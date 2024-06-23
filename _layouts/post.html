@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<a class="button-thin" onclick="window.history.back()">&#129032; Back</a>
+
+<div class="post-container">
+  <div class="post-header">
+    <h2>{{ page.title }}</h2>
+    <p>Posted on: {{ page.date | date_to_string }}</p>
+  </div>
+
+  <div class="line-break-thin"> </div>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</div>

@@ -1,3 +1,4 @@
 url: "https://www.jordanlagan.com" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "Jordan Lagan" # the name of your site, e.g. ACME Corp.
+show_excerpts: true

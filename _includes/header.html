@@ -1,11 +1,12 @@
 <div class="header">
-  <h1>{{ site.title }}</h1>
+  <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
   <nav>
-    <ul>
-      <li><a href="{{ site.baseurl }}/">Blog</a></li>
-      <li><a href="{{ site.baseurl }}/about">About me</a></li>
-      <li><a href="{{ site.baseurl }}/projects">Projects</a></li>
-      <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
-    </ul>
+    <a class="button" href="{{ site.baseurl }}/">Blog</a>
+    <a class="button" href="{{ site.baseurl }}/about">About me</a>
+    <a class="button" href="{{ site.baseurl }}/projects">Projects</a>
+    <a class="button" href="{{ site.baseurl }}/contact">Contact</a>
   </nav>
+</div>
+<div class="mini-hero">
+  <h2>"Programmer: An entity that consumes coffee and produces code"</h2>
 </div>

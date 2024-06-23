@@ -1,5 +1,47 @@
-body { background: #ffffff; color: #000000; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+body { background: #ffffff; color: #000000; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin: 0px; }
 
-p { margin-bottom: 10px; color: blue; }
+.header { display: flex; justify-content: space-between; align-items: center; padding: 1em 2em; gap: 32px; }
+
+.header h1 { margin: 0px; white-space: nowrap; }
+
+.header nav { display: flex; padding: 0px; margin: 0px; gap: 32px; flex-wrap: wrap; }
+
+.header nav div { list-style: none; }
+
+.main-content { padding: 2em 3em; max-width: 80%; margin: 0 auto; }
+
+.main-content h3 { font-size: 16px; }
+
+.mini-hero { border-top: 2px solid black; border-bottom: 2px solid black; padding: 1em 0px; margin-top: 1em; }
+
+.mini-hero h2 { margin: 0px; text-align: center; font-size: 14px; font-style: italic; }
+
+a { text-decoration: none; color: #000000; white-space: nowrap; }
+
+.button { padding: 0.5em 1em; border: 2px solid black; border-radius: 12px; cursor: pointer; transition: background-color 0.3s; }
+
+.button:hover { background-color: #f0f0f0; }
+
+.button-thin { padding: 0.2em 0.6em; border: 2px solid black; border-radius: 12px; cursor: pointer; transition: background-color 0.3s; }
+
+.button-thin:hover { background-color: #f0f0f0; }
+
+.post-container { margin-top: 2em; }
+
+.post-container .post-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+.post-container .post-header h2 { margin: 0px; }
+
+.post-container .post-header p { margin: 0px; font-style: italic; }
+
+.post-list-container { margin-top: 2em; }
+
+.line-break { border-top: 2px solid black; margin: 1em 0px; }
+
+.line-break-thin { border-top: 1px solid black; margin: 1em 0px; }
+
+@media (max-width: 768px) { .header { padding: 1em; flex-direction: column; } .header nav { gap: 16px; } .main-content { padding: 1em; max-width: 100%; } }
+
+@media (max-width: 550px) { .header nav { text-align: center; flex-direction: column; gap: 8px; width: 95%; } .header nav .button { padding: 0.4em 1em; } }
 
 /*# sourceMappingURL=main.css.map */
