@@ -1,8 +1,8 @@
 @font-face { font-family: Mulish; src: url("/assets/fonts/Mulish-VariableFont_wght.ttf") format("truetype supports variations"), url("/assets/fonts/Mulish-VariableFont_wght.ttf") format("truetype-variations"); font-weight: 400 700; font-display: swap; font-style: normal; }
 
-body { background: #ffffff; color: #000000; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin: 0px; }
+body { background: #FBFEF9; color: #50514F; font-family: Mulish, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin: 0px; }
 
-p, h1, h2, h3, h4, h5 { margin: 0px; font-family: Mulish; }
+p, h1, h2, h3, h4, h5 { margin: 0px; }
 
 .header { display: flex; justify-content: space-between; align-items: center; padding: 1em 2em; gap: 32px; }
 
@@ -16,17 +16,17 @@ p, h1, h2, h3, h4, h5 { margin: 0px; font-family: Mulish; }
 
 .main-content h3 { font-size: 16px; }
 
-.mini-hero { border-top: 2px solid black; border-bottom: 2px solid black; padding: 1em 0px; margin-top: 1em; }
+.mini-hero { border-top: 2px solid black; border-bottom: 2px solid black; padding: 1em 0px; margin-top: 1em; background-color: #CFD8CF; }
 
 .mini-hero h2 { text-align: center; font-size: 14px; font-style: italic; }
 
-a { text-decoration: none; color: #000000; }
+a { text-decoration: none; color: #50514F; }
 
-.button { padding: 0.5em 1em; border: 2px solid black; border-radius: 12px; cursor: pointer; transition: background-color 0.3s; }
+.button { padding: 4px 12px 6px 12px; border: 1px solid black; border-radius: 6px; cursor: pointer; transition: background-color 0.3s; font-weight: bold; color: #3C3C3C; background-color: #CFD8CF; }
 
 .button:hover { background-color: #f0f0f0; }
 
-.button-thin { padding: 0.2em 0.6em; border: 2px solid black; border-radius: 12px; cursor: pointer; transition: background-color 0.3s; }
+.button-thin { padding: 2px 8px 4px 8px; border: 1px solid black; border-radius: 6px; cursor: pointer; transition: background-color 0.3s; font-weight: bold; color: #3C3C3C; background-color: #CFD8CF; }
 
 .button-thin:hover { background-color: #f0f0f0; }
 

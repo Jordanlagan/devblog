@@ -1,10 +1,3 @@
-$background_color: #ffffff;
-$body_font: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-$text_color: #000000;
-$primary_color: red;
-$secondary_color: blue;
-$tertiary_color: green;
-
 // Fonts
 @font-face {
   font-family: Mulish;
@@ -15,6 +8,17 @@ $tertiary_color: green;
   font-style: normal;
 }
 
+// Variables
+$body_font: Mulish,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+$primary_1: #50514F;
+$primary_2: #3C3C3C;
+$primary_3: #212121;
+$background_1: #FBFEF9;
+$background_2: #CFD8CF;
+$accent_1: #D7263D;
+$background_color: #{$background_1};
+$text_color: #{$primary_1};
+
 // General styles
 body {
   background: $background_color;
@@ -22,7 +26,7 @@ body {
   font-family: $body_font;
   margin: 0px;
 }
-p, h1, h2, h3, h4, h5 { margin: 0px; font-family: Mulish; }
+p, h1, h2, h3, h4, h5 { margin: 0px; }
 .header { display: flex; justify-content: space-between; align-items: center; padding: 1em 2em; gap: 32px;
   h1 { white-space: nowrap; }
   nav { display: flex; padding: 0px; margin: 0px; gap: 32px; flex-wrap: wrap;
@@ -34,26 +38,32 @@ p, h1, h2, h3, h4, h5 { margin: 0px; font-family: Mulish; }
 }
 
 // Mini hero
-.mini-hero { border-top: 2px solid black; border-bottom: 2px solid black; padding: 1em 0px; margin-top: 1em;
+.mini-hero { border-top: 2px solid black; border-bottom: 2px solid black; padding: 1em 0px; margin-top: 1em; background-color: $background_2;
   h2 { text-align: center; font-size: 14px; font-style: italic; }
 }
 
 // Buttons
 a { text-decoration: none; color: $text_color; }
 .button {
-  padding: 0.5em 1em;
-  border: 2px solid black;
-  border-radius: 12px;
+  padding: 4px 12px 6px 12px;
+  border: 1px solid black;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-weight: bold;
+  color: $primary_2;
+  background-color: $background-2;
   &:hover { background-color: #f0f0f0; }
 }
 .button-thin {
-  padding: 0.2em 0.6em;
-  border: 2px solid black;
-  border-radius: 12px;
+  padding: 2px 8px 4px 8px;
+  border: 1px solid black;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-weight: bold;
+  color: $primary_2;
+  background-color: $background-2;
   &:hover { background-color: #f0f0f0; }
 }
 
