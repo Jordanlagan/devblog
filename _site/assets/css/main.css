@@ -12,7 +12,7 @@ p, h1, h2, h3, h4, h5 { margin: 0px; font-family: Mulish; }
 
 .header nav div { list-style: none; }
 
-.main-content { padding: 2em 3em; max-width: 80%; margin: 0 auto; overflow: hidden; }
+.main-content { padding: 2em 3em; width: 80%; max-width: 900px; margin: 0 auto; overflow: hidden; }
 
 .main-content h3 { font-size: 16px; }
 
@@ -38,7 +38,7 @@ a { text-decoration: none; color: #000000; }
 
 .post-list-container { margin-top: 2em; }
 
-.post-list-container .post-list { max-width: 80%; margin: 12px auto 0px auto; width: 100%; display: flex; gap: 32px; flex-direction: column; }
+.post-list-container .post-list { margin: 12px auto 0px auto; width: 100%; display: flex; gap: 32px; flex-direction: column; }
 
 .post-list-container .post-list .post-list-post { padding: 14px; border: 1px solid black; border-radius: 8px; }
 
