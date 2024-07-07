@@ -27,16 +27,16 @@
           <div class="post-list">
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
             {%- for post in posts -%}
-            <div>
-              <h3>
-                <a class="post-link" href="{{ post.url | relative_url }}">
+            <div class="post-list-post">
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                <h3 class="post-title">
                   {{ post.title | escape }}
-                </a>
-              </h3>
-              <p class="post-date">{{ post.date | date: date_format }}</p>
-              {%- if site.show_excerpts -%}
-                <p class="post-excerpt">{{ post.excerpt }} ...</p>
-              {%- endif -%}
+                </h3>
+                <p class="post-date">{{ post.date | date: date_format }}</p>
+                {%- if site.show_excerpts -%}
+                  <p class="post-excerpt">{{ post.excerpt }} ...</p>
+                {%- endif -%}
+              </a>
             </div>
             {%- endfor -%}
           </div>
