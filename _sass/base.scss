@@ -27,6 +27,7 @@ body {
   margin: 0px;
 }
 p, h1, h2, h3, h4, h5 { margin: 0px; }
+p { line-height: 1.5; }
 .header { display: flex; justify-content: space-between; align-items: center; padding: 1em 2em; gap: 32px;
   h1 { white-space: nowrap; }
   nav { display: flex; padding: 0px; margin: 0px; gap: 32px; flex-wrap: wrap;
@@ -34,19 +35,21 @@ p, h1, h2, h3, h4, h5 { margin: 0px; }
   }
 }
 .main-content { padding: 2em 3em; width: 80%; max-width: 900px; margin: 0 auto; overflow: hidden;
+  h1, h2, h3, h4, h5 { margin-bottom: 16px; }
   h3 { font-size: 16px; }
 }
 
 // Mini hero
-.mini-hero { border-top: 2px solid black; border-bottom: 2px solid black; padding: 1em 0px; margin-top: 1em; background-color: $background_2;
-  h2 { text-align: center; font-size: 14px; font-style: italic; }
+.mini-hero { border-top: 2px solid $primary_3; border-bottom: 2px solid $primary_3; padding: 1em 0px; margin-top: 1em; background-color: $background_2;
+  h2 { text-align: center; font-size: 18px; font-style: italic; }
 }
 
 // Buttons
 a { text-decoration: none; color: $text_color; }
+a[disabled] { opacity: 50%; }
 .button {
   padding: 4px 12px 6px 12px;
-  border: 1px solid black;
+  border: 1px solid $primary_3;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -57,7 +60,7 @@ a { text-decoration: none; color: $text_color; }
 }
 .button-thin {
   padding: 2px 8px 4px 8px;
-  border: 1px solid black;
+  border: 1px solid $primary_3;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -67,31 +70,49 @@ a { text-decoration: none; color: $text_color; }
   &:hover { background-color: #f0f0f0; }
 }
 
+// Icons
+.icon { width: 16px; height: 16px; position: relative; top: 3px; }
+.icon.right-chevron { transform: rotate(180deg); }
+
 // Posts
-.post-container { margin-top: 2em;
+.post-container { margin: 4em auto 2em auto; max-width: 680px; 
   .post-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+    h1 { margin: 0px; }
     p { margin: 0px; font-style: italic; }
+  }
+  .post-content { 
+    h1, h2, h3, h4, h5 { margin-bottom: 16px; margin-top: 8px; }
+    p { margin-bottom: 24px; line-height: 1.8; }
   }
 }
 .post-list-container { margin-top: 2em;
   .post-list { margin: 12px auto 0px auto; width: 100%; display: flex; gap: 32px; flex-direction: column;
-    .post-list-post { padding: 14px; border: 1px solid black; border-radius: 8px;
-      .post-list-title { margin: 0px; }
+    .post-list-post { padding: 14px; border: 1px solid $primary_3; border-radius: 8px;
+      .post-title { margin: 0px 0px 8px 0px; font-size: 20px; }
+      .post-date { margin-bottom: 4px; }
+      .post-excerpt { margin-bottom: 16px; }
+      .post-footer { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+        .post-tags { display: flex; gap: 8px; 
+          .tag-card { padding: 0px 8px 2px 8px; border: 1px solid $primary_3; border-radius: 4px; font-size: 14px; }
+        }
+      }
     }
   }
 }
+.pagination { display: flex; justify-content: center; gap: 16px; margin-top: 2em; align-items: center; }
+
 
 // Projects
 .projects-container { margin-top: 2em; display: flex; gap: 32px;
-  .project { padding: 14px; border: 1px solid black; border-radius: 8px; width: 100%;
+  .project { padding: 14px; border: 1px solid $primary_3; border-radius: 8px; width: 100%;
 
   }
 }
 
 // Misc
 
-.line-break { border-top: 2px solid black; margin: 1em 0px; }
-.line-break-thin { border-top: 1px solid black; margin: 1em 0px; }
+.line-break { border-top: 2px solid $primary_3; margin: 1em 0px; }
+.line-break-thin { border-top: 1px solid $primary_3; margin: 1em 0px; }
 
 // Responsive
 
@@ -99,7 +120,7 @@ a { text-decoration: none; color: $text_color; }
   .header { padding: 1em; flex-direction: column; 
     nav { gap: 16px; }
   }
-  .main-content { padding: 1em; max-width: 100%; }
+  .main-content { padding: 4em 1em; max-width: 100%; }
 }
 @media (max-width: 550px) {
   .header nav { text-align: center; flex-direction: column; gap: 8px; width: 95%;

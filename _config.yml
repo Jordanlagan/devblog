@@ -2,3 +2,9 @@ url: "https://www.jordanlagan.com" # the base hostname & protocol for your site,
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "Jordan Lagan" # the name of your site, e.g. ACME Corp.
 show_excerpts: true
+blog_path: "/"
+plugins:
+  - jekyll-paginate
+
+paginate: 5  # Number of posts per page
+paginate_path: "/page-:num/"

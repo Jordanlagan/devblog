@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  {%- include head.html -%}
+  <body>
+    {%- include header.html -%}
+    <div class="main-content">
+      <a class="button-thin" href="{{ site.blog_path }}">
+        <img src="/assets/images/icons/arrow-left.webp" alt="Back" class="icon left-chevron">
+        Back
+      </a>
+      <div style="margin-bottom: 36px;"></div>
+      <h1>Posts tagged with "{{ page.tag }}"</h1>
+      <hr class="line-break-thin">
+      <div class="post-list-container">
+        <div class="post-list">
+          {%- assign tag = page.tag -%}
+          {%- assign tagged_posts = site.tags[tag] -%}
+          {%- if tagged_posts -%}
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            {%- for post in tagged_posts -%}
+              <!-- <div class="post-list-post">
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                  <h3 class="post-title">{{ post.title | escape }}</h3>
+                  <p class="post-date">{{ post.date | date: date_format }}</p>
+                  {%- if site.show_excerpts -%}
+                    <p class="post-excerpt">{{ post.excerpt }} ...</p>
+                  {%- endif -%}
+                </a>
+              </div> -->
+              <div class="post-list-post">
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                  <h3 class="post-title">
+                    {{ post.title | escape }}
+                  </h3>
+                  <p class="post-date">{{ post.date | date: date_format }}</p>
+                  {%- if site.show_excerpts -%}
+                    <p class="post-excerpt">{{ post.excerpt }} ...</p>
+                  {%- endif -%}
+                </a>
+                <div class="post-footer">
+                  <div class="post-tags">
+                    {%- for tag in post.tags -%}
+                      <a href="/tags/{{ tag | slugify }}" class="tag-card">{{ tag }}</a>
+                    {%- endfor -%}
+                  </div>
+                  <a class="button-thin" href="{{ post.url | relative_url }}">
+                    Read more
+                    <img src="/assets/images/icons/arrow-left.webp" alt="Read more" class="icon right-chevron">
+                  </a>
+                </div>
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            <p>No posts found with this tag.</p>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

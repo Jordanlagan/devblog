@@ -2,13 +2,13 @@
 layout: default
 ---
 <a class="button-thin" onclick="window.history.back()">
-  <img src="/assets/images/icons/arrow-left.webp" alt="Back" class="icon">
+  <img src="/assets/images/icons/arrow-left.webp" alt="Back" class="icon left-chevron">
   Back
 </a>
 
 <div class="post-container">
   <div class="post-header">
-    <h2>{{ page.title }}</h2>
+    <h1>{{ page.title }}</h1>
     <p>Posted on: {{ page.date | date_to_string }}</p>
   </div>
 

@@ -3,7 +3,7 @@ layout: default
 title: "About me"
 ---
 
-## About Me
+# About Me
 
 Hey I'm Jordan. Outside of work I am a part time pet sitter, baker, beer and coffee drinker, food lover and Costco enjoyer.
 

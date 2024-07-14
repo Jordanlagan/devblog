@@ -3,6 +3,7 @@ layout: post
 title: "Why dogs are better than cats"
 categories: fun
 excerpt: "I’m writing this with claw marks etched into my skin and a heart full of disdain. As someone who has faced the wrath of 500 cats—yes, you read that right—I'm here to tell you why dogs are undeniably better than cats"
+tags: ['dogs', 'cats']
 ---
 
 
