@@ -14,13 +14,15 @@ p { line-height: 1.5; }
 
 .header nav div { list-style: none; }
 
+.main-content-container { background-image: url("/assets/images/bg-1.webp"); background-size: cover; background-position: center; min-height: calc(100vh - 131px); background-attachment: fixed; }
+
 .main-content { padding: 2em 3em; width: 80%; max-width: 900px; margin: 0 auto; overflow: hidden; }
 
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5 { margin-bottom: 16px; }
 
 .main-content h3 { font-size: 16px; }
 
-.mini-hero { border-top: 2px solid #212121; border-bottom: 2px solid #212121; padding: 1em 0px; margin-top: 1em; background-color: #CFD8CF; }
+.mini-hero { border-top: 2px solid #212121; border-bottom: 2px solid #212121; padding: 1em 0px; background-color: #CFD8CF; }
 
 .mini-hero h2 { text-align: center; font-size: 18px; font-style: italic; }
 
@@ -56,7 +58,7 @@ a[disabled] { opacity: 50%; }
 
 .post-list-container .post-list { margin: 12px auto 0px auto; width: 100%; display: flex; gap: 32px; flex-direction: column; }
 
-.post-list-container .post-list .post-list-post { padding: 14px; border: 1px solid #212121; border-radius: 8px; }
+.post-list-container .post-list .post-list-post { padding: 14px; border: 1px solid #212121; border-radius: 8px; backdrop-filter: blur(30px); }
 
 .post-list-container .post-list .post-list-post .post-title { margin: 0px 0px 8px 0px; font-size: 20px; }
 
