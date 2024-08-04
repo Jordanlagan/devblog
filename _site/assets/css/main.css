@@ -1,6 +1,6 @@
 @font-face { font-family: Mulish; src: url("/assets/fonts/Mulish-VariableFont_wght.ttf") format("truetype supports variations"), url("/assets/fonts/Mulish-VariableFont_wght.ttf") format("truetype-variations"); font-weight: 400 700; font-display: swap; font-style: normal; }
 
-body { background: #FBFEF9; color: #50514F; font-family: Mulish, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin: 0px; }
+body { background: #FBFEF9; color: #212121; font-family: Mulish, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin: 0px; }
 
 p, h1, h2, h3, h4, h5 { margin: 0px; }
 
@@ -10,13 +10,15 @@ p { line-height: 1.5; }
 
 .header h1 { white-space: nowrap; }
 
+.header h1 a { color: #212121; }
+
 .header nav { display: flex; padding: 0px; margin: 0px; gap: 32px; flex-wrap: wrap; }
 
 .header nav div { list-style: none; }
 
-.main-content-container { background-image: url("/assets/images/bg-1.webp"); background-size: cover; background-position: center; min-height: calc(100vh - 131px); background-attachment: fixed; }
+.main-content-container { background-position: center; min-height: calc(100vh - 131px); /* background-image: url('/assets/images/background-2.webp'); */ }
 
-.main-content { padding: 2em 3em; width: 80%; max-width: 900px; margin: 0 auto; overflow: hidden; }
+.main-content { padding: 4em 3em 2em 3em; width: 80%; max-width: 900px; margin: 0 auto; overflow: hidden; }
 
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5 { margin-bottom: 16px; }
 
@@ -24,9 +26,9 @@ p { line-height: 1.5; }
 
 .mini-hero { border-top: 2px solid #212121; border-bottom: 2px solid #212121; padding: 1em 0px; background-color: #CFD8CF; }
 
-.mini-hero h2 { text-align: center; font-size: 18px; font-style: italic; }
+.mini-hero h2 { text-align: center; font-size: 18px; font-style: italic; color: #3C3C3C; }
 
-a { text-decoration: none; color: #50514F; }
+a { text-decoration: none; color: #212121; }
 
 a[disabled] { opacity: 50%; }
 
@@ -42,7 +44,7 @@ a[disabled] { opacity: 50%; }
 
 .icon.right-chevron { transform: rotate(180deg); }
 
-.post-container { margin: 4em auto 2em auto; max-width: 680px; }
+.post-container { margin: 4em auto 2em auto; max-width: 720px; padding: 14px; border: 1px solid #212121; border-radius: 8px; backdrop-filter: blur(10px); }
 
 .post-container .post-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 
@@ -58,7 +60,7 @@ a[disabled] { opacity: 50%; }
 
 .post-list-container .post-list { margin: 12px auto 0px auto; width: 100%; display: flex; gap: 32px; flex-direction: column; }
 
-.post-list-container .post-list .post-list-post { padding: 14px; border: 1px solid #212121; border-radius: 8px; backdrop-filter: blur(30px); }
+.post-list-container .post-list .post-list-post { padding: 14px; border: 1px solid #212121; border-radius: 8px; backdrop-filter: blur(10px); }
 
 .post-list-container .post-list .post-list-post .post-title { margin: 0px 0px 8px 0px; font-size: 20px; }
 
@@ -78,9 +80,39 @@ a[disabled] { opacity: 50%; }
 
 .projects-container .project { padding: 14px; border: 1px solid #212121; border-radius: 8px; width: 100%; }
 
+p a { color: #659DBD; text-decoration: underline; }
+
 .line-break { border-top: 2px solid #212121; margin: 1em 0px; }
 
 .line-break-thin { border-top: 1px solid #212121; margin: 1em 0px; }
+
+.text-background { background-color: rgba(55, 62, 70, 0.1); backdrop-filter: blur(10px); }
+
+.p-1 { padding: 0.5em; }
+
+.p-2 { padding: 1em; }
+
+.p-3 { padding: 1.5em; }
+
+.p-4 { padding: 2em; }
+
+.pb-1 { padding-bottom: 0.5em; }
+
+.pb-2 { padding-bottom: 1em; }
+
+.pb-3 { padding-bottom: 1.5em; }
+
+.pb-4 { padding-bottom: 2em; }
+
+.mb-1 { margin-bottom: 0.5em; }
+
+.mb-2 { margin-bottom: 1em; }
+
+.mb-3 { margin-bottom: 1.5em; }
+
+.mb-4 { margin-bottom: 2em; }
+
+.rounded { border-radius: 8px; }
 
 @media (max-width: 768px) { .header { padding: 1em; flex-direction: column; } .header nav { gap: 16px; } .main-content { padding: 4em 1em; max-width: 100%; } }
 

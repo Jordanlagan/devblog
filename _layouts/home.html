@@ -19,7 +19,7 @@
 
         {%- if posts.size > 0 -%}
           <div class="post-list-container">
-            <h3>Posts</h3>
+            <h3>Blog posts</h3>
             <hr class="line-break">
 
             {%- if page.list_title -%}
@@ -28,7 +28,7 @@
             <div class="post-list">
               {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
               {%- for post in posts -%}
-              <div class="post-list-post">
+              <div class="post-list-post text-background">
                 <a class="post-link" href="{{ post.url | relative_url }}">
                   <h3 class="post-title">
                     {{ post.title | escape }}
