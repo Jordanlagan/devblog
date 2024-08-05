@@ -3,12 +3,53 @@ layout: home
 title: "Web Developer Blog"
 ---
 
-<div class="text-background p-2 rounded">
-  <h2>Welcome.</h2>
-  <p class="pb-2">
-    This is my personal website and blog. I'm a web developer and have been greatly assisted by dev blogs like this one in my career. I only write about things that I think are helpful or useful to others. I hope you find something useful here.
-  </p>
-  <p>
-    If you want to read more about me or see cute pictures of my dog, click <a href="/about">here</a>.
-  </p>
+<div class="text-background p-2 rounded element-shadow">
+  <div class="homepage-welcome">
+    <div class="profile-picture">
+      <img src="/assets/images/home/jordan-lagan-2.jpg" alt="Profile picture">
+    </div>
+    <div class="profile-info">
+      <h2>Welcome.</h2>
+      <p class="pb-2">
+        This is my personal website and blog. I'm a web developer and have been greatly assisted by dev blogs like this one in my career. I only write about things that I think are interesting or helpful. I hope you find something useful here.
+      </p>
+      <p>
+        If you want to read more about me or see cute pictures of my dog, click <a href="/about">here</a>.
+      </p>
+    </div>
+  </div>
 </div>
+
+<style>
+  .homepage-welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .profile-picture {
+    min-width: 133px;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid black;
+  }
+
+  .profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  @media (max-width: 768px) {
+    .homepage-welcome {
+      flex-direction: column;
+    }
+
+    .profile-info {
+      width: 100%;
+    }
+  }
+</style>

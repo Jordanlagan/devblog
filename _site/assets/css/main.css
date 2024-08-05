@@ -16,6 +16,12 @@ p { line-height: 1.5; }
 
 .header nav div { list-style: none; }
 
+.header nav a { color: #212121; text-transform: uppercase; text-decoration: none; letter-spacing: 0.15em; display: inline-block; padding: 15px 20px; position: relative; }
+
+.header nav a:after { background: none repeat scroll 0 0 transparent; bottom: 0; content: ""; display: block; height: 2px; left: 50%; position: absolute; background: #212121; transition: width 0.3s ease 0s, left 0.3s ease 0s; width: 0; }
+
+.header nav a:hover:after { width: 100%; left: 0; }
+
 .main-content-container { background-position: center; min-height: calc(100vh - 131px); /* background-image: url('/assets/images/background-2.webp'); */ }
 
 .main-content { padding: 4em 3em 2em 3em; width: 80%; max-width: 900px; margin: 0 auto; overflow: hidden; }
@@ -32,13 +38,9 @@ a { text-decoration: none; color: #212121; }
 
 a[disabled] { opacity: 50%; }
 
-.button { padding: 4px 12px 6px 12px; border: 1px solid #212121; border-radius: 6px; cursor: pointer; transition: background-color 0.3s; font-weight: bold; color: #3C3C3C; background-color: #CFD8CF; }
+.button { padding: 4px 12px 6px 12px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s; font-weight: bold; color: #3C3C3C; }
 
-.button:hover { background-color: #f0f0f0; }
-
-.button-thin { padding: 2px 8px 4px 8px; border: 1px solid #212121; border-radius: 6px; cursor: pointer; transition: background-color 0.3s; font-weight: bold; color: #3C3C3C; background-color: #CFD8CF; }
-
-.button-thin:hover { background-color: #f0f0f0; }
+.button-thin { padding: 2px 8px 4px 8px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s; font-weight: bold; color: #3C3C3C; }
 
 .icon { width: 16px; height: 16px; position: relative; top: 3px; }
 
@@ -80,7 +82,7 @@ a[disabled] { opacity: 50%; }
 
 .projects-container .project { padding: 14px; border: 1px solid #212121; border-radius: 8px; width: 100%; }
 
-p a { color: #659DBD; text-decoration: underline; }
+p a { font-weight: bold; color: #3C3C3C; text-decoration: underline; }
 
 .line-break { border-top: 2px solid #212121; margin: 1em 0px; }
 
@@ -113,6 +115,8 @@ p a { color: #659DBD; text-decoration: underline; }
 .mb-4 { margin-bottom: 2em; }
 
 .rounded { border-radius: 8px; }
+
+.element-shadow { box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px; }
 
 @media (max-width: 768px) { .header { padding: 1em; flex-direction: column; } .header nav { gap: 16px; } .main-content { padding: 4em 1em; max-width: 100%; } }
 

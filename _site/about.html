@@ -53,26 +53,6 @@
     <div class="swiper-slide"><a href="/assets/images/about-me/about-me-15.jpg" data-lightbox="about-me-15"><img src="/assets/images/about-me/about-me-15.jpg" alt="About me 15"></a></div>
     <div class="swiper-slide"><a href="/assets/images/about-me/about-me-17.jpg" data-lightbox="about-me-17"><img src="/assets/images/about-me/about-me-17.jpg" alt="About me 17"></a></div>
     <div class="swiper-slide"><a href="/assets/images/about-me/about-me-18.jpg" data-lightbox="about-me-18"><img src="/assets/images/about-me/about-me-18.jpg" alt="About me 18"></a></div>
-    
-    <!-- <div class="swiper-slide"><img src="/assets/images/about-me/about-me-19.jpg" alt="About me 19"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-7.jpg" alt="About me 7"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-16.jpg" alt="About me 16"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-5.jpg" alt="About me 5"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-4.jpg" alt="About me 4"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-6.jpg" alt="About me 6"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-1.jpg" alt="About me 1"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-2.jpg" alt="About me 2"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-3.jpg" alt="About me 3"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-8.jpg" alt="About me 8"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-9.jpg" alt="About me 9"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-10.jpg" alt="About me 10"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-11.jpg" alt="About me 11"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-12.jpg" alt="About me 12"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-13.jpg" alt="About me 13"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-14.jpg" alt="About me 14"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-15.jpg" alt="About me 15"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-17.jpg" alt="About me 17"></div>
-    <div class="swiper-slide"><img src="/assets/images/about-me/about-me-18.jpg" alt="About me 18"></div> -->
   </div>
   <!-- If we need pagination -->
   <div class="swiper-pagination"></div>
@@ -82,7 +62,7 @@
   <div class="swiper-button-next"></div>
 </div>
 
-<div class="text-background p-2 rounded">
+<div class="text-background p-2 rounded element-shadow">
 <h1>About Me</h1>
 <p class="pb-2">
 Hey I'm Jordan. Outside of work I am a part time pet sitter, baker, beer and coffee drinker, food lover and Costco enjoyer.
@@ -114,6 +94,8 @@ The other 10% of those pictures would be food / drink. My guilty pleasure is dri
     width: 100%;
     height: 100%;
     object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    border-radius: 8px;
   }
   .swiper-button-prev {
     background-image: url(/assets/images/icons/arrow-left.webp) !important;
@@ -149,7 +131,7 @@ The other 10% of those pictures would be food / drink. My guilty pleasure is dri
     loop: true,
     autoHeight: true,
     autoplay: {
-      delay: 7500,
+      delay: 10000,
       disableOnInteraction: false,
     },
     pagination: {
