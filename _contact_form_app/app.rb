@@ -8,8 +8,8 @@ configure do
     delivery_method :smtp, {
       address: "smtp.gmail.com",
       port: 587,
-      user_name: 'your-email@gmail.com',
-      password: 'your-email-password',
+      user_name: ENV["EMAIL_USER"],
+      password: ENV["EMAIL_PASSWORD"],
       authentication: 'plain',
       enable_starttls_auto: true
     }
@@ -23,7 +23,7 @@ post '/submit_form' do
 
   mail = Mail.new do
     from    email
-    to      'your-email@gmail.com'
+    to      ENV["EMAIL_USER"]
     subject 'New Contact Form Submission'
     body    "Name: #{name}\nEmail: #{email}\nMessage: #{message}"
   end
