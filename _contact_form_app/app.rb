@@ -23,8 +23,8 @@ post '/submit_form' do
   message = params[:message]
 
   mail = Mail.new do
-    from    'your-verified-email@domain.com'   # This email must be verified in SES
-    to      'recipient-email@example.com'
+    from    'jordanlagan000@gmail.com'   # This email must be verified in SES
+    to      'jordanlagan000@gmail.com'
     subject 'New Contact Form Submission'
     body    "Name: #{name}\nEmail: #{email}\nMessage: #{message}"
   end
