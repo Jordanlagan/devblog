@@ -116,6 +116,20 @@ a[disabled] { opacity: 50%; }
 
 .projects-container.game-archive .project-image { min-width: 150px; width: 150px; height: 150px; }
 
+.contact-form form { padding: 20px 40px; }
+
+.contact-form label, .contact-form select, .contact-form input, .contact-form textarea, .contact-form button { display: block; width: 100%; border: none; cursor: pointer; border-radius: 2px; }
+
+.contact-form textarea { height: 120px; }
+
+.contact-form button, .contact-form select, .contact-form input { height: 40px; }
+
+.contact-form .form-row { display: flex; justify-content: space-between; gap: 24px; }
+
+.contact-form .form-element { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+
+.contact-form input, .contact-form textarea, .contact-form select, .contact-form button { border: 1px solid grey; border-radius: 4px; }
+
 p a { font-weight: bold; color: #3C3C3C; text-decoration: underline; }
 
 .line-break { border-top: 2px solid #212121; margin: 1em 0px; }
@@ -160,7 +174,7 @@ p a { font-weight: bold; color: #3C3C3C; text-decoration: underline; }
 
 .element-shadow { box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px; }
 
-@media (max-width: 768px) { .header { padding: 1em; flex-direction: column; } .header nav { gap: 16px; } .main-content { padding: 4em 1em; max-width: 100%; } }
+@media (max-width: 768px) { .header { padding: 1em; flex-direction: column; } .header nav { gap: 16px; } .main-content { padding: 4em 1em; max-width: 100%; } .contact-form .form-row { flex-wrap: wrap; } }
 
 @media (max-width: 550px) { .header nav { text-align: center; flex-direction: column; gap: 8px; width: 95%; } .header nav .button { padding: 0.4em 1em; } }
 
