@@ -36,28 +36,8 @@ post '/submit_form' do
   end
 
   if mail.deliver
-    redirect '/thank_you'
+    redirect '/contact-thank-you'
   else
-    redirect '/error'
+    redirect '/contact-error'
   end
-end
-
-get '/thank_you' do
-  <<-HTML
-  <div style="text-align: center; padding: 20px;">
-    <h1>Thank You!</h1>
-    <p>Your message has been sent successfully. I'll get back to you shortly.</p>
-    <a href="/" style="color: blue; text-decoration: underline;">Back to homepage</a>
-  </div>
-  HTML
-end
-
-get '/error' do
-  <<-HTML
-  <div style="text-align: center; padding: 20px;">
-    <h1>Oops!</h1>
-    <p>Something went wrong. Please try again later.</p>
-    <a href="/contact" style="color: blue; text-decoration: underline;">Go back to the contact form</a>
-  </div>
-  HTML
 end
