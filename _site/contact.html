@@ -56,6 +56,12 @@
         <textarea id="message" name="message" required></textarea>
       </div>
 
+      <!-- Honeypot field (hidden from users but visible to bots) -->
+      <div class="form-element honeypot" style="display: none;">
+        <label for="honeypot">Leave this field blank</label>
+        <input type="text" id="honeypot" name="honeypot">
+      </div>
+
       <button class="mt-3" type="submit">Send</button>
     </form>
   </div>
