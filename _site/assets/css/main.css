@@ -54,9 +54,11 @@ a[disabled] { opacity: 50%; }
 
 .post-container .post-header p { margin: 0px; font-style: italic; }
 
-.post-container .post-content h1, .post-container .post-content h2, .post-container .post-content h3, .post-container .post-content h4, .post-container .post-content h5 { margin-bottom: 16px; margin-top: 8px; }
+.post-container .post-content h1, .post-container .post-content h2, .post-container .post-content h3, .post-container .post-content h4, .post-container .post-content h5 { margin-bottom: 16px; margin-top: 16px; }
 
 .post-container .post-content p { margin-bottom: 24px; line-height: 1.8; }
+
+.post-container .post-content a { color: #3C3C3C; text-decoration: underline; }
 
 .post-list-container { margin-top: 2em; }
 
@@ -77,6 +79,10 @@ a[disabled] { opacity: 50%; }
 .post-list-container .post-list .post-list-post .post-footer .post-tags .tag-card { padding: 0px 8px 2px 8px; border: 1px solid #212121; border-radius: 4px; font-size: 14px; }
 
 .pagination { display: flex; justify-content: center; gap: 16px; margin-top: 2em; align-items: center; }
+
+.post-featured-image-container { width: 100%; max-width: 100%; height: auto; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-bottom: 32px; }
+
+.post-featured-image { width: 100%; height: auto; object-fit: cover; display: block; max-width: 500px; border-radius: 8px; }
 
 .about-me-container { display: flex; flex-direction: row; border: 1px solid #3C3C3C; border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px; }
 
