@@ -48,6 +48,11 @@ title: "Contact Me"
         <input type="text" id="honeypot" name="honeypot">
       </div>
 
+      <div class="form-element mt-3">
+        <label for="captcha">Solve this: <%= captcha_question %></label>
+        <input type="text" id="captcha" name="captcha" required>
+      </div>      
+
       <button class="mt-3" type="submit">Send</button>
     </form>
   </div>
