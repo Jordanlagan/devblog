@@ -1,0 +1,195 @@
+---
+layout: post
+title:  "How To Hide Out Of Stock Products on Shopify - No App"
+excerpt: "A lot of people want to know how to hide out of stock products and how to hide products with no inventory on Shopify.
+"
+tags: ["shopify", "ecommerce"]
+---
+
+<div class="post-featured-image-container">
+  <img class="post-featured-image" src="/assets/images/posts/hide-out-of-stock-products-shopify.webp" alt="Hide Out of Stock Products on Shopify">
+</div>
+
+<h1>How To Hide Out Of Stock Products on Shopify - No App</h1>
+
+<p>Many Shopify store owners ask, <strong>"How do I hide out-of-stock products?"</strong> Unfortunately, Shopify does not offer a built-in solution, and most apps that do this require a paid subscription.</p>
+
+<p>In this guide, I'll show you how to hide products with zero inventory using the <strong>Shopify Storefront API</strong> via a custom Ruby without affecting pagination.</p>
+
+<h2>Why Shopify Doesn't Support This by Default</h2>
+
+<p>Editing <code>collection.liquid</code> to exclude out-of-stock items can break pagination and filtering. You can go through and manually adjust each collection to filter out of stock products, but this is time-consuming and not scalable if your store has lots of collections.</p>
+<p>Many users have asked Shopify for a native fix, but they have yet to implement one: <a href="https://www.reddit.com/r/shopify/comments/12pywvh/is_there_a_free_app_for_hiding_out_of_stock_items/" target="_blank">Reddit Discussion</a>.</p>
+
+<h2>Free & Fast Method: Shopify Storefront API</h2>
+
+<p>The best way to hide out-of-stock products is by programmatically <strong>updating collection rules</strong> to include an inventory filter.</p>
+
+<h3>Prerequisites</h3>
+<ul>
+  <li>You must have <strong>Ruby</strong> installed on your computer.</li>
+  <li>Install the required gems: <code>shopify_api</code> (v14.8.0) and <code>logger</code> (v1.6.6).</li>
+  <li>Create a <strong>custom Shopify app</strong> with API access.</li>
+</ul>
+
+<h3>Step 1: Create a Shopify Custom App</h3>
+
+<ol>
+  <li>Log in to your Shopify store.</li>
+
+  <li>Go to <strong>Settings &gt; Apps and Sales Channels &gt; Develop Apps</strong>.</li>
+  <img class="post-image" src="/assets/images/posts/settings.jpg" alt="Create a Shopify Custom App">
+  <img class="post-image" src="/assets/images/posts/app-and-sales-channels.jpg" alt="App and Sales Channels">
+  <img class="post-image" src="/assets/images/posts/develop-apps.jpg" alt="Develop Apps">
+  
+  <li>Enable custom app development.</li>
+  <img class="post-image" src="/assets/images/posts/allow-custom-dev.jpg" alt="Allow Custom App Development">
+  
+  <li>Create a new app and name it something like <code>Hide Out of Stock</code>.</li>
+  <img class="post-image" src="/assets/images/posts/create-app.jpg" alt="Create a New App">
+
+  <li>Click <strong>API Credentials</strong> and allow <code>read & write</code> permissions for <strong>products</strong>.</li>
+  <img class="post-image" src="/assets/images/posts/api-creds.jpg" alt="API Credentials">
+  <img class="post-image" src="/assets/images/posts/scopes.jpg" alt="Scopes">
+  <img class="post-image" src="/assets/images/posts/enable-scopes.jpg" alt="Enable Scopes">
+
+  <li>Use <strong>Shopify API version 2025-01</strong>.</li>
+  <img class="post-image" src="/assets/images/posts/version.jpg" alt="API Version">
+
+  <li>Install the app and retrieve your <strong>Admin API Access Token</strong>.</li>
+  <img class="post-image" src="/assets/images/posts/install-app.jpg" alt="Install App">
+  <img class="post-image" src="/assets/images/posts/access-token.jpg" alt="Access Token">
+</ol>
+
+<h3>Step 2: Run the Ruby Script</h3>
+
+<p>Copy the script below and save it as <code>hide-out-of-stock-products.rb</code>.</p>
+<p>Replace <code>SHOP_NAME</code>, <code>ACESS_TOKEN</code> and <code>LIMIT</code> with your values.</p>
+
+<pre><code class="language-ruby">
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'shopify_api'
+require 'logger'
+
+# Shopify store credentials
+SHOP_NAME = "your-store-name"
+ACCESS_TOKEN = "YOUR_ACCESS_TOKEN" # Use the admin token, not the API secret
+
+LIMIT = 5 # Adjust as needed
+
+ShopifyAPI::Context.setup(
+  api_key: "DUMMY_VALUE",
+  host_name: "DUMMY_VALUE",
+  scope: "DUMMY_VALUE",
+  private_shop: "#{SHOP_NAME}.myshopify.com",
+  api_secret_key: ACCESS_TOKEN,
+  is_embedded: false,
+  is_private: true,
+  api_version: "2025-01"
+)
+
+session = ShopifyAPI::Auth::Session.new(
+  shop: "#{SHOP_NAME}.myshopify.com",
+  access_token: ACCESS_TOKEN
+)
+client = ShopifyAPI::Clients::Graphql::Admin.new(session: session)
+
+# GraphQL query to get all collections and their filters
+GET_COLLECTIONS_QUERY = <<-GRAPHQL
+  {
+    collections(first: 100) {
+      edges {
+        node {
+          id
+          title
+          ruleSet {
+            appliedDisjunctively
+            rules {
+              column
+              relation
+              condition
+            }
+          }
+        }
+      }
+    }
+  }
+GRAPHQL
+
+response = client.query(query: GET_COLLECTIONS_QUERY)
+result = response.body
+errors = result.dig("errors") || result.dig("data", "collectionUpdate", "userErrors") || []
+
+if errors.any?
+  puts "❌ Error fetching collections: #{errors}"
+  exit
+end
+
+collections = result.dig("data", "collections", "edges") || []
+index = 0
+
+collections.each do |collection|
+  index += 1
+  break if index > LIMIT
+
+  collection_id = collection["node"]["id"]
+  title = collection["node"]["title"]
+  rule_set = collection["node"]["ruleSet"]
+
+  next if rule_set.nil?
+
+  rules = rule_set["rules"] || []
+  has_inventory_filter = rules.any? { |rule| rule["column"] == "VARIANT_INVENTORY" && rule["relation"] == "GREATER_THAN" && rule["condition"] == "0" }
+
+  unless has_inventory_filter
+    new_rules = rules + [{ "column" => "VARIANT_INVENTORY", "relation" => "GREATER_THAN", "condition" => "0" }]
+    update_mutation = <<-GRAPHQL
+      mutation {
+        collectionUpdate(input: {
+          id: "#{collection_id}",
+          ruleSet: { appliedDisjunctively: false, rules: [#{new_rules.map { |r| "{ column: #{r['column']}, relation: #{r['relation']}, condition: #{r['condition'].inspect} }" }.join(", ")}] }
+        }) {
+          collection { id }
+          userErrors { field message }
+        }
+      }
+    GRAPHQL
+
+    update_response = client.query(query: update_mutation)
+    puts update_response.body.dig("data", "collectionUpdate", "userErrors") ? "❌ Error updating #{title}" : "✅ Updated: #{title}"
+  end
+end
+puts "🎉 Finished processing collections."
+</code></pre>
+<style>
+  pre {
+    background: #f9f9f9;
+    border-radius: 16px;
+    padding: 0px 12px 20px 12px;
+    white-space: break-spaces;
+  }
+  .post-image {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    max-width: 100%;
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+</style>
+
+<h3>Final Steps</h3>
+<ol>
+  <li>Open a terminal and navigate to the script folder.</li>
+  <li>Run: <code>gem install shopify_api</code></li>
+  <li>Run: <code>ruby ./hide-out-of-stock-products.rb</code></li>
+</ol>
+
+<p>That's it! Your out-of-stock products will now be hidden automatically.</p>
+
+<p>Need help? Feel free to <a href="/contact">contact me</a>!</p>
+
+<p>Let me know in the comments if you run into any issues or have questions.</p>
