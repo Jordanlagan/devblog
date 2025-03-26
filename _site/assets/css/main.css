@@ -64,7 +64,11 @@ a[disabled] { opacity: 50%; }
 
 .post-list-container .post-list { margin: 12px auto 0px auto; width: 100%; display: flex; gap: 32px; flex-direction: column; }
 
-.post-list-container .post-list .post-list-post { padding: 14px; border: 1px solid #212121; border-radius: 8px; backdrop-filter: blur(10px); }
+.post-list-container .post-list .post-list-post { padding: 14px; border: 1px solid #212121; border-radius: 8px; backdrop-filter: blur(10px); display: flex; gap: 16px; align-items: center; }
+
+.post-list-container .post-list .post-list-post .post-link { display: flex; }
+
+.post-list-container .post-list .post-list-post .post-list-image { max-width: 180px; max-height: 180px; border-radius: 8px; }
 
 .post-list-container .post-list .post-list-post .post-title { margin: 0px 0px 8px 0px; font-size: 20px; }
 
