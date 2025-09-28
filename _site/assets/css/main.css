@@ -192,4 +192,6 @@ p a { font-weight: bold; color: #3C3C3C; text-decoration: underline; }
 
 @media (max-width: 550px) { .header nav { text-align: center; flex-direction: column; gap: 8px; width: 95%; } .header nav .button { padding: 0.4em 1em; } }
 
+.post-list-post-body { width: 100%; }
+
 /*# sourceMappingURL=main.css.map */
