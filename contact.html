@@ -27,10 +27,10 @@ title: "Contact Me"
         <div class="form-element">
           <label for="inquiry_type">Inquiry Type:</label>
           <select id="inquiry_type" name="inquiry_type" required>
-            <option value="project">I need help with a project (Ecommerce/Web Dev)</option>
-            <option value="consultation">I'd like a consultation call</option>
+            <option value="project">I need help with a project</option>
             <option value="general">I have a question</option>
             <option value="personal">Just saying hello</option>
+            <option value="other">Other</option>
           </select>
         </div>
   
@@ -142,10 +142,14 @@ title: "Contact Me"
   }
   
   // Track user interaction
-  function trackUserInteraction() {
+  function trackUserInteraction(event) {
     if (!userInteracted) {
       userInteracted = true;
       document.getElementById('submit-btn').disabled = false;
+    }
+    // Add class to show validation styles only after user interaction
+    if (event && event.target) {
+      event.target.classList.add('user-interacted');
     }
   }
   
@@ -219,6 +223,20 @@ title: "Contact Me"
     
     generateCaptcha();
     generateSessionToken();
+    
+    // Check for pre-filled data from services page
+    const prefilledMessage = sessionStorage.getItem('prefilledMessage');
+    const prefilledInquiry = sessionStorage.getItem('prefilledInquiry');
+    
+    if (prefilledMessage) {
+      document.getElementById('message').value = prefilledMessage;
+      sessionStorage.removeItem('prefilledMessage');
+    }
+    
+    if (prefilledInquiry) {
+      document.getElementById('inquiry_type').value = prefilledInquiry;
+      sessionStorage.removeItem('prefilledInquiry');
+    }
     
     // Add interaction listeners
     const form = document.getElementById('contact-form');
@@ -447,15 +465,15 @@ title: "Contact Me"
   100% { transform: rotate(360deg); }
 }
 
-/* Form validation styles */
-.contact-form input:invalid:not(:focus):not(:placeholder-shown),
-.contact-form textarea:invalid:not(:focus):not(:placeholder-shown) {
+/* Form validation styles - only show after user interaction */
+.contact-form input.user-interacted:invalid:not(:focus),
+.contact-form textarea.user-interacted:invalid:not(:focus) {
   border-color: #ef4444 !important;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
 }
 
-.contact-form input:valid:not(:focus):not(:placeholder-shown),
-.contact-form textarea:valid:not(:focus):not(:placeholder-shown) {
+.contact-form input.user-interacted:valid:not(:focus):not(:placeholder-shown),
+.contact-form textarea.user-interacted:valid:not(:focus):not(:placeholder-shown) {
   border-color: #10b981 !important;
 }
 

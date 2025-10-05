@@ -6,19 +6,22 @@ title: "Hire Me - Professional Ecommerce Web Developer"
 <div class="text-background p-2 rounded element-shadow">
   <div class="hire-me-hero">
     <h1>Pro Ecommerce Web Developer</h1>
-    <h2 class="subtitle">Optimizing Shopify, WordPress + Others</h2>
-    <div class="rate-badge">
+    <h2 class="subtitle">Fast, Expert Solutions on Shopify, Wordpress, and More</h2>
+    <a href="/contact" class="rate-badge">
       <span class="rate">$50/hr</span>
       <span class="availability">Available Now</span>
-    </div>
+    </a>
   </div>
 </div>
 
 <div class="hire-me-content">
   <section class="value-proposition text-background p-3 rounded element-shadow mt-4">
-    <h3>Your On-Demand Ecommerce Partner</h3>
+    <h3>I help online businesses launch, fix, and grow their online stores.</h3>
+    <p class="lead" style="margin-bottom: 16px">
+      If I take your project, you can be sure that <strong>I won't outsource it</strong>. You'll be working directly with me from start to finish. No outsourcing or vibe-coded BS.
+    </p>
     <p class="lead">
-      I help online businesses launch, fix, and grow their online stores. With over <strong>8 years of professional web development experience</strong> working on platforms like Shopify, WordPress/WooCommerce, Webflow, and BigCommerce.
+       I have <strong>8 years of professional web development experience</strong> working in platforms like Shopify, WordPress/WooCommerce, Webflow, and BigCommerce.
     </p>
     <p class="lead">
       If you don't have a dev team, think of me as your on-demand ecommerce partner. I handle the technical side so you can focus on running your business.
@@ -27,61 +30,41 @@ title: "Hire Me - Professional Ecommerce Web Developer"
 
   <section class="services text-background p-3 rounded element-shadow mt-4">
     <h3>What I Can Do For You</h3>
-    <div class="services-grid">
-      <div class="service-item">
-        <div class="service-icon">🔧</div>
-        <div class="service-content">
-          <h4>Fix & Debug</h4>
-          <p>Fix broken features, glitchy websites, checkout issues, theme bugs, or integrations</p>
-        </div>
+    <div class="services-list">
+      <div class="service-item-new" data-service="speed">
+        <span class="service-icon">⚡</span>
+        <span class="service-text">Make websites faster</span>
+        <span class="service-arrow">→</span>
       </div>
       
-      <div class="service-item">
-        <div class="service-icon">🚀</div>
-        <div class="service-content">
-          <h4>Build & Launch</h4>
-          <p>Build complete stores, landing pages or custom features that fit your business needs</p>
-        </div>
+      <div class="service-item-new" data-service="conversions">
+        <span class="service-icon">📈</span>
+        <span class="service-text">Improve conversions & conversion rate</span>
+        <span class="service-arrow">→</span>
       </div>
       
-      <div class="service-item">
-        <div class="service-icon">📈</div>
-        <div class="service-content">
-          <h4>Migrate & Scale</h4>
-          <p>Migrate your store to a different platform without downtime or SEO loss</p>
-        </div>
+      <div class="service-item-new" data-service="redesign">
+        <span class="service-icon">🎨</span>
+        <span class="service-text">Website redesign</span>
+        <span class="service-arrow">→</span>
       </div>
       
-      <div class="service-item">
-        <div class="service-icon">⚡</div>
-        <div class="service-content">
-          <h4>Optimize Performance</h4>
-          <p>Optimize site speed, performance, and Core Web Vitals for better rankings</p>
-        </div>
+      <div class="service-item-new" data-service="bugfixes">
+        <span class="service-icon">�</span>
+        <span class="service-text">Bug fixes</span>
+        <span class="service-arrow">→</span>
       </div>
       
-      <div class="service-item">
-        <div class="service-icon">📊</div>
-        <div class="service-content">
-          <h4>Analytics & Tracking</h4>
-          <p>Set up conversion tracking & fix attribution issues</p>
-        </div>
+      <div class="service-item-new" data-service="migration">
+        <span class="service-icon">🚀</span>
+        <span class="service-text">Migrate from one platform to another</span>
+        <span class="service-arrow">→</span>
       </div>
       
-      <div class="service-item">
-        <div class="service-icon">💰</div>
-        <div class="service-content">
-          <h4>Conversion Optimization</h4>
-          <p>Boost your conversions with detailed audits & remediation of identified issues</p>
-        </div>
-      </div>
-      
-      <div class="service-item">
-        <div class="service-icon">🎨</div>
-        <div class="service-content">
-          <h4>Design & UX</h4>
-          <p>Graphic design and Figma mockups for better user experience</p>
-        </div>
+      <div class="service-item-new" data-service="fullbuild">
+        <span class="service-icon">🏗️</span>
+        <span class="service-text">Full website / ecommerce store build</span>
+        <span class="service-arrow">→</span>
       </div>
     </div>
   </section>
@@ -155,6 +138,16 @@ title: "Hire Me - Professional Ecommerce Web Developer"
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.rate-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+  color: white;
 }
 
 .rate {
@@ -178,37 +171,84 @@ title: "Hire Me - Professional Ecommerce Web Developer"
   line-height: 1.6;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+.services-list {
   margin-top: 1.5rem;
-}
-
-.service-item {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.service-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
-
-.service-content h4 {
-  margin: 0 0 0.5rem 0;
+.service-item-new {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 500;
   color: #333;
+  position: relative;
+  overflow: hidden;
 }
 
-.service-content p {
-  margin: 0;
-  color: #666;
-  line-height: 1.5;
+.service-item-new::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.service-item-new:hover::before {
+  left: 100%;
+}
+
+.service-item-new:hover {
+  transform: translateX(8px);
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.service-item-new:active {
+  transform: translateX(4px) scale(0.98);
+}
+
+.service-item-new .service-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.service-item-new:hover .service-icon {
+  transform: scale(1.1);
+}
+
+.service-item-new .service-text {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.service-item-new .service-arrow {
+  font-size: 1.2rem;
+  color: #667eea;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.service-item-new:hover .service-arrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .benefits-list {
@@ -288,13 +328,13 @@ title: "Hire Me - Professional Ecommerce Web Developer"
     font-size: 1.2rem;
   }
   
-  .services-grid {
-    grid-template-columns: 1fr;
+  .service-item-new {
+    padding: 1rem;
+    font-size: 1rem;
   }
   
-  .service-item {
-    flex-direction: column;
-    text-align: center;
+  .service-item-new:hover {
+    transform: translateY(-2px);
   }
   
   .cta-buttons {
@@ -305,6 +345,79 @@ title: "Hire Me - Professional Ecommerce Web Developer"
   .cta-button {
     width: 100%;
     max-width: 300px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const serviceItems = document.querySelectorAll('.service-item-new');
+  
+  serviceItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const service = this.dataset.service;
+      const serviceTexts = {
+        'speed': 'Website speed optimization',
+        'conversions': 'Conversion rate optimization',
+        'redesign': 'Website redesign project',
+        'bugfixes': 'Bug fixes and troubleshooting',
+        'migration': 'Platform migration project', 
+        'fullbuild': 'Full website/ecommerce build'
+      };
+      
+      // Redirect to contact page with pre-filled inquiry type and message
+      const contactUrl = '/contact';
+      const message = `Hi! I'm interested in ${serviceTexts[service]}. Can you help me with this?`;
+      
+      // Store the message in sessionStorage to pre-fill the contact form
+      sessionStorage.setItem('prefilledMessage', message);
+      sessionStorage.setItem('prefilledInquiry', 'project');
+      
+      window.location.href = contactUrl;
+    });
+    
+    // Add ripple effect on click
+    item.addEventListener('mousedown', function(e) {
+      const ripple = document.createElement('span');
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+      
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+      ripple.classList.add('ripple');
+      
+      this.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  });
+});
+</script>
+
+<style>
+.service-item-new {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.3);
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(2);
+    opacity: 0;
   }
 }
 </style>
