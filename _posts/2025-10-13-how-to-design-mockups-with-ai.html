@@ -1,0 +1,162 @@
+---
+layout: post
+title: "How To Design Mockups With AI"
+date: 2025-10-13
+excerpt: "Learn how to create professional website mockups using AI and simple HTML/CSS - no design skills required. Perfect for developers who need quick client previews."
+featured_image: "/assets/images/posts/design-mockups-with-ai.png"
+tags: ["web development", "ai", "design"]
+---
+
+<div class="post-featured-image-container">
+  <img class="post-featured-image" src="{{ page.featured_image }}" alt="Hide Out of Stock Products on Shopify">
+</div>
+
+
+<p>If you're a web developer, you've probably been there — a client or PM says:</p>
+
+<blockquote>
+<p><strong>"Can you just throw together a quick design for the homepage?"</strong></p>
+</blockquote>
+
+<p>No designer. No budget. Just vibes.</p>
+
+<p>So you end up hacking something together with free templates, screenshots from competitors, and a few YouTube tutorials. It's a pain - and you know it's not what you're good at.</p>
+
+<p>That's exactly where AI becomes useful - not for generating mockups in the traditional sense (like a JPG or PDF) - ChatGPT isn't there yet. Instead, you can take advantage of the text-based reasoning capabilities of LLMs to generate HTML and CSS designs that you can use to create live, code-based mockups that you can easily tweak and share with clients.</p>
+
+<p>In this post, I'll show you how to create mockups with AI using a simple workflow that any developer can reproduce in under an hour.</p>
+
+<h2>What You'll Need</h2>
+
+<p>Before you start, make sure you have:</p>
+
+<ul>
+<li><strong>ChatGPT (GPT-4 or GPT-4o)</strong> — or any AI that can output HTML/CSS</li>
+<li><strong>CodePen.io</strong> (or JSFiddle, StackBlitz — anything with a live preview)</li>
+<li><strong>A rough page idea</strong> — section layout, rough hierarchy, and a general vibe</li>
+</ul>
+
+<p>That's it. You don't need Figma, design assets, or even a color palette yet.</p>
+
+<h2>Step-By-Step: How To Create Website Mockups With AI</h2>
+
+<p>Here's the full process I use to create mockups with AI for quick client previews or internal projects.</p>
+
+<h3>1. Outline the Page</h3>
+
+<p>Decide what sections your page will have and in what order.</p>
+
+<p>Write it out like this:</p>
+<ul>
+<li>Header with logo and nav</li>
+<li>Hero section with title, subtitle, CTA</li>
+<li>Features section with 3 icons</li>
+<li>Testimonials</li>
+<li>Footer with contact info</li>
+</ul>
+
+<p>Keep it short — 5-8 sections max.</p>
+
+<h3>2. Annotate the Outline</h3>
+
+<p>Next, describe what each section should look like in plain English.</p>
+
+<p><strong>Example:</strong></p>
+<ul>
+<li><strong>Hero section:</strong> full width, white background, centered text, CTA button</li>
+<li><strong>Features:</strong> 3 cards with small icons and short text. Light gray background</li>
+<li><strong>Testimonials:</strong> slider with customer quotes</li>
+</ul>
+
+<h3>3. Gather Static Assets</h3>
+
+<p>If you already have brand elements, collect them:</p>
+
+<ul>
+<li><strong>Logo:</strong> <code>https://example.com/logo.png</code></li>
+<li><strong>Fonts:</strong> "Inter", sans-serif and "Open Sans", sans-serif (might need to provide links)</li>
+<li><strong>Colors:</strong> <code>#1A1A1A</code>, <code>#FFD84D</code>, <code>#FFFFFF</code></li>
+</ul>
+
+<p>You can grab these directly from your client's existing site using Inspect Element. (Make sure you post the full URL so that the assets will load in CodePen.)</p>
+
+<h3>4. Create the Prompt</h3>
+
+<p>Now, open ChatGPT and write your request clearly.</p>
+
+<p>Here's the prompt template I use:</p>
+
+<pre><code>Create a fully designed landing page for example.com. 
+Generate a standalone page for CodePen.io (don't include &lt;html&gt;, &lt;head&gt;, or &lt;body&gt; tags).
+Use inline CSS and JS at the bottom.
+
+Outline:
+&lt;insert your outline here&gt;
+
+Resources:
+Logo: &lt;link&gt;
+Fonts: &lt;list&gt;
+Primary colors: &lt;list&gt;</code></pre>
+
+<p>This tells the AI to create a mockup that's structured, valid, and ready for live preview.</p>
+
+<h3>5. Paste It Into CodePen</h3>
+
+<p>Once ChatGPT generates the code:</p>
+
+<ol>
+<li>Copy everything and paste it into a new Pen on CodePen.io</li>
+<li>Click <strong>Run</strong> to see your AI mockup live</li>
+<li>Screenshot it (Win + Shift + S on Windows or Cmd + Shift + 4 on Mac)</li>
+</ol>
+
+<p>You've just created your first AI website mockup — no designer, no tools, no nonsense.</p>
+
+<h3>6. Iterate Fast</h3>
+
+<p>Here's where it gets powerful.</p>
+
+<p>You don't need to rewrite your prompt from scratch. Just tell ChatGPT something like:</p>
+
+<blockquote>
+<p>"Generate another variation, but make the hero darker and use rounded buttons."</p>
+</blockquote>
+
+<p>You can reference section classes directly since ChatGPT consistently names elements logically (e.g., <code>.hero</code>, <code>.features</code>, <code>.footer</code>).</p>
+
+<p>Stack these variations in separate Pens and toggle between them to compare.</p>
+
+<p>You can create mockups with AI this way in minutes — and quickly show multiple versions to clients or teammates for feedback.</p>
+
+<h2>Tips for Better Results</h2>
+
+<ul>
+<li><strong>Be specific with structure, vague with style.</strong> AI handles layout better than taste</li>
+<li><strong>Always ask for inline CSS</strong> and simple grid/flex layouts</li>
+<li><strong>Use your real brand assets</strong> whenever possible for consistency</li>
+<li><strong>Save your prompt templates</strong> — reuse them across projects</li>
+</ul>
+
+<h2>Example Prompt (You Can Copy This)</h2>
+
+<pre><code>Create a website mockup for a tech startup landing page. 
+The page should include:
+1. Header with logo and navigation
+2. Hero section with background image, tagline, and CTA button
+3. Features grid with icons
+4. Pricing table with 3 plans
+5. Footer with contact info
+
+Resources:
+Logo: https://example.com/logo.png
+Fonts: "Inter" and "Open Sans"
+Primary colors: #1A1A1A, #FFD84D, #FFFFFF
+
+Generate a complete HTML page with inline CSS formatted for CodePen. 
+Do not include &lt;html&gt;, &lt;head&gt;, or &lt;body&gt; tags.</code></pre>
+
+<p>Drop that into ChatGPT, paste the result into CodePen, and you'll have a clean mockup in under 10 minutes.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>If you're a developer working without a designer, this workflow is a lifesaver. You can create mockups with AI that look professional, load instantly, and evolve quickly with feedback.</p>
