@@ -353,6 +353,13 @@ body::before {
     margin-top: -80px;
 }
 
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 120px;
+        margin-top: 0;
+    }
+}
+
 .hero-bg-animated {
     content: '';
     position: absolute;
@@ -975,7 +982,7 @@ body::before {
 }
 
 .main-content {
-    padding: 2rem 2rem 4rem 2rem;
+    padding: 0;
 }
 
 /* Projects page styles */
@@ -1291,6 +1298,34 @@ body::before {
 .form-element textarea {
     min-height: 150px;
     resize: vertical;
+}
+
+.contact-submit-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-submit-btn:hover {
+    background: #C11D54;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(219, 39, 99, 0.4);
+}
+
+.contact-submit-btn:disabled {
+    background: var(--dark-bg-3);
+    color: var(--text-muted-dark);
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* Post container styles */
