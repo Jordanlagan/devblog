@@ -1,0 +1,72 @@
+---
+layout: default
+title: "Blog"
+pagination:
+  enabled: true
+---
+
+<div class="blog-listing-header">
+    <h1 class="title-effect-emboss">Blog</h1>
+    <p>Thoughts, tutorials, and insights that I've picked up along the way</p>
+</div>
+
+<div class="blog-listing-posts">
+    {% if paginator %}
+      {% assign posts = paginator.posts %}
+    {% else %}
+      {% assign posts = site.posts %}
+    {% endif %}
+    
+    {% for post in posts %}
+    <article class="blog-listing-card">
+        {% if post.featured_image %}
+        <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" class="blog-listing-image">
+        {% else %}
+        <img src="/assets/images/posts/default.webp" alt="{{ post.title }}" class="blog-listing-image">
+        {% endif %}
+        <div class="blog-listing-content">
+            <p class="blog-listing-date">{{ post.date | date: "%B %d, %Y" }}</p>
+            <h2 class="blog-listing-title title-effect-emboss"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            {% if post.tags %}
+            <div class="blog-listing-tags">
+                {% for tag in post.tags %}
+                <a href="/tags/{{ tag | slugify }}" class="blog-tag">{{ tag }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <p class="blog-listing-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            <a href="{{ post.url | relative_url }}" class="project-link">Read More 
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Previous</a>
+    {% else %}
+    <span class="disabled">&laquo; Previous</span>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <span class="current">{{ page }}</span>
+      {% elsif page == 1 %}
+        <a href="{{ '/blog' | relative_url }}">{{ page }}</a>
+      {% else %}
+        <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+    {% else %}
+    <span class="disabled">Next &raquo;</span>
+    {% endif %}
+</div>
+{% endif %}
