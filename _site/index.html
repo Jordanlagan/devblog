@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/main.css?v=1768163690">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L35VSMBBVT"></script>
@@ -401,33 +401,7 @@
         animate();
     })();
 
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && document.querySelector(href)) {
-                e.preventDefault();
-                document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-
-    // Scroll animations
-    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
-    }, observerOptions);
-    document.querySelectorAll('.scroll-animate').forEach((element) => { observer.observe(element); });
+    // Note: Header scroll, smooth scroll, and scroll animations are handled by home.html layout
 </script>
 <footer class="footer">
     <div class="footer-socials">
