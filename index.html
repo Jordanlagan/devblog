@@ -24,7 +24,7 @@ title: "Home"
         <h2 class="heading-sec__main scroll-animate title-effect-emboss">About Me</h2>
         <div class="about__content">
             <div class="scroll-animate">
-                <h3 class="about__content-title title-effect-emboss">About Me</h3>
+                <h3 class="about__content-title title-effect-emboss">My Background</h3>
                 <p class="about__content-details-para">I got my first developer job in 2017 after graduating from a coding bootcamp called Bloc.io. Since then I've led departments, built enterprise level web apps used by hundreds of companies and developed websites for multimillion dollar brands.</p>
                 <p class="about__content-details-para">I'm passionate about writing clean, maintainable code and using my creativity to solve complex technical challenges. There's nothing more satisfying than building awesome solutions that genuinely help people and make their lives easier. Every project is an opportunity to learn something new and create something meaningful.</p>
                 <a href="/contact" class="btn">Get In Touch</a>
@@ -142,8 +142,7 @@ title: "Home"
     </div>
     
     <div class="blog-posts">
-        {% assign recent_posts = site.posts | limit: 3 %}
-        {% for post in recent_posts %}
+        {% for post in site.posts limit: 3 %}
         <article class="blog-post-card scroll-animate">
             {% if post.featured_image %}
             <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" class="blog-post-image">

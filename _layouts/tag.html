@@ -3,9 +3,8 @@
   {%- include head.html -%}
   <body>
     {%- include header.html -%}
-    <div class="main-content-container">
-      <div class="page-content-inner page-with-padding">
-        <a class="button-thin" href="{{ site.blog_path }}">
+    <div class="tag-page">
+      <a class="button-thin" href="{{ site.blog_path }}">
           <img src="/assets/images/icons/arrow-left.webp" alt="Back" class="icon left-chevron">
           Back
         </a>
@@ -47,7 +46,6 @@
               <p>No posts found with this tag.</p>
             {%- endif -%}
         </div>
-      </div>
     </div>
 
     {%- include footer.html -%}

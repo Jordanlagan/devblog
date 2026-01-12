@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css?v=1768187011">
+  <link rel="stylesheet" href="/assets/css/main.css?v=1768195759">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L35VSMBBVT"></script>
@@ -76,12 +76,9 @@
             </a>
         </div>
     </div>
-</div><div class="main-content-container">
-      <div class="main-content">
-        <div class="page-content-inner page-with-padding">
-  <div class="page-banner">
-    <h1 class="title-effect-emboss">Contact Me</h1>
-    <p>Let's build something great together</p>
+</div><div class="page-banner">
+  <h1 class="title-effect-emboss">Contact Me</h1>
+  <p>Let's build something great together</p>
 </div>
 
 <div class="contact-form">
@@ -138,7 +135,7 @@
       </div>
 
       <!-- Enhanced CAPTCHA with multiple question types -->
-      <div class="form-element mt-3">
+      <div class="form-element security-question">
         <label for="captcha">Security Question: <span id="captcha-question"></span></label>
         <input type="text" id="captcha" name="captcha" required autocomplete="off">
         <input type="hidden" id="captcha-answer" name="captcha_answer">
@@ -352,289 +349,7 @@
 </script>
 
 <!-- Load reCAPTCHA (uncomment and add your site key when ready) -->
-<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-
-<style>
-/* Modern Contact Form Styling */
-.contact-form {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border-radius: 15px !important;
-  padding: 40px !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
-  backdrop-filter: blur(20px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-}
-
-.contact-form h1 {
-  text-align: center;
-  margin-bottom: 10px;
-  color: #333;
-  font-size: 2.2rem;
-}
-
-.contact-form > p {
-  text-align: center;
-  color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  font-style: italic;
-}
-
-/* Form Structure */
-.contact-form form {
-  padding: 0 !important;
-}
-
-.form-row {
-  display: flex !important;
-  gap: 20px !important;
-  margin-bottom: 20px !important;
-}
-
-.form-element {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 8px !important;
-  width: 100% !important;
-}
-
-/* Labels */
-.contact-form label {
-  font-weight: 600 !important;
-  color: #333 !important;
-  font-size: 0.95rem !important;
-  margin-bottom: 5px !important;
-  display: block !important;
-  width: auto !important;
-}
-
-/* Input Fields */
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  width: 100% !important;
-  padding: 15px 18px !important;
-  border: 2px solid #e1e5e9 !important;
-  border-radius: 12px !important;
-  font-size: 1rem !important;
-  background: white !important;
-  transition: all 0.3s ease !important;
-  box-sizing: border-box !important;
-  font-family: inherit !important;
-  height: auto !important;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus {
-  border-color: #667eea !important;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15) !important;
-  outline: none !important;
-  transform: translateY(-1px) !important;
-}
-
-.contact-form input:hover:not(:focus),
-.contact-form textarea:hover:not(:focus),
-.contact-form select:hover:not(:focus) {
-  border-color: #c5c9d0 !important;
-}
-
-/* Textarea specific */
-.contact-form textarea {
-  min-height: 120px !important;
-  resize: vertical !important;
-  line-height: 1.5 !important;
-}
-
-/* Select specific */
-.contact-form select {
-  cursor: pointer !important;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
-  background-position: right 12px center !important;
-  background-repeat: no-repeat !important;
-  background-size: 16px !important;
-  padding-right: 45px !important;
-  appearance: none !important;
-}
-
-/* CAPTCHA Section */
-.form-element:has(#captcha) {
-  background: rgba(102, 126, 234, 0.05);
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(102, 126, 234, 0.2);
-}
-
-.form-element:has(#captcha) label {
-  color: #667eea !important;
-  font-weight: 700 !important;
-}
-
-#captcha-question {
-  font-weight: bold;
-  color: #333;
-  font-size: 1.1rem;
-}
-
-/* reCAPTCHA container */
-.g-recaptcha {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-}
-
-/* Submit Button */
-.contact-submit-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-  color: white !important;
-  border: none !important;
-  padding: 18px 40px !important;
-  border-radius: 50px !important;
-  font-weight: bold !important;
-  font-size: 1.2rem !important;
-  cursor: pointer !important;
-  transition: all 0.3s ease !important;
-  width: auto !important;
-  height: auto !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-width: 180px !important;
-  margin: 30px auto 0 auto !important;
-  display: block !important;
-  text-align: center !important;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
-}
-
-.contact-submit-btn:hover:not(:disabled) {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4) !important;
-}
-
-.contact-submit-btn:disabled {
-  opacity: 0.7 !important;
-  cursor: not-allowed !important;
-  transform: none !important;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2) !important;
-}
-
-.contact-submit-btn:active:not(:disabled) {
-  transform: translateY(-1px) !important;
-}
-
-/* Loading animation */
-.btn-loading {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn-loading::after {
-  content: '';
-  width: 18px;
-  height: 18px;
-  border: 2px solid transparent;
-  border-top: 2px solid white;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Form validation styles - only show after user interaction */
-.contact-form input.user-interacted:invalid:not(:focus),
-.contact-form textarea.user-interacted:invalid:not(:focus) {
-  border-color: #ef4444 !important;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
-}
-
-.contact-form input.user-interacted:valid:not(:focus):not(:placeholder-shown),
-.contact-form textarea.user-interacted:valid:not(:focus):not(:placeholder-shown) {
-  border-color: #10b981 !important;
-}
-
-/* Placeholder styling */
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #9ca3af !important;
-  font-style: italic !important;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-form {
-    padding: 25px !important;
-    margin: 10px !important;
-  }
-  
-  .form-row {
-    flex-direction: column !important;
-    gap: 15px !important;
-  }
-  
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form select {
-    padding: 12px 15px !important;
-  }
-  
-  .contact-submit-btn {
-    width: 100% !important;
-    padding: 16px 24px !important;
-    font-size: 1.1rem !important;
-  }
-  
-  .contact-form h1 {
-    font-size: 1.8rem;
-  }
-  
-  .contact-form > p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-form {
-    padding: 20px !important;
-  }
-  
-  .form-element:has(#captcha) {
-    padding: 15px;
-  }
-}
-
-/* Animation for form elements */
-.form-element {
-  animation: slideUp 0.6s ease forwards;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.form-element:nth-child(1) { animation-delay: 0.1s; }
-.form-element:nth-child(2) { animation-delay: 0.2s; }
-.form-element:nth-child(3) { animation-delay: 0.3s; }
-.form-element:nth-child(4) { animation-delay: 0.4s; }
-.form-element:nth-child(5) { animation-delay: 0.5s; }
-.form-element:nth-child(6) { animation-delay: 0.6s; }
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Override any conflicting base styles */
-.contact-form * {
-  box-sizing: border-box !important;
-}
-</style>
-</div>
-      </div>
-    </div><footer class="footer">
+<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> --><footer class="footer">
     <div class="footer-socials">
         <a href="https://github.com/jordanlagan" class="footer-social" title="GitHub" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

@@ -5,8 +5,7 @@ pagination:
   enabled: true
 ---
 
-<div class="page-content-inner">
-  <div class="blog-listing-header">
+<div class="blog-listing-header">
     <h1 class="title-effect-emboss">Blog</h1>
     <p>Thoughts, tutorials, and insights that I've picked up along the way</p>
 </div>
@@ -45,29 +44,3 @@ pagination:
     </article>
     {% endfor %}
 </div>
-
-{% if paginator.total_pages > 1 %}
-<div class="pagination">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Previous</a>
-    {% else %}
-    <span class="disabled">&laquo; Previous</span>
-    {% endif %}
-
-    {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-        <span class="current">{{ page }}</span>
-      {% elsif page == 1 %}
-        <a href="{{ '/blog' | relative_url }}">{{ page }}</a>
-      {% else %}
-        <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
-      {% endif %}
-    {% endfor %}
-
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
-    {% else %}
-    <span class="disabled">Next &raquo;</span>
-    {% endif %}
-</div>
-{% endif %}
