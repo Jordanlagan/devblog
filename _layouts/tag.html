@@ -4,7 +4,7 @@
   <body>
     {%- include header.html -%}
     <div class="main-content-container">
-      <div class="main-content">
+      <div class="page-content-inner page-with-padding">
         <a class="button-thin" href="{{ site.blog_path }}">
           <img src="/assets/images/icons/arrow-left.webp" alt="Back" class="icon left-chevron">
           Back
@@ -12,51 +12,40 @@
         <div style="margin-bottom: 36px;"></div>
         <h1>Posts tagged with "{{ page.tag }}"</h1>
         <hr class="line-break-thin">
-        <div class="post-list-container">
-          <div class="post-list">
+        <div class="blog-listing-posts">
             {%- assign tag = page.tag -%}
             {%- assign tagged_posts = site.tags[tag] -%}
             {%- if tagged_posts -%}
               {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
               {%- for post in tagged_posts -%}
-                <div class="post-list-post text-background element-shadow">
-                  <a class="post-link" href="{{ post.url | relative_url }}">
-                    {%- if post.featured_image -%}
-                      <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="post-list-image">
-                    {%- endif -%}
-                  </a>
-                  <div class="post-list-post-body">
-                    <a class="post-link" href="{{ post.url | relative_url }}">
-                      <h3 class="post-title">
-                        {{ post.title | escape }}
-                      </h3>
-                    </a>
-                    <a class="post-link" href="{{ post.url | relative_url }}">
-                      <p class="post-date">{{ post.date | date: date_format }}</p>
-                    </a>
-                    <a class="post-link" href="{{ post.url | relative_url }}">
-                      {%- if site.show_excerpts -%}
-                        <p class="post-excerpt">{{ post.excerpt }} ...</p>
-                      {%- endif -%}
-                    </a>
-                    <div class="post-footer">
-                      <div class="post-tags">
-                        {%- for tag in post.tags -%}
-                          <a href="/tags/{{ tag | slugify }}" class="tag-card">{{ tag }}</a>
-                        {%- endfor -%}
-                      </div>
-                      <a class="button-thin" href="{{ post.url | relative_url }}">
-                        Read more
-                        <img src="/assets/images/icons/arrow-left.webp" alt="Read more" class="icon right-chevron">
-                      </a>
+                <article class="blog-listing-card">
+                  {%- if post.featured_image -%}
+                    <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="blog-listing-image">
+                  {%- else -%}
+                    <img src="/assets/images/posts/default.webp" alt="{{ post.title }}" class="blog-listing-image">
+                  {%- endif -%}
+                  <div class="blog-listing-content">
+                    <p class="blog-listing-date">{{ post.date | date: date_format }}</p>
+                    <h2 class="blog-listing-title title-effect-emboss">
+                      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                    </h2>
+                    <div class="blog-listing-tags">
+                      {%- for tag in post.tags -%}
+                        <a href="/tags/{{ tag | slugify }}" class="blog-tag">{{ tag }}</a>
+                      {%- endfor -%}
                     </div>
+                    <p class="blog-listing-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                    <a href="{{ post.url | relative_url }}" class="project-link">Read More 
+                      <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </a>
                   </div>
-                </div>
+                </article>
               {%- endfor -%}
             {%- else -%}
               <p>No posts found with this tag.</p>
             {%- endif -%}
-          </div>
         </div>
       </div>
     </div>
