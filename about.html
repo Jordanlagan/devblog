@@ -3,89 +3,799 @@ layout: default
 title: "About me"
 ---
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
+<link rel="stylesheet" href="/assets/css/lightbox.min.css">
 
+<style>
+/* About Page Specific Styles */
+:root { 
+  --primary: #DB2763; 
+  --secondary: #0353A4; 
+  --accent: #EEB902; 
+  --dark-bg: #0B1220; 
+  --dark-bg-2: #0F172A; 
+  --text-dark: #E5E7EB; 
+  --text-muted: #9CA3AF; 
+  --border-dark: rgba(255, 255, 255, 0.08); 
+}
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+/* Page Header */
+.page-header {
+  padding: 5rem 0 5rem;
+  text-align: center;
+  position: relative;
+  border-bottom: 2px solid var(--border-dark);
+}
 
-<link rel="stylesheet" href="/assets/css/lightbox.min.css" />
-<script src="/assets/scripts/lightbox-plus-jquery.min.js"></script>
+.page-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
 
-<div class="page-banner">
-  <h1 class="title-effect-emboss">About Me</h1>
-  <p>Get to know me better</p>
-</div>
+.page-header h2 {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
 
-<div class="about-me-container">
-  <div class="about-me-info">
-    <div class="about-me-info-inner">
-      <p class="pb-2">
-      Hey I'm Jordan. Outside of work I am a part time pet sitter, baker, beer and coffee drinker, food lover and Costco enjoyer.
-      </p>
-      <p class="pb-2">
-      In 2023, I adopted a dog named Rosie and she has been the best thing to happen to me. I have a passion for taking pictures of her and she makes up 90% of my camera roll.
-      </p>
-      <p class="pb-2">
-      The other 10% of those pictures would be food / drink. My guilty pleasure is drinking smooth IPAs (funky but not bitter), Lattes with fancy chocolates, and splurging on expensive restaurants 🥡.
-      </p>
+/* Info Cards */
+.info-cards-container {
+  max-width: 900px;
+  margin: -2.5rem auto 4rem;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: var(--dark-bg-2);
+  border: 1px solid var(--border-dark);
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--card-accent);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.card-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--card-accent);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+}
+
+/* About Section */
+.about-section {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--border-dark);
+  border-radius: 12px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+.about-text p:first-of-type {
+  display: flex;
+  align-items: flex-end;
+}
+
+.about-text p:first-of-type::first-letter {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary);
+  font-family: 'Space Grotesk', sans-serif;
+  margin-right: 0.05em;
+  float: none;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-dark);
+}
+
+/* Timeline Section */
+.timeline-section {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.timeline-section h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.timeline-wrapper {
+  position: relative;
+}
+
+.timeline-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 3rem;
+  position: relative;
+}
+
+.timeline-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-item:hover {
+  background: rgba(15, 23, 42, 0.7);
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(219, 39, 99, 0.2);
+}
+
+.timeline-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border-dark);
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-year {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-label {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Gallery Section */
+.gallery-section {
+  margin-bottom: 4rem;
+}
+
+.gallery-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  overflow: visible;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  z-index: 10;
+}
+
+.gallery-item-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: 12px;
+}
+
+.gallery-item:hover .gallery-main-image {
+  transform: scale(1.05);
+}
+
+.gallery-stack {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 140px;
+  height: 140px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.stack-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  transform-origin: top right;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0;
+  border-radius: 10px;
+}
+
+.stack-photo:nth-child(1) {
+  transform: rotate(0deg) translate(0, 0) scale(0.7);
+}
+
+.stack-photo:nth-child(2) {
+  transform: rotate(0deg) translate(0, 0) scale(0.7);
+}
+
+.gallery-item:hover .stack-photo:nth-child(1) {
+  opacity: 1;
+  transform: rotate(-10deg) translate(25px, -30px) scale(0.85);
+  transition-delay: 0.05s;
+}
+
+.gallery-item:hover .stack-photo:nth-child(2) {
+  opacity: 1;
+  transform: rotate(10deg) translate(50px, -15px) scale(0.8);
+  transition-delay: 0.15s;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(11, 18, 32, 0.95), transparent);
+  padding: 2rem 1.5rem 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-label {
+  color: var(--text-dark);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 18, 32, 0.97);
+  backdrop-filter: blur(10px);
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--dark-bg-2);
+  border: 1px solid var(--border-dark);
+  border-radius: 12px;
+  max-width: 1000px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 3rem;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: var(--primary);
+}
+
+.modal-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.modal-gallery-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-dark);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.modal-gallery-image:hover {
+  transform: scale(1.05);
+}
+
+/* Pullquote */
+.pullquote {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-family: 'Space Grotesk', sans-serif;
+  text-align: center;
+  margin: 3rem 0;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.pullquote::before {
+  content: '"';
+  font-size: 6rem;
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--primary);
+  opacity: 0.2;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(17, 24, 39, 0.6) 100%);
+  border: 1px solid var(--border-dark);
+  border-radius: 12px;
+  padding: 4rem 3rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.cta-headline {
+  font-size: 1.75rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.cta-subtext {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: var(--dark-bg);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header h1 { font-size: 2.5rem; }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+
+<main>
+    <!-- Page Header with border -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Me</h1>
+            <h2>Developer, Dog Lover & Dad</h2>
+        </div>
+    </section>
+
+    <!-- Info Cards -->
+    <div class="info-cards-container">
+        <div class="info-cards" id="infoCards">
+            <div class="info-card" style="--card-accent: var(--primary)">
+                <div class="card-number">2017</div>
+                <div class="card-title">Software engineer since</div>
+            </div>
+            <div class="info-card" style="--card-accent: var(--secondary)">
+                <div class="card-number">2</div>
+                <div class="card-title">Kids (one human, one fluffy Bernese)</div>
+            </div>
+            <div class="info-card" style="--card-accent: var(--accent)">
+                <div class="card-number">2-3</div>
+                <div class="card-title">Cups of coffee per day</div>
+            </div>
+        </div>
     </div>
-  </div>
-  <!-- Slider main container -->
-  <div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-20.jpg" data-lightbox="about-me-20"><img src="/assets/images/about-me/about-me-20.jpg" alt="About me 20"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-19.jpg" data-lightbox="about-me-19"><img src="/assets/images/about-me/about-me-19.jpg" alt="About me 19"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-7.jpg" data-lightbox="about-me-7"><img src="/assets/images/about-me/about-me-7.jpg" alt="About me 7"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-16.jpg" data-lightbox="about-me-16"><img src="/assets/images/about-me/about-me-16.jpg" alt="About me 16"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-5.jpg" data-lightbox="about-me-5"><img src="/assets/images/about-me/about-me-5.jpg" alt="About me 5"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-4.jpg" data-lightbox="about-me-4"><img src="/assets/images/about-me/about-me-4.jpg" alt="About me 4"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-6.jpg" data-lightbox="about-me-6"><img src="/assets/images/about-me/about-me-6.jpg" alt="About me 6"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-1.jpg" data-lightbox="about-me-1"><img src="/assets/images/about-me/about-me-1.jpg" alt="About me 1"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-2.jpg" data-lightbox="about-me-2"><img src="/assets/images/about-me/about-me-2.jpg" alt="About me 2"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-3.jpg" data-lightbox="about-me-3"><img src="/assets/images/about-me/about-me-3.jpg" alt="About me 3"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-8.jpg" data-lightbox="about-me-8"><img src="/assets/images/about-me/about-me-8.jpg" alt="About me 8"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-9.jpg" data-lightbox="about-me-9"><img src="/assets/images/about-me/about-me-9.jpg" alt="About me 9"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-10.jpg" data-lightbox="about-me-10"><img src="/assets/images/about-me/about-me-10.jpg" alt="About me 10"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-11.jpg" data-lightbox="about-me-11"><img src="/assets/images/about-me/about-me-11.jpg" alt="About me 11"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-12.jpg" data-lightbox="about-me-12"><img src="/assets/images/about-me/about-me-12.jpg" alt="About me 12"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-13.jpg" data-lightbox="about-me-13"><img src="/assets/images/about-me/about-me-13.jpg" alt="About me 13"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-14.jpg" data-lightbox="about-me-14"><img src="/assets/images/about-me/about-me-14.jpg" alt="About me 14"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-15.jpg" data-lightbox="about-me-15"><img src="/assets/images/about-me/about-me-15.jpg" alt="About me 15"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-17.jpg" data-lightbox="about-me-17"><img src="/assets/images/about-me/about-me-17.jpg" alt="About me 17"></a></div>
-      <div class="swiper-slide"><a href="/assets/images/about-me/about-me-18.jpg" data-lightbox="about-me-18"><img src="/assets/images/about-me/about-me-18.jpg" alt="About me 18"></a></div>
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
 
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
+    <!-- About Section -->
+    <div class="container">
+        <section class="about-section">
+            <div class="about-content">
+                <div class="about-text">
+                    <p style="font-size: 1.35rem; font-weight: 600; color: var(--text-dark); text-shadow: 0 0 20px rgba(219, 39, 99, 0.4);">Hello, I'm Jordan.</p>
+                    <p>Outside of work, my days are filled with barking dogs, smoke-filled kitchens, crying babies, and the comforting aroma of fresh coffee. A little chaos, a lot of joy. I love watching my newborn daughter smile, taking my dog Rosie for long walks, and discovering new foods, beers, and coffee spots. (I will happily drive more than an hour for good food)</p>
+                    <p>Baking experiments, Costco runs, road trips, fishing trips, kickboxing sessions, and blasting hip hop or heavy metal the whole way; this is what makes life fun for me.</p>
+                    <p>I bring that same energy and curiosity into my work as an engineer. I build things that are fast, scalable, and genuinely useful, and I enjoy taking an idea from the whiteboard all the way to production. Being a full-stack developer allows me to solve complex problems creatively while creating experiences that make people's lives better. I try to live fully, with passion and curiosity, and I am always excited for the next chapter.</p>
+                </div>
+                <img src="/assets/images/about-me/family/jordan-and-lily-2.jpg" alt="Jordan Lagan" class="about-image">
+            </div>
+        </section>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="container">
+        <section class="timeline-section">
+            <h2>Journey</h2>
+            <div class="timeline-wrapper">
+                <div class="timeline-list">
+                    <div class="timeline-item">
+                        <img src="/assets/images/about-me/jordan-lagan-young.jpg" alt="2009" class="timeline-icon">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2009</div>
+                            <div class="timeline-label">Making games with GameMaker</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="/assets/images/about-me/jordan-young-4.jpg" alt="2017" class="timeline-icon">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2017</div>
+                            <div class="timeline-label">Graduated Bloc.io & started my developer career</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="/assets/images/about-me/dogs/rosie-7.jpg" alt="2023" class="timeline-icon">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2023</div>
+                            <div class="timeline-label">Adopted Rosie</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="/assets/images/about-me/family/lily-3.jpg" alt="2025" class="timeline-icon">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2025</div>
+                            <div class="timeline-label">Became a father</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="container">
+        <section class="gallery-section">
+            <h2>Life in Pictures</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-gallery="dogs">
+                    <div class="gallery-item-inner">
+                        <img src="/assets/images/about-me/dogs/rosie-happy-puppy.jpg" alt="Dogs" class="gallery-main-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-label">Dogs</div>
+                        </div>
+                    </div>
+                    <div class="gallery-stack">
+                        <img src="/assets/images/about-me/dogs/rosie-1.jpg" alt="Dogs" class="stack-photo">
+                        <img src="/assets/images/about-me/dogs/rosie-2.jpg" alt="Dogs" class="stack-photo">
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-gallery="fooddrink">
+                    <div class="gallery-item-inner">
+                        <img src="/assets/images/about-me/food-and-drink/sushi.jpg" alt="Food & Drink" class="gallery-main-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-label">Food & Drink</div>
+                        </div>
+                    </div>
+                    <div class="gallery-stack">
+                        <img src="/assets/images/about-me/food-and-drink/pizza.jpg" alt="Food & Drink" class="stack-photo">
+                        <img src="/assets/images/about-me/food-and-drink/latte.jpg" alt="Food & Drink" class="stack-photo">
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-gallery="family">
+                    <div class="gallery-item-inner">
+                        <img src="/assets/images/about-me/family/jordan-and-lily.jpg" alt="Family" class="gallery-main-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-label">Family</div>
+                        </div>
+                    </div>
+                    <div class="gallery-stack">
+                        <img src="/assets/images/about-me/family/lily-1.jpg" alt="Family" class="stack-photo">
+                        <img src="/assets/images/about-me/family/jordan-and-lily-2.jpg" alt="Family" class="stack-photo">
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-gallery="adventures">
+                    <div class="gallery-item-inner">
+                        <img src="/assets/images/about-me/adventures/japan-1.jpg" alt="Adventures" class="gallery-main-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-label">Adventures</div>
+                        </div>
+                    </div>
+                    <div class="gallery-stack">
+                        <img src="/assets/images/about-me/adventures/japan-2.jpg" alt="Adventures" class="stack-photo">
+                        <img src="/assets/images/about-me/adventures/new-orleans.jpg" alt="Adventures" class="stack-photo">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pullquote -->
+    <div class="container">
+        <div class="pullquote">
+            Programmer: An entity that consumes coffee and produces code
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="container">
+        <section class="cta-section">
+            <h2 class="cta-headline">Wow, you read this far — we're practically best friends</h2>
+            <p class="cta-subtext">Why don't you reach out and say hi?</p>
+            <a href="/contact" class="cta-button">Say Hello</a>
+        </section>
+    </div>
+</main>
+
+<!-- Gallery Modal -->
+<div class="modal" id="galleryModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <h2 class="modal-title" id="modalTitle">Gallery</h2>
+        <div class="modal-gallery" id="modalGallery">
+            <!-- Gallery images will be populated here -->
+        </div>
+    </div>
 </div>
 
 <script>
-  const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    autoplay: {
-      delay: 10000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      dynamicBullets: true,
-    },
+// Gallery data
+const galleryData = {
+    dogs: [
+        '/assets/images/about-me/dogs/rosie-happy-puppy.jpg',
+        '/assets/images/about-me/dogs/rosie-1.jpg',
+        '/assets/images/about-me/dogs/rosie-2.jpg',
+        '/assets/images/about-me/dogs/rosie-3.jpg',
+        '/assets/images/about-me/dogs/rosie-4.jpg',
+        '/assets/images/about-me/dogs/rosie-5.jpg',
+        '/assets/images/about-me/dogs/rosie-6.jpg',
+        '/assets/images/about-me/dogs/rosie-7.jpg',
+        '/assets/images/about-me/dogs/rosie-8.jpg',
+        '/assets/images/about-me/dogs/rosie-9.jpg',
+        '/assets/images/about-me/dogs/rosie-10.jpg',
+        '/assets/images/about-me/dogs/rosie-11.jpg',
+        '/assets/images/about-me/dogs/rosie-12.jpg',
+        '/assets/images/about-me/dogs/rosie-13.jpg',
+        '/assets/images/about-me/dogs/rosie-14.jpg',
+        '/assets/images/about-me/dogs/rosie-15.jpg',
+        '/assets/images/about-me/dogs/rosie-16.jpg',
+        '/assets/images/about-me/dogs/rosie-17.jpg',
+        '/assets/images/about-me/dogs/rosie-18.jpg',
+        '/assets/images/about-me/dogs/rosie-19.jpg',
+        '/assets/images/about-me/dogs/rosie-20.jpg',
+        '/assets/images/about-me/dogs/rosie-21.jpg',
+        '/assets/images/about-me/dogs/rosie-cute-1.jpg',
+        '/assets/images/about-me/dogs/rosie-cute-2.jpg',
+        '/assets/images/about-me/dogs/rosie-cute-3.jpg',
+        '/assets/images/about-me/dogs/rosie-cute-4.jpg',
+        '/assets/images/about-me/dogs/rosie-cute-5.jpg',
+        '/assets/images/about-me/dogs/rosie-cute-6.jpg',
+        '/assets/images/about-me/dogs/rosie-cute-7.jpg'
+    ],
+    fooddrink: [
+        '/assets/images/about-me/food-and-drink/bread-2.jpg',
+        '/assets/images/about-me/food-and-drink/bread.jpg',
+        '/assets/images/about-me/food-and-drink/breakfast-big-mac.jpg',
+        '/assets/images/about-me/food-and-drink/buns.jpg',
+        '/assets/images/about-me/food-and-drink/gin.jpg',
+        '/assets/images/about-me/food-and-drink/latte.jpg',
+        '/assets/images/about-me/food-and-drink/lattes.jpg',
+        '/assets/images/about-me/food-and-drink/okonomiyaki.jpg',
+        '/assets/images/about-me/food-and-drink/pizza.jpg',
+        '/assets/images/about-me/food-and-drink/sushi-2.jpg',
+        '/assets/images/about-me/food-and-drink/sushi.jpg',
+        '/assets/images/about-me/food-and-drink/tai-meshi.jpg',
+        '/assets/images/about-me/food-and-drink/udon-2.jpg',
+        '/assets/images/about-me/food-and-drink/udon.jpg',
+        '/assets/images/about-me/food-and-drink/yaki-niku.jpg'
+    ],
+    family: [
+        '/assets/images/about-me/family/jordan-and-lily.jpg',
+        '/assets/images/about-me/family/jordan-and-lily-2.jpg',
+        '/assets/images/about-me/family/jordan-and-lily-3.jpg',
+        '/assets/images/about-me/family/jordan-lily-rosie.jpg',
+        '/assets/images/about-me/family/jordan-rosie-1.jpg',
+        '/assets/images/about-me/family/lily-1.jpg',
+        '/assets/images/about-me/family/lily-2.jpg',
+        '/assets/images/about-me/family/lily-3.jpg'
+    ],
+    adventures: [
+        '/assets/images/about-me/adventures/cancun-plane.jpg',
+        '/assets/images/about-me/adventures/caterpillar.jpg',
+        '/assets/images/about-me/adventures/connecticut-1.jpg',
+        '/assets/images/about-me/adventures/japan-1.jpg',
+        '/assets/images/about-me/adventures/japan-2.jpg',
+        '/assets/images/about-me/adventures/japan-4.jpg',
+        '/assets/images/about-me/adventures/japan-5.jpg',
+        '/assets/images/about-me/adventures/new-orleans.jpg'
+    ]
+};
 
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
+// Gallery modal
+const galleryItems = document.querySelectorAll('.gallery-item');
+const modal = document.getElementById('galleryModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalGallery = document.getElementById('modalGallery');
+
+galleryItems.forEach(item => {
+    item.addEventListener('click', function() {
+        const galleryType = this.dataset.gallery;
+        const images = galleryData[galleryType] || [];
+        
+        const titles = {
+            dogs: 'Dogs',
+            fooddrink: 'Food & Drink',
+            family: 'Family',
+            adventures: 'Adventures'
+        };
+        
+        modalTitle.textContent = titles[galleryType] || 'Gallery';
+        
+        modalGallery.innerHTML = images.map((img, index) => 
+            `<a href="${img}" data-lightbox="${galleryType}-gallery" data-title="${titles[galleryType]}">
+                <img src="${img}" alt="${titles[galleryType]}" class="modal-gallery-image">
+            </a>`
+        ).join('');
+        
+        modal.classList.add('active');
+    });
+});
+
+function closeModal() {
+    modal.classList.remove('active');
+}
+
+// Close modal on outside click
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+// Close modal on escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
 </script>
+
+<script src="/assets/scripts/lightbox-plus-jquery.min.js"></script>
