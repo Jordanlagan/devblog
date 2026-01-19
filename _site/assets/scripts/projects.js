@@ -234,8 +234,8 @@ function openProjectDetail(projectId) {
             </div>
           </div>
           ` : `
-          <div style="border-radius: 12px; overflow: hidden; background: #000; margin-bottom: 20px; position: relative; max-height: 600px; display: flex; align-items: center; justify-content: center;">
-            <img src="${firstMedia.src}" alt="${project.title}" class="zoomable" onclick="openImageZoom('${firstMedia.src}')" style="max-width: 100%; max-height: 600px; width: auto; height: auto; object-fit: contain; display: block; cursor: zoom-in;" loading="lazy">
+          <div style="border-radius: 12px; overflow-y: auto; overflow-x: hidden; background: #000; margin-bottom: 20px; position: relative; max-height: 600px;">
+            <img src="${firstMedia.src}" alt="${project.title}" class="zoomable" onclick="openImageZoom('${firstMedia.src}')" style="width: 100%; height: auto; display: block; cursor: zoom-in;" loading="lazy">
             <div class="media-caption">${firstMedia.caption}</div>
           </div>
           `}
