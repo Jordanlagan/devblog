@@ -3,142 +3,917 @@ layout: default
 title: "My Work"
 ---
 
+<style>
+  /* Projects Page Styles */
+  .projects-page {
+    display: flex;
+    gap: 0;
+    min-height: 80vh;
+    margin-top: 20px;
+  }
+
+  /* Sidebar Filter Styles */
+  .projects-sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    padding-right: 30px;
+    border-right: 1px solid var(--border-dark);
+  }
+
+  .projects-sidebar h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+  }
+
+  .filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .filter-item {
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-size: 15px;
+    color: var(--text-muted);
+  }
+
+  .filter-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .filter-item.active {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  /* Projects Grid Styles */
+  .projects-content {
+    flex: 1;
+    padding-left: 40px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  /* Match homepage project card style */
+  .project-card {
+    background-color: var(--dark-bg-2);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 0.5px solid var(--border-dark);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    border-color: var(--accent);
+  }
+
+  .project-card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .project-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .project-card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    color: var(--text-dark);
+  }
+
+  .project-card-description {
+    color: var(--text-muted-dark);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .project-card-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    margin-top: auto;
+  }
+
+  .project-card-link:hover {
+    color: #B38602;
+    gap: 1rem;
+  }
+
+  .arrow-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card-link:hover .arrow-icon {
+    transform: translateX(5px);
+  }
+
+  /* Detail Sidebar (Notion-style sliding panel) - Dark Mode */
+  .project-detail-sidebar {
+    position: fixed;
+    top: 0;
+    right: -80%;
+    width: 80%;
+    height: 100vh;
+    background: var(--dark-bg-2);
+    box-shadow: -4px 0 24px rgba(0,0,0,0.8);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .project-detail-sidebar.active {
+    right: 0;
+  }
+
+  .detail-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .detail-sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .detail-sidebar-content {
+    padding: 60px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .detail-close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+  }
+
+  .detail-close-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(90deg);
+  }
+
+  /* Project Detail Content */
+  .detail-header {
+    margin-bottom: 40px;
+  }
+
+  .detail-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .detail-subtitle {
+    font-size: 18px;
+    color: var(--text-muted);
+  }
+
+  /* Two Column Layout for Detail Content */
+  .detail-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .detail-left-column {
+    position: sticky;
+    top: 60px;
+  }
+
+  .detail-right-column {
+    padding-top: 0;
+  }
+
+  /* Simple Media Gallery */
+  .media-viewer {
+    margin-bottom: 30px;
+  }
+
+  .media-gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .media-gallery-main {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .media-gallery-main img,
+  .media-gallery-main video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .media-gallery-side {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    padding-bottom: 5px;
+  }
+
+  .media-gallery-side::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .media-gallery-side::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  .media-gallery-side::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+
+  .media-gallery-side::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .media-thumbnail {
+    width: 110px;
+    height: 110px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .media-thumbnail:hover {
+    border-color: var(--accent);
+  }
+
+  .media-thumbnail.active {
+    border-color: var(--primary);
+  }
+
+  .media-thumbnail img,
+  .media-thumbnail video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .media-caption {
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 10px;
+  }
+
+  /* Tech Stack Tags (matching homepage skills style) */
+  .detail-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tech-badge {
+    padding: 8px 16px;
+    background: rgba(238, 185, 2, 0.15);
+    color: var(--accent);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(238, 185, 2, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .tech-badge:hover {
+    background: rgba(238, 185, 2, 0.25);
+    border-color: var(--accent);
+  }
+
+  /* About Section */
+  .detail-about {
+    margin-bottom: 40px;
+  }
+
+  .detail-section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-dark);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .detail-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-muted-dark);
+    margin-bottom: 20px;
+  }
+
+  /* Features List */
+  .detail-features {
+    margin-bottom: 40px;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .features-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 16px;
+    color: var(--text-muted-dark);
+    line-height: 1.6;
+  }
+
+  .features-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  /* CTA Button */
+  .detail-cta {
+    display: inline-block;
+    padding: 14px 30px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    font-size: 16px;
+  }
+
+  .detail-cta:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(219, 39, 99, 0.4);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .project-detail-sidebar {
+      width: 90%;
+      right: -90%;
+    }
+
+    .detail-sidebar-content {
+      padding: 40px 40px;
+    }
+
+    .detail-body {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .detail-left-column {
+      position: static;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .projects-page {
+      flex-direction: column;
+    }
+
+    .projects-sidebar {
+      width: 100%;
+      padding-right: 0;
+      padding-bottom: 20px;
+      border-right: none;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .filter-list {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .projects-content {
+      padding-left: 0;
+      padding-top: 20px;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .project-detail-sidebar {
+      width: 100%;
+      right: -100%;
+    }
+
+    .detail-sidebar-content {
+      padding: 30px 20px;
+    }
+
+    .detail-title {
+      font-size: 32px;
+    }
+
+    .detail-body {
+      grid-template-columns: 1fr;
+    }
+
+    .media-thumbnails {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+
 <div class="projects-page">
-  <h1>My Work</h1>
-  <p>
-  Some of the cool stuff I've built / worked on
-  </p>
-
-  <div class="projects-container">
-  <div class="project">
-    <div class="project-image">
-      <img src="/assets/images/projects/datapulse-1.png" alt="DataPulse 1">
-    </div>
-    <div class="project-info">
-      <h2 class="project-title">DataPulse</h2>
-      <div class="project-content">
-        <p>
-          DataPulse is a digital marketing tool that helps agencies & businesses visualize the performance of their marketing campaigns in real-time.
-          It pulls data from various APIs on-demand and displays dashboards that can be shared with clients.
-          This project was built using Ruby on Rails and a frontend in React.
-        </p>
-      </div>
-      <p><a href="https://www.digitalposition.com/discover-datapulse" target="_blank" class="project-link">View homepage</a></p>
-    </div>
+  <!-- Left Sidebar Filters -->
+  <div class="projects-sidebar">
+    <h2>Filter By</h2>
+    <ul class="filter-list">
+      <li class="filter-item active" data-filter="all">All Projects</li>
+      <li class="filter-item" data-filter="web-app">Web Applications</li>
+      <li class="filter-item" data-filter="website">Websites</li>
+      <li class="filter-item" data-filter="game">Games</li>
+    </ul>
   </div>
 
-  <div class="project">
-    <div class="project-image">
-      <img src="/assets/images/projects/kaiwa-1.jpg" alt="Kaiwa 1">
-    </div>
-    <div class="project-info">
-      <h2 class="project-title">Kaiwa</h2>
-      <div class="project-content">
-        <p>
-          Kaiwa is a lightweight & highly customizable solution for adding comments to any website. Users can create comment boxes in Kaiwa, then install them using a simple tag. This is a work in progress.
-        </p>
-        <p>The backend is written in Ruby on Rails, but the kaiwa.js script is pure JavaScript.</p>
-      </div>
-      <p><a href="https://kaiwa-app.com/" target="_blank" class="project-link">Visit website</a></p>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="/assets/images/projects/blog-autopilot.png" alt="Blog Autopilot">
-    </div>
-    <div class="project-info">
-      <h2 class="project-title">Blog Autopilot</h2>
-      <div class="project-content">
-        <p>
-          Blog Autopilot is an AI-powered content generation tool that helps businesses and creators automate their blog publishing workflow. It generates SEO-optimized articles, and supports auto publishing to various platforms.
-        </p>
-        <p>Built with Ruby on Rails with jQuery for frontend. Uses OpenAI API for content generation.</p>
-      </div>
-      <p><a href="https://blog-autopilot.com" target="_blank" class="project-link">Visit website</a></p>
+  <!-- Right Content Area -->
+  <div class="projects-content">
+    <h1>My Work</h1>
+    <p style="margin-bottom: 40px;">Some of the cool stuff I've built / worked on</p>
+    
+    <div class="projects-grid" id="projectsGrid">
+      <!-- Project cards will be dynamically inserted here -->
     </div>
   </div>
 </div>
 
-<hr class="line-break mt-4 mb-4">
-
-<h2 style="margin-top: 80px">Archive</h2>
-
-<p>I built these games when I was growing up and I don't want to lose track of them. They may or may not be playable on modern systems.</p>
-<div class="projects-container game-archive">
-  <div class="project">
-    <div class="project-image">
-      <img src="/assets/images/projects/escape-3.jpg" alt="Escape 3">
-    </div>
-    <div class="project-info">
-      <h2 class="project-title">Escape 3</h2>
-      <div class="project-content">
-        <p>
-          Side scrolling platformer game.
-        </p>
-      </div>
-      <p><a href="/downloads/escape_3.exe" target="_blank" class="project-link">Download</a></p>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="/assets/images/projects/escape-4.jpg" alt="Escape 4">
-    </div>
-    <div class="project-info">
-      <h2 class="project-title">Escape 4</h2>
-      <div class="project-content">
-        <p>
-          Side scrolling platformer game.
-        </p>
-      </div>
-      <p><a href="/downloads/escape_4.exe" target="_blank" class="project-link">Download</a></p>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="/assets/images/projects/bally-jump.jpg" alt="Bally Jump">
-    </div>
-    <div class="project-info">
-      <h2 class="project-title">Bally Jump</h2>
-      <div class="project-content">
-        <p>
-          An infinite climbing game.
-        </p>
-      </div>
-      <p><a href="/downloads/bally_jump.exe" target="_blank" class="project-link">Download</a></p>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="/assets/images/projects/talga-belly.jpg" alt="Talga Belly">
-    </div>
-    <div class="project-info">
-      <h2 class="project-title">Talga Belly</h2>
-      <div class="project-content">
-        <p>
-          Not really a game, you just eat the villagers.
-        </p>
-      </div>
-      <p><a href="/downloads/talga_belly.exe" target="_blank" class="project-link">Download</a></p>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-image">
-      <img src="/assets/images/projects/world-craft.jpg" alt="World Craft">
-    </div>
-    <div class="project-info">
-      <h2 class="project-title">World Craft</h2>
-      <div class="project-content">
-        <p>
-          2D building like Minecraft.
-        </p>
-      </div>
-      <p><a href="/downloads/world_craft.exe" target="_blank" class="project-link">Download</a></p>
-    </div>
+<!-- Detail Sidebar (Notion-style sliding panel) -->
+<div class="detail-sidebar-overlay" id="detailOverlay"></div>
+<div class="project-detail-sidebar" id="detailSidebar">
+  <button class="detail-close-btn" id="detailCloseBtn">&times;</button>
+  <div class="detail-sidebar-content" id="detailContent">
+    <!-- Project details will be dynamically inserted here -->
   </div>
 </div>
-</div>
+
+<script>
+  // Project Data Structure
+  const projects = [
+    {
+      id: 'datapulse',
+      title: 'DataPulse',
+      category: 'web-app',
+      shortDescription: 'DataPulse is a digital marketing tool that helps agencies & businesses visualize the performance of their marketing campaigns in real-time. It pulls data from various APIs on-demand and displays dashboards that can be shared with clients.',
+      thumbnail: '/assets/images/projects/datapulse/datapulse-thumbnail.png',
+      
+      // Full project details for sidebar
+      subtitle: 'Real-time Marketing Analytics Platform',
+      description: 'DataPulse is a comprehensive digital marketing tool that helps agencies and businesses visualize the performance of their marketing campaigns in real-time. It pulls data from various APIs on-demand and displays interactive dashboards that can be shared with clients. Built to handle enterprise-level data processing with real-time updates and customizable reporting.',
+      features: [
+        'Real-time data visualization from multiple marketing platforms',
+        'Customizable dashboards with drag-and-drop widgets',
+        'Client-shareable reports with white-label branding',
+        'API integrations with Google Analytics, Facebook Ads, and more',
+        'Automated reporting and email notifications',
+        'Multi-user collaboration and role management'
+      ],
+      techStack: ['Ruby on Rails', 'React', 'PostgreSQL', 'Redis', 'Chart.js', 'REST APIs'],
+      mediaGallery: [
+        { src: '/assets/images/projects/datapulse/datapulse-thumbnail.png', thumbnail: '/assets/images/projects/datapulse/datapulse-thumbnail.png', caption: 'Main dashboard overview', isMainThumbnail: true },
+        { src: '/assets/images/projects/datapulse/datapulse-dashboard.mp4', thumbnail: '/assets/images/projects/datapulse/datapulse-dashboard-thumbnail.jpg', caption: 'Main dashboard showing real-time campaign analytics', isVideo: true },
+        { src: '/assets/images/projects/datapulse/datapulse-config.mp4', thumbnail: '/assets/images/projects/datapulse/datapulse-config-thumbnail.jpg', caption: 'Client configuration and setup interface', isVideo: true },
+        { src: '/assets/images/projects/datapulse/datapulse-alert-system.mp4', thumbnail: '/assets/images/projects/datapulse/datapulse-alerts-system-thumbnail.jpg', caption: 'Automated alert and notification system', isVideo: true }
+      ],
+      link: { label: 'View Homepage', url: 'https://www.digitalposition.com/discover-datapulse' }
+    },
+    {
+      id: 'kaiwa',
+      title: 'Kaiwa',
+      category: 'web-app',
+      shortDescription: 'Kaiwa is a lightweight & highly customizable solution for adding comments to any website. Users can create comment boxes in Kaiwa, then install them using a simple tag. This is a work in progress.',
+      thumbnail: '/assets/images/projects/kaiwa-1.jpg',
+      
+      subtitle: 'Universal Comment System',
+      description: 'Kaiwa is a lightweight and highly customizable solution for adding comments to any website. Users can create comment boxes in Kaiwa, then install them using a simple JavaScript tag. Features real-time updates, moderation tools, and seamless integration with any website or platform.',
+      features: [
+        'Easy integration with single line of code',
+        'Real-time comment updates with WebSockets',
+        'Advanced moderation tools and spam filtering',
+        'Customizable styling to match your brand',
+        'User authentication and profiles',
+        'Threaded conversations and notifications'
+      ],
+      techStack: ['Ruby on Rails', 'JavaScript', 'WebSockets', 'PostgreSQL', 'Action Cable'],
+      mediaGallery: [
+        { src: '/assets/images/projects/kaiwa-1.jpg', thumbnail: '/assets/images/projects/kaiwa-1.jpg', caption: 'Kaiwa comment system interface' }
+      ],
+      link: { label: 'Visit Website', url: 'https://kaiwa-app.com/' }
+    },
+    {
+      id: 'blog-autopilot',
+      title: 'Blog Autopilot',
+      category: 'web-app',
+      shortDescription: 'Blog Autopilot is an AI-powered content generation tool that helps businesses and creators automate their blog publishing workflow. It generates SEO-optimized articles, and supports auto publishing to various platforms.',
+      thumbnail: '/assets/images/projects/blog-autopilot.png',
+      
+      subtitle: 'AI-Powered Content Automation',
+      description: 'Blog Autopilot is an AI-powered content generation tool that helps businesses and creators automate their blog publishing workflow. Using advanced AI models, it generates SEO-optimized articles and supports auto-publishing to various platforms including WordPress, Medium, and custom CMSs.',
+      features: [
+        'AI-generated SEO-optimized articles using GPT-4',
+        'Auto-publishing to WordPress, Medium, and more',
+        'Content calendar and scheduling system',
+        'Keyword research and optimization suggestions',
+        'Multi-site management dashboard',
+        'Analytics and performance tracking'
+      ],
+      techStack: ['Ruby on Rails', 'jQuery', 'OpenAI API', 'PostgreSQL', 'Sidekiq', 'WordPress API'],
+      mediaGallery: [
+        { src: '/assets/images/projects/blog-autopilot.png', thumbnail: '/assets/images/projects/blog-autopilot.png', caption: 'Blog Autopilot dashboard' }
+      ],
+      link: { label: 'Visit Website', url: 'https://blog-autopilot.com' }
+    },
+    {
+      id: 'escape-3',
+      title: 'Escape 3',
+      category: 'game',
+      shortDescription: 'A side-scrolling platformer game built during my early game development days. Features multiple levels with increasing difficulty and various obstacles.',
+      thumbnail: '/assets/images/projects/escape-3.jpg',
+      
+      subtitle: 'Classic Platformer Game',
+      description: 'A side-scrolling platformer game built during my early game development days. Features multiple levels with increasing difficulty and various obstacles. Created with Game Maker Studio, this project helped me learn game design principles and player mechanics.',
+      features: [
+        'Multiple challenging levels with unique themes',
+        'Smooth platforming mechanics',
+        'Custom level design with progressive difficulty',
+        'Retro pixel art style',
+        'Boss battles and collectibles'
+      ],
+      techStack: ['Game Maker Studio', 'GML'],
+      mediaGallery: [
+        { src: '/assets/images/projects/escape-3.jpg', thumbnail: '/assets/images/projects/escape-3.jpg', caption: 'Escape 3 gameplay' }
+      ],
+      link: { label: 'Download Game', url: '/downloads/escape_3.exe' }
+    },
+    {
+      id: 'escape-4',
+      title: 'Escape 4',
+      category: 'game',
+      shortDescription: 'The sequel to Escape 3, featuring improved mechanics and more challenging levels.',
+      thumbnail: '/assets/images/projects/escape-4.jpg',
+      
+      subtitle: 'Platformer Game - Sequel',
+      description: 'The sequel to Escape 3, featuring improved mechanics and more challenging levels. Built on lessons learned from the first game, Escape 4 introduced new enemies, power-ups, and a more polished player experience.',
+      features: [
+        'Enhanced gameplay mechanics',
+        'More complex level design',
+        'New obstacles and enemy types',
+        'Power-up system',
+        'Improved graphics and animations'
+      ],
+      techStack: ['Game Maker Studio', 'GML'],
+      mediaGallery: [
+        { src: '/assets/images/projects/escape-4.jpg', thumbnail: '/assets/images/projects/escape-4.jpg', caption: 'Escape 4 gameplay' }
+      ],
+      link: { label: 'Download Game', url: '/downloads/escape_4.exe' }
+    },
+    {
+      id: 'bally-jump',
+      title: 'Bally Jump',
+      category: 'game',
+      shortDescription: 'An infinite climbing game where you jump upwards avoiding obstacles and collecting points.',
+      thumbnail: '/assets/images/projects/bally-jump.jpg',
+      
+      subtitle: 'Infinite Climbing Game',
+      description: 'An infinite climbing game where you jump upwards avoiding obstacles and collecting points. Features procedurally generated levels that get progressively harder as you climb higher. Simple mechanics, endless challenge.',
+      features: [
+        'Infinite procedural level generation',
+        'Global leaderboard and score tracking',
+        'Increasing difficulty curve',
+        'Simple one-button controls',
+        'Addictive arcade gameplay'
+      ],
+      techStack: ['Game Maker Studio', 'GML'],
+      mediaGallery: [
+        { src: '/assets/images/projects/bally-jump.jpg', thumbnail: '/assets/images/projects/bally-jump.jpg', caption: 'Bally Jump game screen' }
+      ],
+      link: { label: 'Download Game', url: '/downloads/bally_jump.exe' }
+    },
+    {
+      id: 'talga-belly',
+      title: 'Talga Belly',
+      category: 'game',
+      shortDescription: 'A quirky interactive experience where you control a creature that eats villagers. Not your typical game!',
+      thumbnail: '/assets/images/projects/talga-belly.jpg',
+      
+      subtitle: 'Interactive Experience',
+      description: 'A quirky interactive experience where you control a creature that eats villagers. Not your typical game! This experimental project explores unconventional gameplay mechanics and humorous interactions.',
+      features: [
+        'Unique gameplay concept',
+        'Interactive villagers with AI behavior',
+        'Humorous sound effects and animations',
+        'Multiple game modes',
+        'Unlockable content'
+      ],
+      techStack: ['Game Maker Studio', 'GML'],
+      mediaGallery: [
+        { src: '/assets/images/projects/talga-belly.jpg', thumbnail: '/assets/images/projects/talga-belly.jpg', caption: 'Talga Belly game screen' }
+      ],
+      link: { label: 'Download', url: '/downloads/talga_belly.exe' }
+    },
+    {
+      id: 'world-craft',
+      title: 'World Craft',
+      category: 'game',
+      shortDescription: 'A 2D sandbox building game inspired by Minecraft. Mine resources, craft items, and build your world.',
+      thumbnail: '/assets/images/projects/world-craft.jpg',
+      
+      subtitle: '2D Sandbox Building Game',
+      description: 'A 2D sandbox building game inspired by Minecraft. Mine resources, craft items, and build your world. Features procedurally generated terrain, crafting systems, and creative freedom to build whatever you imagine.',
+      features: [
+        '2D procedural terrain generation',
+        'Mining and crafting system',
+        'Block-based building mechanics',
+        'Resource management and inventory',
+        'Day/night cycle',
+        'Save and load world functionality'
+      ],
+      techStack: ['Game Maker Studio', 'GML'],
+      mediaGallery: [
+        { src: '/assets/images/projects/world-craft.jpg', thumbnail: '/assets/images/projects/world-craft.jpg', caption: 'World Craft game screen' }
+      ],
+      link: { label: 'Download Game', url: '/downloads/world_craft.exe' }
+    }
+  ];
+
+  // Current media index for each project
+  let currentMediaIndex = {};
+
+  // Initialize media indices
+  projects.forEach(project => {
+    currentMediaIndex[project.id] = 0;
+  });
+
+  // Render project cards
+  function renderProjects(filter = 'all') {
+    const grid = document.getElementById('projectsGrid');
+    grid.innerHTML = '';
+    
+    const filteredProjects = filter === 'all' 
+      ? projects 
+      : projects.filter(p => p.category === filter);
+    
+    filteredProjects.forEach(project => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.onclick = () => openProjectDetail(project.id);
+      
+      card.innerHTML = `
+        <div class="project-card-image">
+          <img src="${project.thumbnail}" alt="${project.title}">
+        </div>
+        <div class="project-card-body">
+          <h3 class="project-card-title">${project.title}</h3>
+          <p class="project-card-description">${project.shortDescription}</p>
+          <a href="#" class="project-card-link" onclick="event.preventDefault(); openProjectDetail('${project.id}')">
+            Read More 
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      `;
+      
+      grid.appendChild(card);
+    });
+  }
+
+  // Change media in viewer
+  function changeMedia(projectId, index) {
+    const project = projects.find(p => p.id === projectId);
+    if (!project) return;
+
+    currentMediaIndex[projectId] = index;
+    const media = project.mediaGallery[index];
+    const mainViewer = document.getElementById('mainMediaViewer');
+    const caption = document.getElementById('mediaCaption');
+
+    // Update main viewer
+    if (media.isVideo) {
+      mainViewer.innerHTML = `<video controls loop muted autoplay><source src="${media.src}" type="video/mp4"></video>`;
+    } else {
+      mainViewer.innerHTML = `<img src="${media.src}" alt="${project.title}">`;
+    }
+    
+    // Update caption
+    caption.textContent = media.caption;
+
+    // Update active thumbnail
+    document.querySelectorAll('.media-thumbnail').forEach((thumb, i) => {
+      thumb.classList.toggle('active', i === index);
+    });
+  }
+
+  // Open project detail sidebar
+  function openProjectDetail(projectId) {
+    const project = projects.find(p => p.id === projectId);
+    if (!project) return;
+    
+    // Reset to first media
+    currentMediaIndex[projectId] = 0;
+    
+    const firstMedia = project.mediaGallery[0];
+    const hasMultipleMedia = project.mediaGallery.length > 1;
+    
+    const content = document.getElementById('detailContent');
+    content.innerHTML = `
+      <div class="detail-header">
+        <h1 class="detail-title">${project.title}</h1>
+        <p class="detail-subtitle">${project.subtitle}</p>
+      </div>
+
+      <div class="detail-body">
+        <!-- Left Column: Media Viewer + Tech Stack -->
+        <div class="detail-left-column">
+          <div class="media-viewer">
+            ${hasMultipleMedia ? `
+            <div class="media-gallery-container">
+              <div class="media-gallery-main" id="mainMediaViewer">
+                ${firstMedia.isVideo ? `
+                  <video controls loop muted autoplay>
+                    <source src="${firstMedia.src}" type="video/mp4">
+                  </video>
+                ` : `
+                  <img src="${firstMedia.src}" alt="${project.title}">
+                `}
+              </div>
+              <div class="media-gallery-side">
+                ${project.mediaGallery.map((media, idx) => `
+                  <div class="media-thumbnail ${idx === 0 ? 'active' : ''}" onclick="changeMedia('${project.id}', ${idx})">
+                    <img src="${media.thumbnail}" alt="Thumbnail ${idx + 1}">
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <div class="media-caption" id="mediaCaption">${firstMedia.caption}</div>
+            ` : `
+            <div style="border-radius: 12px; overflow: hidden; background: #000; margin-bottom: 30px;">
+              <img src="${firstMedia.src}" alt="${project.title}" style="width: 100%; display: block;">
+            </div>
+            `}
+          </div>
+
+          <h3 class="detail-section-title">Technologies Used</h3>
+          <div class="detail-tech-stack">
+            ${project.techStack.map(tech => `
+              <div class="tech-badge">${tech}</div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Right Column: Description + Features + CTA -->
+        <div class="detail-right-column">
+          <div class="detail-about">
+            <h2 class="detail-section-title">About This Project</h2>
+            <p class="detail-description">${project.description}</p>
+          </div>
+
+          <div class="detail-features">
+            <h2 class="detail-section-title">Key Features</h2>
+            <ul class="features-list">
+              ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+            </ul>
+          </div>
+
+          <a href="${project.link.url}" target="_blank" class="detail-cta">
+            ${project.link.label}
+          </a>
+        </div>
+      </div>
+    `;
+    
+    document.getElementById('detailSidebar').classList.add('active');
+    document.getElementById('detailOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Close project detail sidebar
+  function closeProjectDetail() {
+    document.getElementById('detailSidebar').classList.remove('active');
+    document.getElementById('detailOverlay').classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Close project detail sidebar
+  function closeProjectDetail() {
+    document.getElementById('detailSidebar').classList.remove('active');
+    document.getElementById('detailOverlay').classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Event listeners
+  document.addEventListener('DOMContentLoaded', function() {
+    // Render initial projects
+    renderProjects();
+    
+    // Filter button clicks
+    document.querySelectorAll('.filter-item').forEach(item => {
+      item.addEventListener('click', function() {
+        document.querySelectorAll('.filter-item').forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+        renderProjects(this.dataset.filter);
+      });
+    });
+    
+    // Close button
+    document.getElementById('detailCloseBtn').addEventListener('click', closeProjectDetail);
+    
+    // Overlay click
+    document.getElementById('detailOverlay').addEventListener('click', closeProjectDetail);
+    
+    // ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeProjectDetail();
+    });
+  });
+</script>
+
+<script src="/assets/scripts/lightbox-plus-jquery.min.js"></script>
