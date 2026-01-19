@@ -48,6 +48,7 @@ function changeMedia(projectId, index) {
   currentMediaIndex[projectId] = index;
   const media = project.mediaGallery[index];
   const mainViewer = document.getElementById('mainMediaViewer');
+  const captionEl = mainViewer.parentElement.querySelector('.media-caption');
 
   // Update main viewer
   if (media.isVideo) {
@@ -58,13 +59,16 @@ function changeMedia(projectId, index) {
       <div class="video-play-overlay" onclick="playVideo(event)">
         <div class="play-button"></div>
       </div>
-      <div class="media-caption">${media.caption}</div>
     `;
   } else {
     mainViewer.innerHTML = `
       <img src="${media.src}" alt="${project.title}" class="zoomable" onclick="openImageZoom('${media.src}')" loading="lazy">
-      <div class="media-caption">${media.caption}</div>
     `;
+  }
+
+  // Update caption separately
+  if (captionEl) {
+    captionEl.textContent = media.caption;
   }
 
   // Update active thumbnail
@@ -211,19 +215,20 @@ function openProjectDetail(projectId) {
         <div class="media-viewer">
           ${hasMultipleMedia ? `
           <div class="media-gallery-container">
-            <div class="media-gallery-main" id="mainMediaViewer">
-              ${firstMedia.isVideo ? `
-                <video id="mainVideo" controls>
-                  <source src="${firstMedia.src}" type="video/mp4">
-                </video>
-                <div class="video-play-overlay" onclick="playVideo(event)">
-                  <div class="play-button"></div>
-                </div>
-                <div class="media-caption">${firstMedia.caption}</div>
-              ` : `
-                <img src="${firstMedia.src}" alt="${project.title}" class="zoomable" onclick="openImageZoom('${firstMedia.src}')" loading="lazy">
-                <div class="media-caption">${firstMedia.caption}</div>
-              `}
+            <div class="media-gallery-wrapper">
+              <div class="media-gallery-main" id="mainMediaViewer">
+                ${firstMedia.isVideo ? `
+                  <video id="mainVideo" controls>
+                    <source src="${firstMedia.src}" type="video/mp4">
+                  </video>
+                  <div class="video-play-overlay" onclick="playVideo(event)">
+                    <div class="play-button"></div>
+                  </div>
+                ` : `
+                  <img src="${firstMedia.src}" alt="${project.title}" class="zoomable" onclick="openImageZoom('${firstMedia.src}')" loading="lazy">
+                `}
+              </div>
+              <div class="media-caption">${firstMedia.caption}</div>
             </div>
             <div class="media-gallery-side">
               ${project.mediaGallery.map((media, idx) => `
@@ -234,8 +239,10 @@ function openProjectDetail(projectId) {
             </div>
           </div>
           ` : `
-          <div style="border-radius: 12px; overflow-y: auto; overflow-x: hidden; background: #000; margin-bottom: 20px; position: relative; max-height: 600px;">
-            <img src="${firstMedia.src}" alt="${project.title}" class="zoomable" onclick="openImageZoom('${firstMedia.src}')" style="width: 100%; height: auto; display: block; cursor: zoom-in;" loading="lazy">
+          <div style="border-radius: 12px; overflow: hidden; background: #000; margin-bottom: 20px; position: relative; max-height: 600px;">
+            <div style="overflow-y: auto; overflow-x: hidden; max-height: 600px;">
+              <img src="${firstMedia.src}" alt="${project.title}" class="zoomable" onclick="openImageZoom('${firstMedia.src}')" style="width: 100%; height: auto; display: block; cursor: zoom-in;" loading="lazy">
+            </div>
             <div class="media-caption">${firstMedia.caption}</div>
           </div>
           `}
