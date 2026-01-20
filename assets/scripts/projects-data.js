@@ -299,18 +299,18 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'Designed and developed an e-commerce platform for Brickhouse Nutrition, a premium supplements brand. The site features custom product pages with detailed nutritional information, customer testimonials, and optimized checkout flows to maximize conversions.'
+        content: 'E-commerce website for Brickhouse Nutrition, a supplements brand. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Custom Shopify theme development',
-          'Responsive design across all devices',
-          'Optimized product detail pages',
-          'Educational content integration',
-          'Subscription management system',
-          'Performance optimization'
+          'Shopify e-commerce platform',
+          'Product pages with supplement information',
+          'Lorem ipsum dolor sit amet',
+          'Consectetur adipiscing elit',
+          'Sed do eiusmod tempor',
+          'Responsive web design'
         ]
       }
     ]
@@ -341,18 +341,18 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'Created a dual-storefront e-commerce platform for Honey Hole, serving both retail sports card collectors and card breaking enthusiasts. The solution features unified branding with separate shopping experiences, integrated navigation, and optimized flows for both business models.'
+        content: 'E-commerce platform for Honey Hole, featuring both a retail collectibles store and a card breaking service. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Dual Shopify store integration',
-          'Unified navigation and branding',
-          'Custom product filtering',
-          'Live breaking schedule integration',
-          'Inventory management across platforms',
-          'Mobile-optimized experience'
+          'Two separate Shopify stores',
+          'Sports card retail and breaking services',
+          'Lorem ipsum dolor sit amet',
+          'Consectetur adipiscing elit',
+          'Mobile-responsive design',
+          'Product catalog and filtering'
         ]
       }
     ]
@@ -378,18 +378,18 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'Developed a hybrid e-commerce and service booking platform for Maydi Strength, combining product sales with personal training lead generation. The site balances e-commerce functionality with service-based business needs.'
+        content: 'Website for Maydi Strength, a personal training brand. Features product shop and consultation booking. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'E-commerce product catalog',
-          'Consultation booking system',
-          'Lead capture forms',
-          'Training program showcase',
+          'Shopify e-commerce store',
+          'Training consultation booking',
+          'Lorem ipsum dolor sit',
+          'Consectetur adipiscing',
           'Responsive design',
-          'Integration with booking tools'
+          'Product catalog'
         ]
       }
     ]
@@ -414,18 +414,18 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'Built an e-commerce platform for Mixhers, a women\'s health supplement brand. The site emphasizes scientific credibility with educational content while maintaining an approachable, feminine aesthetic that resonates with the target audience.'
+        content: 'E-commerce website for Mixhers, a women\'s health supplement brand. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Science-focused content pages',
-          'Subscription management',
-          'Educational resources',
-          'Product quiz integration',
-          'Customer reviews system',
-          'Mobile-first design'
+          'Shopify e-commerce platform',
+          'Women\'s health supplement products',
+          'Lorem ipsum dolor sit amet',
+          'Consectetur adipiscing elit',
+          'Responsive web design',
+          'Product information pages'
         ]
       }
     ]
@@ -450,18 +450,18 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'Developed a B2B e-commerce platform for Naturaverde Pro, catering to professional estheticians and beauty salons. The site features wholesale pricing structures, bulk ordering capabilities, and professional-grade product information.'
+        content: 'E-commerce website for Naturaverde Pro, featuring professional esthetician supplies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'B2B wholesale pricing',
-          'Bulk order management',
-          'Professional account system',
-          'Product education resources',
-          'Quick reorder functionality',
-          'Professional certification integration'
+          'Shopify e-commerce store',
+          'Professional beauty supply products',
+          'Lorem ipsum dolor sit',
+          'Consectetur adipiscing',
+          'Responsive design',
+          'Product catalog'
         ]
       }
     ]
@@ -489,18 +489,18 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'Created a comprehensive e-commerce platform for Visbiome, a medical-grade probiotic brand. The site features extensive condition-specific educational content, scientific research integration, and optimized flows for both consumers and healthcare providers.'
+        content: 'E-commerce website for Visbiome, a medical-grade probiotic brand. Features educational content about gut health conditions. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Condition-specific landing pages',
-          'Scientific research integration',
-          'Healthcare provider resources',
-          'Prescription management system',
-          'Educational content library',
-          'Product comparison tools'
+          'Shopify e-commerce platform',
+          'Medical probiotic products',
+          'Gut health educational pages',
+          'Lorem ipsum dolor sit',
+          'Responsive web design',
+          'Product information'
         ]
       }
     ]
