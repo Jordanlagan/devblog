@@ -30,7 +30,7 @@ function renderProjects(filter = 'all') {
         <a href="#" class="project-card-link" onclick="event.preventDefault(); openProjectDetail('${project.id}')">
           Read More 
           <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
+            <path d="M9 5l7 7-7 7"/>
           </svg>
         </a>
       </div>

@@ -100,7 +100,7 @@ body::before { content: ''; position: fixed; inset: 0; background: #000; z-index
 @keyframes blackScreenFadeOut { from { opacity: 1; }
   to { opacity: 0; } }
 
-.hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 6rem 0 2rem; color: var(--text-dark); overflow: hidden; z-index: 2; margin-top: -80px; }
+.hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 12rem 0 2rem; color: var(--text-dark); overflow: hidden; z-index: 2; margin-top: -80px; }
 
 @media (max-width: 768px) { .hero-section { padding-top: 120px; margin-top: 0; } }
 
@@ -197,9 +197,9 @@ body::before { content: ''; position: fixed; inset: 0; background: #000; z-index
 
 .project-description { color: var(--text-muted-dark); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; }
 
-.project-link { color: var(--accent); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; font-size: 0.95rem; }
+.project-link { color: var(--accent); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; font-size: 0.95rem; cursor: pointer; }
 
-.project-link:hover { color: #B38602; gap: 1rem; }
+.project-link:hover { color: #B38602; gap: 1rem; cursor: pointer; }
 
 .arrow-icon { width: 20px; height: 20px; transition: transform 0.3s ease; }
 
@@ -323,9 +323,9 @@ body::before { content: ''; position: fixed; inset: 0; background: #000; z-index
 
 .project-content p { margin: 0 0 1rem 0; }
 
-.project-link { color: var(--accent); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; }
+.project-link { color: var(--accent); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; cursor: pointer; }
 
-.project-link:hover { color: #B38602; gap: 1rem; }
+.project-link:hover { color: #B38602; gap: 1rem; cursor: pointer; }
 
 .line-break { border: 0; height: 1px; background: var(--border-dark); margin: 4rem 0; }
 
@@ -414,9 +414,11 @@ body::before { content: ''; position: fixed; inset: 0; background: #000; z-index
 
 .post-header h1 { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; color: var(--text-dark); margin-bottom: 1rem; }
 
-.post-featured-image { margin: 2rem 0; text-align: center; }
+.post-featured-image-container { margin: 2rem auto; text-align: center; max-width: 480px; padding: 0 1rem; }
 
-.post-featured-image img { max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+.post-featured-image { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); cursor: pointer; }
+
+.post-featured-image img { max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); cursor: pointer; }
 
 .post-header p { color: var(--text-muted-dark); font-size: 0.95rem; }
 
@@ -436,9 +438,9 @@ body::before { content: ''; position: fixed; inset: 0; background: #000; z-index
 
 .post-content pre code { background: none; padding: 0; }
 
-.button-thin { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent); text-decoration: none; font-weight: 700; transition: all 0.3s ease; margin-bottom: 2rem; font-size: 0.95rem; }
+.button-thin { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent); text-decoration: none; font-weight: 700; transition: all 0.3s ease; margin-bottom: 2rem; font-size: 0.95rem; cursor: pointer; }
 
-.button-thin:hover { color: #B38602; transform: translateX(-5px); }
+.button-thin:hover { color: #B38602; transform: translateX(-5px); cursor: pointer; }
 
 .icon { width: 20px; height: 20px; }
 
@@ -463,7 +465,7 @@ body::before { content: ''; position: fixed; inset: 0; background: #000; z-index
 .author-blurb a:hover { color: #B38602; text-decoration: underline; }
 
 /* Kaiwa comment box styling */
-#kaiwa-box { margin-top: 3rem; background-color: transparent; padding-bottom: 3rem; }
+#kaiwa-box { margin-top: 3rem; background-color: transparent !important; padding-bottom: 3rem; }
 
 #kaiwa-box * { color: var(--text-dark) !important; }
 

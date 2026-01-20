@@ -5,9 +5,11 @@
     {%- include header.html -%}
     <div class="tag-page">
       <a class="button-thin" href="{{ site.blog_path }}">
-          <img src="/assets/images/icons/arrow-left.webp" alt="Back" class="icon left-chevron">
-          Back
-        </a>
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; transform: rotate(180deg);">
+          <path d="M9 5l7 7-7 7"/>
+        </svg>
+        Back
+      </a>
         <div style="margin-bottom: 36px;"></div>
         <h1>Posts tagged with "{{ page.tag }}"</h1>
         <hr class="line-break-thin">
@@ -36,7 +38,7 @@
                     <p class="blog-listing-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
                     <a href="{{ post.url | relative_url }}" class="project-link">Read More 
                       <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                        <path d="M9 5l7 7-7 7"/>
                       </svg>
                     </a>
                   </div>

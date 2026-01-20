@@ -7,7 +7,8 @@ module Jekyll
     def generate(site)
       dir = 'tags'
       site.tags.each do |tag, posts|
-        write_tag_index(site, File.join(dir, tag), tag)
+        tag_slug = tag.downcase.gsub(' ', '-').gsub('%20', '-')
+        write_tag_index(site, File.join(dir, tag_slug), tag)
       end
     end
 

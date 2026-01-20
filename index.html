@@ -89,39 +89,39 @@ title: "Home"
         
         <div class="projects-grid">
             <div class="project-card scroll-animate">
-                <img src="/assets/images/projects/datapulse-1.png" alt="DataPulse" class="project-image">
+                <img src="/assets/images/projects/datapulse/datapulse-thumbnail.png" alt="DataPulse" class="project-image">
                 <div class="project-content">
                     <h3 class="project-title title-effect-emboss">DataPulse</h3>
                     <p class="project-description">DataPulse is a digital marketing tool that helps agencies & businesses visualize the performance of their marketing campaigns in real-time. It pulls data from various APIs on-demand and displays dashboards that can be shared with clients. This project was built using Ruby on Rails and a frontend in React.</p>
-                    <a href="/projects#datapulse" class="project-link">Learn More 
+                    <a href="/projects" data-project-id="datapulse" class="project-link home-project-link">Learn More 
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                            <path d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
                 </div>
             </div>
 
             <div class="project-card scroll-animate">
-                <img src="/assets/images/projects/blog-autopilot.png" alt="Blog Autopilot" class="project-image">
+                <img src="/assets/images/projects/blog-autopilot/blog-autopilot.png" alt="Blog Autopilot" class="project-image">
                 <div class="project-content">
                     <h3 class="project-title title-effect-emboss">Blog Autopilot</h3>
                     <p class="project-description">Blog Autopilot is an AI-powered content generation tool that helps businesses and creators automate their blog publishing workflow. It generates SEO-optimized articles, and supports auto publishing to various platforms. Built with Ruby on Rails with jQuery for frontend. Uses OpenAI API for content generation.</p>
-                    <a href="/projects#blog-autopilot" class="project-link">Learn More 
+                    <a href="/projects" data-project-id="blog-autopilot" class="project-link home-project-link">Learn More 
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                            <path d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
                 </div>
             </div>
 
             <div class="project-card scroll-animate">
-                <img src="/assets/images/projects/kaiwa-1.jpg" alt="Kaiwa" class="project-image">
+                <img src="/assets/images/projects/kaiwa/kaiwa-1.jpg" alt="Kaiwa" class="project-image">
                 <div class="project-content">
                     <h3 class="project-title title-effect-emboss">Kaiwa</h3>
                     <p class="project-description">Kaiwa is a lightweight & highly customizable solution for adding comments to any website. Users can create comment boxes in Kaiwa, then install them using a simple tag. This is a work in progress. The backend is written in Ruby on Rails, but the kaiwa.js script is pure JavaScript.</p>
-                    <a href="/projects#kaiwa" class="project-link">Learn More 
+                    <a href="/projects" data-project-id="kaiwa" class="project-link home-project-link">Learn More 
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                            <path d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
                 </div>
@@ -155,7 +155,7 @@ title: "Home"
                 <p class="blog-post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
                 <a href="{{ post.url | relative_url }}" class="blog-post-link">Read More 
                     <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                        <path d="M9 5l7 7-7 7"/>
                     </svg>
                 </a>
             </div>
@@ -280,6 +280,20 @@ title: "Home"
 
         animate();
     })();
+
+    // Handle homepage project link clicks to open project detail sidebar
+    document.addEventListener('DOMContentLoaded', function() {
+        const homeProjectLinks = document.querySelectorAll('.home-project-link');
+        homeProjectLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const projectId = this.getAttribute('data-project-id');
+                if (projectId) {
+                    // Store the project ID in sessionStorage to open on projects page
+                    sessionStorage.setItem('openProjectId', projectId);
+                }
+            });
+        });
+    });
 
     // Note: Header scroll, smooth scroll, and scroll animations are handled by home.html layout
 </script>

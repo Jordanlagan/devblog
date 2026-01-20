@@ -347,7 +347,7 @@ body::before {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 6rem 0 2rem;
+    padding: 12rem 0 2rem;
     color: var(--text-dark);
     overflow: hidden;
     z-index: 2;
@@ -680,11 +680,13 @@ body::before {
     gap: 0.5rem;
     transition: all 0.3s ease;
     font-size: 0.95rem;
+    cursor: pointer;
 }
 
 .project-link:hover {
     color: #B38602;
     gap: 1rem;
+    cursor: pointer;
 }
 
 .arrow-icon {
@@ -1107,11 +1109,13 @@ body::before {
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .project-link:hover {
     color: #B38602;
     gap: 1rem;
+    cursor: pointer;
 }
 
 .line-break {
@@ -1415,9 +1419,19 @@ body::before {
     margin-bottom: 1rem;
 }
 
-.post-featured-image {
-    margin: 2rem 0;
+.post-featured-image-container {
+    margin: 2rem auto;
     text-align: center;
+    max-width: 480px;
+    padding: 0 1rem;
+}
+
+.post-featured-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .post-featured-image img {
@@ -1425,6 +1439,7 @@ body::before {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .post-header p {
@@ -1495,11 +1510,13 @@ body::before {
     transition: all 0.3s ease;
     margin-bottom: 2rem;
     font-size: 0.95rem;
+    cursor: pointer;
 }
 
 .button-thin:hover {
     color: #B38602;
     transform: translateX(-5px);
+    cursor: pointer;
 }
 
 .icon {
@@ -1574,7 +1591,7 @@ body::before {
 /* Kaiwa comment box styling */
 #kaiwa-box {
     margin-top: 3rem;
-    background-color: transparent;
+    background-color: transparent !important; 
     padding-bottom: 3rem;
 }
 

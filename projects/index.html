@@ -48,3 +48,17 @@ title: "My Work"
 <script src="/assets/scripts/projects-data.js"></script>
 <script src="/assets/scripts/projects.js"></script>
 <script src="/assets/scripts/lightbox-plus-jquery.min.js"></script>
+
+<script>
+  // Check if we should open a specific project from homepage
+  document.addEventListener('DOMContentLoaded', function() {
+    const openProjectId = sessionStorage.getItem('openProjectId');
+    if (openProjectId) {
+      sessionStorage.removeItem('openProjectId');
+      // Wait a bit for projects to render, then open the detail
+      setTimeout(() => {
+        openProjectDetail(openProjectId);
+      }, 100);
+    }
+  });
+</script>
