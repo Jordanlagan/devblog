@@ -21,7 +21,7 @@ function renderProjects(filter = 'all') {
     card.onclick = () => openProjectDetail(project.id);
     
     card.innerHTML = `
-      <div class="project-card-image">
+      <div class="project-card-image ${project.category}">
         <img src="${project.thumbnail}" alt="${project.title}" loading="lazy">
       </div>
       <div class="project-card-body">

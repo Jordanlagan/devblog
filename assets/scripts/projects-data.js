@@ -283,13 +283,13 @@ const projects = [
     title: 'Brickhouse Nutrition',
     category: 'website',
     shortDescription: 'E-commerce website for a premium nutrition and supplements brand. Features custom product pages, educational content, and optimized conversion funnels.',
-    thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home.jpg',
+    thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home-thumbnail.jpg',
     subtitle: 'E-commerce Nutrition Website',
     techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
     mediaGallery: [
-      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home.jpg', caption: 'Homepage' },
-      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp.jpg', caption: 'Field of Greens product page' },
-      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp.jpg', caption: 'Creatone product page' }
+      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home-thumbnail.jpg', caption: 'Homepage' },
+      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp-thumbnail.jpg', caption: 'Field of Greens product page' },
+      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp-thumbnail.jpg', caption: 'Creatone product page' }
     ],
     links: {
       primary: { label: 'Visit Website', url: 'https://www.brickhousenutrition.com' },
@@ -320,16 +320,16 @@ const projects = [
     title: 'Honey Hole Collectibles',
     category: 'website',
     shortDescription: 'Multi-brand e-commerce platform for sports card collecting and breaking. Features separate storefronts for retail and breaking services with shared navigation.',
-    thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-homepage.jpg',
+    thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-homepage-thumbnail.webp',
     subtitle: 'Sports Card E-commerce Platform',
     techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
     mediaGallery: [
-      { src: '/assets/images/projects/honey-hole/honeyhole-nav.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-nav.jpg', caption: 'Unified navigation system' },
-      { src: '/assets/images/projects/honey-hole/honeyhole-collect-homepage.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-homepage.jpg', caption: 'Collect store homepage' },
-      { src: '/assets/images/projects/honey-hole/honeyhole-breaks-homepage.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-breaks-homepage.jpg', caption: 'Breaks store homepage' },
-      { src: '/assets/images/projects/honey-hole/honeyhole-collect-collection.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-collection.jpg', caption: 'Product collection page' },
-      { src: '/assets/images/projects/honey-hole/honeyhole-collect-pdp.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-pdp.jpg', caption: 'Product detail page' },
-      { src: '/assets/images/projects/honey-hole/honeyhole-collect-about-us.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-about-us.jpg', caption: 'About page' }
+      { src: '/assets/images/projects/honey-hole/honeyhole-nav.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-nav-thumbnail.webp', caption: 'Unified navigation system' },
+      { src: '/assets/images/projects/honey-hole/honeyhole-collect-homepage.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-homepage-thumbnail.webp', caption: 'Collect store homepage' },
+      { src: '/assets/images/projects/honey-hole/honeyhole-breaks-homepage.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-breaks-homepage-thumbnail.webp', caption: 'Breaks store homepage' },
+      { src: '/assets/images/projects/honey-hole/honeyhole-collect-collection.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-collection-thumbnail.webp', caption: 'Product collection page' },
+      { src: '/assets/images/projects/honey-hole/honeyhole-collect-pdp.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-pdp-thumbnail.webp', caption: 'Product detail page' },
+      { src: '/assets/images/projects/honey-hole/honeyhole-collect-about-us.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-about-us-thumbnail.webp', caption: 'About page' }
     ],
     links: {
       primary: { label: 'Visit Collect Store', url: 'https://www.honeyholecollect.com' },
@@ -362,13 +362,13 @@ const projects = [
     title: 'Maydi Strength',
     category: 'website',
     shortDescription: 'E-commerce and lead generation website for a personal training and fitness brand. Features online shop, consultation booking, and fitness content.',
-    thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-homepage.jpg',
+    thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-homepage-thumbnail.webp',
     subtitle: 'Fitness & Training Platform',
     techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
     mediaGallery: [
-      { src: '/assets/images/projects/maydi-strength/maydi-strength-homepage.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-homepage.jpg', caption: 'Homepage' },
-      { src: '/assets/images/projects/maydi-strength/maydi-strength-shop.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-shop.jpg', caption: 'Product shop' },
-      { src: '/assets/images/projects/maydi-strength/maydi-strength-lead-form.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-lead-form.jpg', caption: 'Consultation booking form' }
+      { src: '/assets/images/projects/maydi-strength/maydi-strength-homepage.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-homepage-thumbnail.webp', caption: 'Homepage' },
+      { src: '/assets/images/projects/maydi-strength/maydi-strength-shop.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-shop-thumbnail.webp', caption: 'Product shop' },
+      { src: '/assets/images/projects/maydi-strength/maydi-strength-lead-form.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-lead-form-thumbnail.webp', caption: 'Consultation booking form' }
     ],
     links: {
       primary: { label: 'Visit Website', url: 'https://www.maydistrength.com' },
@@ -399,12 +399,12 @@ const projects = [
     title: 'Mixhers',
     category: 'website',
     shortDescription: 'E-commerce website for women\'s health supplements. Features science-backed educational content, subscription management, and optimized product pages.',
-    thumbnail: '/assets/images/projects/mixhers/mixhers-homepage.jpg',
+    thumbnail: '/assets/images/projects/mixhers/mixhers-homepage-thumbnail.webp',
     subtitle: 'Women\'s Health E-commerce',
     techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
     mediaGallery: [
-      { src: '/assets/images/projects/mixhers/mixhers-homepage.jpg', thumbnail: '/assets/images/projects/mixhers/mixhers-homepage.jpg', caption: 'Homepage' },
-      { src: '/assets/images/projects/mixhers/mixhers-backed-by-science.jpg', thumbnail: '/assets/images/projects/mixhers/mixhers-backed-by-science.jpg', caption: 'Science and education page' }
+      { src: '/assets/images/projects/mixhers/mixhers-homepage.jpg', thumbnail: '/assets/images/projects/mixhers/mixhers-homepage-thumbnail.webp', caption: 'Homepage' },
+      { src: '/assets/images/projects/mixhers/mixhers-backed-by-science.jpg', thumbnail: '/assets/images/projects/mixhers/mixhers-backed-by-science-thumbnail.webp', caption: 'Science and education page' }
     ],
     links: {
       primary: { label: 'Visit Website', url: 'https://www.mixhers.com' },
@@ -435,12 +435,12 @@ const projects = [
     title: 'Naturaverde Pro',
     category: 'website',
     shortDescription: 'B2B e-commerce platform for professional esthetician supplies. Features wholesale pricing, bulk ordering, and professional product education.',
-    thumbnail: '/assets/images/projects/naturaverde-pro/naturaverde-pro-homepage.jpg',
+    thumbnail: '/assets/images/projects/naturaverde-pro/naturaverde-pro-homepage-thumbnail.webp',
     subtitle: 'Professional Beauty Supplies',
     techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
     mediaGallery: [
-      { src: '/assets/images/projects/naturaverde-pro/naturaverde-pro-homepage.jpg', thumbnail: '/assets/images/projects/naturaverde-pro/naturaverde-pro-homepage.jpg', caption: 'Homepage' },
-      { src: '/assets/images/projects/naturaverde-pro/naturaverde-pro-pdp.jpg', thumbnail: '/assets/images/projects/naturaverde-pro/naturaverde-pro-pdp.jpg', caption: 'Product detail page' }
+      { src: '/assets/images/projects/naturaverde-pro/naturaverde-pro-homepage.jpg', thumbnail: '/assets/images/projects/naturaverde-pro/naturaverde-pro-homepage-thumbnail.webp', caption: 'Homepage' },
+      { src: '/assets/images/projects/naturaverde-pro/naturaverde-pro-pdp.jpg', thumbnail: '/assets/images/projects/naturaverde-pro/naturaverde-pro-pdp-thumbnail.webp', caption: 'Product detail page' }
     ],
     links: {
       primary: { label: 'Visit Website', url: 'https://www.naturaverdepro.com' },
@@ -471,15 +471,15 @@ const projects = [
     title: 'Visbiome',
     category: 'website',
     shortDescription: 'Medical-grade probiotic e-commerce website with extensive educational content. Features condition-specific pages and scientific research integration.',
-    thumbnail: '/assets/images/projects/visbiome/visbiome-gut-health.jpg',
+    thumbnail: '/assets/images/projects/visbiome/visbiome-gut-health-thumbnail.webp',
     subtitle: 'Medical Probiotic E-commerce',
     techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
     mediaGallery: [
-      { src: '/assets/images/projects/visbiome/visbiome-gut-health.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-gut-health.jpg', caption: 'Gut health information page' },
-      { src: '/assets/images/projects/visbiome/visbiome-ibs.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-ibs.jpg', caption: 'IBS treatment page' },
-      { src: '/assets/images/projects/visbiome/visbiome-leaky-gut.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-leaky-gut.jpg', caption: 'Leaky gut information' },
-      { src: '/assets/images/projects/visbiome/visbiome-ulcerative-colitis.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-ulcerative-colitis.jpg', caption: 'Ulcerative colitis page' },
-      { src: '/assets/images/projects/visbiome/visbiome-vs-vsl3.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-vs-vsl3.jpg', caption: 'Product comparison page' }
+      { src: '/assets/images/projects/visbiome/visbiome-gut-health.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-gut-health-thumbnail.webp', caption: 'Gut health information page' },
+      { src: '/assets/images/projects/visbiome/visbiome-ibs.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-ibs-thumbnail.webp', caption: 'IBS treatment page' },
+      { src: '/assets/images/projects/visbiome/visbiome-leaky-gut.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-leaky-gut-thumbnail.webp', caption: 'Leaky gut information' },
+      { src: '/assets/images/projects/visbiome/visbiome-ulcerative-colitis.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-ulcerative-colitis-thumbnail.webp', caption: 'Ulcerative colitis page' },
+      { src: '/assets/images/projects/visbiome/visbiome-vs-vsl3.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-vs-vsl3-thumbnail.webp', caption: 'Product comparison page' }
     ],
     links: {
       primary: { label: 'Visit Website', url: 'https://www.visbiome.com' },
