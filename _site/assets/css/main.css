@@ -189,7 +189,7 @@ body::before { content: ''; position: fixed; inset: 0; background: #000; z-index
 
 .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7); border-color: var(--accent); }
 
-.project-image { width: 100%; height: 200px; object-fit: cover; }
+.project-image { width: 100%; min-height: 320px; object-fit: cover; }
 
 .project-content { padding: 2rem; }
 
@@ -307,13 +307,13 @@ body::before { content: ''; position: fixed; inset: 0; background: #000; z-index
 /* Projects container */
 .projects-container { display: flex; flex-direction: column; gap: 3rem; margin-top: 3rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
 
-.project { background-color: var(--dark-bg-2); border-radius: 15px; overflow: hidden; border: 0.5px solid var(--border-dark); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: all 0.3s ease; display: grid; grid-template-columns: 350px 1fr; gap: 0; }
+.project { background-color: var(--dark-bg-2); border-radius: 15px; overflow: hidden; border: 0.5px solid var(--border-dark); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: all 0.3s ease; display: grid; grid-template-columns: 400px 1fr; gap: 0; }
 
 .project:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7); border-color: var(--accent); }
 
-.project-image { width: 350px; height: 250px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--dark-bg-1); }
+.project-image { width: 100%; min-height: 320px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--dark-bg-1); }
 
-.project-image img { width: 100%; height: 100%; object-fit: contain; padding: 1rem; }
+.project-image img { width: 100%; height: 100%; object-fit: cover; }
 
 .project-info { padding: 2rem; display: flex; flex-direction: column; }
 
@@ -517,7 +517,7 @@ body::before { content: ''; position: fixed; inset: 0; background: #000; z-index
 /* RESPONSIVE */
 @media (max-width: 1024px) { .about__content { grid-template-columns: 1fr; grid-gap: 4rem; } .projects-grid { grid-template-columns: repeat(2, 1fr); } }
 
-@media (max-width: 768px) { .name-display { font-size: 3rem; } .projects-grid { grid-template-columns: 1fr; } .blog-post-card { flex-direction: column; } .blog-post-image { width: 100%; } .nav { display: none; } .mobile-menu-btn { display: flex; } .heading-sec__main, .section-title, .blog-header h2, .cta-container h2 { font-size: 2rem; } .profile-image { width: 140px; height: 140px; } .mobile-nav-link { font-size: 2rem; } /* Mobile skills adjustments */ .skills { gap: 0.5rem; } .skills__skill { padding: 0.4rem 0.7rem; font-size: 0.8rem; } .skills-container.collapsed .skills { max-height: 220px; overflow: hidden; } .skills-curtain { display: block; position: absolute; bottom: 0px; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent 0%, var(--dark-bg-2) 100%); pointer-events: none; opacity: 1; transition: opacity 0.3s ease; } .skills-container:not(.collapsed) .skills-curtain { opacity: 0; } .skills-view-more { display: inline-flex; color: var(--accent); text-decoration: none; font-weight: 700; align-items: center; gap: 0.5rem; transition: all 0.3s ease; font-size: 0.9rem; cursor: pointer; background: none; border: none; padding: 0; margin-top: 0rem; justify-content: center; width: 100%; position: relative; z-index: 1; top: -10px; } .skills-view-more:hover { color: #B38602; gap: 0.7rem; } .skills-view-more svg { width: 20px; height: 20px; transition: transform 0.3s ease; } .skills-container:not(.collapsed) .skills-view-more svg { transform: rotate(180deg); } /* About page mobile */ .about-me-container { grid-template-columns: 1fr; gap: 2rem; } /* Projects mobile */ .project { grid-template-columns: 1fr; } .project-image { width: 100%; height: 200px; } /* Blog listing mobile */ .blog-listing-card { flex-direction: column; } .blog-listing-image { width: 100%; height: 200px; } .page-banner h1 { font-size: 2rem; } .blog-listing-header h1 { font-size: 2rem; } .form-row { grid-template-columns: 1fr; gap: 1rem; } .contact-form { padding: 2rem; } }
+@media (max-width: 768px) { .name-display { font-size: 3rem; } .projects-grid { grid-template-columns: 1fr; } .blog-post-card { flex-direction: column; } .blog-post-image { width: 100%; } .nav { display: none; } .mobile-menu-btn { display: flex; } .heading-sec__main, .section-title, .blog-header h2, .cta-container h2 { font-size: 2rem; } .profile-image { width: 140px; height: 140px; } .mobile-nav-link { font-size: 2rem; } /* Mobile skills adjustments */ .skills { gap: 0.5rem; } .skills__skill { padding: 0.4rem 0.7rem; font-size: 0.8rem; } .skills-container.collapsed .skills { max-height: 220px; overflow: hidden; } .skills-curtain { display: block; position: absolute; bottom: 0px; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent 0%, var(--dark-bg-2) 100%); pointer-events: none; opacity: 1; transition: opacity 0.3s ease; } .skills-container:not(.collapsed) .skills-curtain { opacity: 0; } .skills-view-more { display: inline-flex; color: var(--accent); text-decoration: none; font-weight: 700; align-items: center; gap: 0.5rem; transition: all 0.3s ease; font-size: 0.9rem; cursor: pointer; background: none; border: none; padding: 0; margin-top: 0rem; justify-content: center; width: 100%; position: relative; z-index: 1; top: -10px; } .skills-view-more:hover { color: #B38602; gap: 0.7rem; } .skills-view-more svg { width: 20px; height: 20px; transition: transform 0.3s ease; } .skills-container:not(.collapsed) .skills-view-more svg { transform: rotate(180deg); } /* About page mobile */ .about-me-container { grid-template-columns: 1fr; gap: 2rem; } /* Projects mobile */ .project { grid-template-columns: 1fr; } .project-image { width: 100%; min-height: 250px; } /* Blog listing mobile */ .blog-listing-card { flex-direction: column; } .blog-listing-image { width: 100%; height: 200px; } .page-banner h1 { font-size: 2rem; } .blog-listing-header h1 { font-size: 2rem; } .form-row { grid-template-columns: 1fr; gap: 1rem; } .contact-form { padding: 2rem; } }
 
 .post-list-post-body { width: 100%; }
 

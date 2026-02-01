@@ -5,11 +5,11 @@ const projects = [
     title: 'DataPulse',
     category: 'web-app',
     shortDescription: 'DataPulse is a digital marketing tool that helps agencies & businesses visualize the performance of their marketing campaigns in real-time. It pulls data from various APIs on-demand and displays dashboards that can be shared with clients.',
-    thumbnail: '/assets/images/projects/datapulse/datapulse-thumbnail.png',
+    thumbnail: '/assets/images/projects/datapulse/datapulse-promo.png',
     subtitle: 'Real-time Marketing Analytics Platform',
     techStack: ['Ruby on Rails', 'React', 'AWS', 'PostgreSQL', 'Sidekiq', 'Redis', 'Chart.js', 'GraphQL', 'REST APIs'],
     mediaGallery: [
-      { src: '/assets/images/projects/datapulse/datapulse-thumbnail.png', thumbnail: '/assets/images/projects/datapulse/datapulse-thumbnail.png', caption: 'Main dashboard overview', isMainThumbnail: true },
+      { src: '/assets/images/projects/datapulse/datapulse-promo.png', thumbnail: '/assets/images/projects/datapulse/datapulse-promo.png', caption: '', isMainThumbnail: true },
       { src: '/assets/images/projects/datapulse/datapulse-dashboard.mp4', thumbnail: '/assets/images/projects/datapulse/datapulse-dashboard-thumbnail.jpg', caption: 'Main dashboard showing real-time campaign analytics', isVideo: true },
       { src: '/assets/images/projects/datapulse/datapulse-config.mp4', thumbnail: '/assets/images/projects/datapulse/datapulse-config-thumbnail.jpg', caption: 'Client configuration and setup interface', isVideo: true },
       { src: '/assets/images/projects/datapulse/datapulse-alert-system.mp4', thumbnail: '/assets/images/projects/datapulse/datapulse-alerts-system-thumbnail.jpg', caption: 'Automated alert and notification system', isVideo: true }
@@ -43,11 +43,15 @@ const projects = [
     title: 'Kaiwa',
     category: 'web-app',
     shortDescription: 'Kaiwa is a lightweight & highly customizable solution for adding comments to any website. Users can create comment boxes in Kaiwa, then install them using a simple tag. This is a work in progress.',
-    thumbnail: '/assets/images/projects/kaiwa/kaiwa-1.jpg',
+    thumbnail: '/assets/images/projects/kaiwa/kaiwa-promo.png',
     subtitle: 'Universal Comment System',
-    techStack: ['Ruby on Rails', 'JavaScript', 'AWS', 'PostgreSQL', 'OpenAI API', 'ActiveJob'],
+    techStack: ['Ruby on Rails', 'JavaScript', 'AWS', 'PostgreSQL'],
     mediaGallery: [
-      { src: '/assets/images/projects/kaiwa/kaiwa-1.jpg', thumbnail: '/assets/images/projects/kaiwa/kaiwa-1.jpg', caption: 'Kaiwa interface' }
+      { src: '/assets/images/projects/kaiwa/kaiwa-promo.png', thumbnail: '/assets/images/projects/kaiwa/kaiwa-promo.png', caption: '' },
+      { src: '/assets/images/projects/kaiwa/kaiwa-dashboard.jpg', thumbnail: '/assets/images/projects/kaiwa/kaiwa-dashboard-thumbnail.jpg', caption: 'Kaiwa dashboard' },
+      { src: '/assets/images/projects/kaiwa/kaiwa-login.jpg', thumbnail: '/assets/images/projects/kaiwa/kaiwa-login-thumbnail.jpg', caption: 'Login screen' },
+      { src: '/assets/images/projects/kaiwa/kaiwa-config.jpg', thumbnail: '/assets/images/projects/kaiwa/kaiwa-config-thumbnail.jpg', caption: 'Configuration interface' },
+      { src: '/assets/images/projects/kaiwa/kaiwa-install.jpg', thumbnail: '/assets/images/projects/kaiwa/kaiwa-install-thumbnail.jpg', caption: 'Installation instructions' }
     ],
     links: {
       primary: { label: 'Visit Website', url: 'https://kaiwa-app.com/' },
@@ -64,10 +68,8 @@ const projects = [
         title: 'Key Features',
         items: [
           'Easy integration with single line of code',
-          'Advanced moderation tools and spam filtering',
+          'Basic moderation',
           'Customizable styling to match your brand',
-          'User authentication and profiles',
-          'Threaded conversations and notifications'
         ]
       }
     ]
@@ -77,11 +79,15 @@ const projects = [
     title: 'Blog Autopilot',
     category: 'web-app',
     shortDescription: 'Blog Autopilot is an AI-powered content generation tool that helps businesses and creators automate their blog publishing workflow. It generates SEO-optimized articles, and supports auto publishing to various platforms.',
-    thumbnail: '/assets/images/projects/blog-autopilot/blog-autopilot.png',
+    thumbnail: '/assets/images/projects/blog-autopilot/blog-autopilot-promo.png',
     subtitle: 'AI-Powered Content Automation',
-    techStack: ['Ruby on Rails', 'jQuery', 'OpenAI API', 'PostgreSQL', 'ActiveJob', 'WordPress API'],
+    techStack: ['Ruby on Rails', 'jQuery', 'OpenAI API', 'PostgreSQL', 'ActiveJob'],
     mediaGallery: [
-      { src: '/assets/images/projects/blog-autopilot/blog-autopilot.png', thumbnail: '/assets/images/projects/blog-autopilot/blog-autopilot.png', caption: 'Blog Autopilot dashboard' }
+      { src: '/assets/images/projects/blog-autopilot/blog-autopilot-promo.png', thumbnail: '/assets/images/projects/blog-autopilot/blog-autopilot-promo.png', caption: '' },
+      { src: '/assets/images/projects/blog-autopilot/blog-autopilot-login.jpg', thumbnail: '/assets/images/projects/blog-autopilot/blog-autopilot-login-thumbnail.jpg', caption: 'Login screen' },
+      { src: '/assets/images/projects/blog-autopilot/blog-autopilot-campaign.jpg', thumbnail: '/assets/images/projects/blog-autopilot/blog-autopilot-campaign-thumbnail.jpg', caption: 'Campaign creation interface' },
+      { src: '/assets/images/projects/blog-autopilot/blog-autopilot-edit-campaign.jpg', thumbnail: '/assets/images/projects/blog-autopilot/blog-autopilot-edit-campaign-thumbnail.jpg', caption: 'Editing a campaign' },
+      { src: '/assets/images/projects/blog-autopilot/blog-autopilot-new-campaign.jpg', thumbnail: '/assets/images/projects/blog-autopilot/blog-autopilot-new-campaign-thumbnail.jpg', caption: 'Creating a new campaign' }
     ],
     links: {
       primary: { label: 'Visit Website', url: 'https://blog-autopilot.com' },
@@ -91,18 +97,208 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'Blog Autopilot is an AI-powered content generation tool that helps businesses and creators automate their blog publishing workflow. Using advanced AI models, it generates SEO-optimized articles and supports auto-publishing to various platforms including WordPress, Medium, and custom CMSs.'
+        content: 'Blog Autopilot is an AI-powered content generation tool that helps businesses and creators automate their blog publishing workflow. It generates SEO-optimized articles using AI and supports auto-publishing to various platforms including WordPress, Google Docs, and Custom SFTP servers.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'AI-generated SEO-optimized articles using GPT-4',
-          'Auto-publishing to WordPress, Medium, and more',
+          'AI-generated SEO-optimized articles',
+          'Auto-publishing to WordPress, Google Docs, and Custom SFTP servers',
           'Content calendar and scheduling system',
-          'Keyword research and optimization suggestions',
+          'Competitor research and optimization suggestions',
           'Multi-site management dashboard',
-          'Analytics and performance tracking'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'brickhouse-nutrition',
+    title: 'Brickhouse Nutrition',
+    category: 'website',
+    shortDescription: 'E-commerce website for a premium nutrition and supplements brand. Features custom product pages, educational content, and optimized conversion funnels.',
+    thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home-thumbnail.jpg',
+    subtitle: 'E-commerce Nutrition Website',
+    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
+    mediaGallery: [
+      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home-thumbnail.jpg', caption: 'Homepage' },
+      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp-thumbnail.jpg', caption: 'Field of Greens product page' },
+      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp-thumbnail.jpg', caption: 'Creatone product page' }
+    ],
+    links: {
+      primary: { label: 'Visit Website', url: 'https://www.brickhousenutrition.com' },
+      external: []
+    },
+    sections: [
+      {
+        type: 'about',
+        title: 'About This Project',
+        content: 'E-commerce website for Brickhouse Nutrition, a premium supplements brand. Features custom product pages with detailed supplement information and educational content about health and nutrition.'
+      },
+      {
+        type: 'features',
+        title: 'Key Features',
+        items: [
+          'Custom Shopify theme development',
+          'Product pages with detailed supplement information',
+          'Educational content and blog',
+          'Subscription and bundle options',
+          'Mobile-optimized checkout',
+          'Responsive web design'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'honey-hole',
+    title: 'Honey Hole Collectibles',
+    category: 'website',
+    shortDescription: 'Multi-brand e-commerce platform for sports card collecting and breaking. Features separate storefronts for retail and breaking services with shared navigation.',
+    thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-homepage-thumbnail.webp',
+    subtitle: 'Sports Card E-commerce Platform',
+    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
+    mediaGallery: [
+      { src: '/assets/images/projects/honey-hole/honeyhole-nav.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-nav-thumbnail.webp', caption: 'Unified navigation system' },
+      { src: '/assets/images/projects/honey-hole/honeyhole-collect-homepage.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-homepage-thumbnail.webp', caption: 'Collect store homepage' },
+      { src: '/assets/images/projects/honey-hole/honeyhole-breaks-homepage.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-breaks-homepage-thumbnail.webp', caption: 'Breaks store homepage' },
+      { src: '/assets/images/projects/honey-hole/honeyhole-collect-collection.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-collection-thumbnail.webp', caption: 'Product collection page' },
+      { src: '/assets/images/projects/honey-hole/honeyhole-collect-pdp.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-pdp-thumbnail.webp', caption: 'Product detail page' },
+      { src: '/assets/images/projects/honey-hole/honeyhole-collect-about-us.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-about-us-thumbnail.webp', caption: 'About page' }
+    ],
+    links: {
+      primary: { label: 'Visit Collect Store', url: 'https://www.honeyholecollect.com' },
+      external: [
+        { label: 'Visit Breaks Store', url: 'https://www.honeyholebreaks.com' }
+      ]
+    },
+    sections: [
+      {
+        type: 'about',
+        title: 'About This Project',
+        content: 'E-commerce platform for Honey Hole, featuring both a retail collectibles store and a card breaking service. Built as two separate Shopify stores with unified branding and shared navigation system.'
+      },
+      {
+        type: 'features',
+        title: 'Key Features',
+        items: [
+          'Dual Shopify store architecture',
+          'Sports card retail and breaking services',
+          'Unified navigation across stores',
+          'Custom product pages',
+          'Mobile-responsive design',
+          'Product catalog and filtering'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'maydi-strength',
+    title: 'Maydi Strength',
+    category: 'website',
+    shortDescription: 'E-commerce and lead generation website for a personal training and fitness brand. Features online shop, consultation booking, and fitness content.',
+    thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-homepage-thumbnail.webp',
+    subtitle: 'Fitness & Training Platform',
+    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
+    mediaGallery: [
+      { src: '/assets/images/projects/maydi-strength/maydi-strength-homepage.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-homepage-thumbnail.webp', caption: 'Homepage' },
+      { src: '/assets/images/projects/maydi-strength/maydi-strength-shop.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-shop-thumbnail.webp', caption: 'Product shop' },
+      { src: '/assets/images/projects/maydi-strength/maydi-strength-lead-form.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-lead-form-thumbnail.webp', caption: 'Consultation booking form' }
+    ],
+    links: {
+      primary: { label: 'Visit Website', url: 'https://www.maydistrength.com' },
+      external: []
+    },
+    sections: [
+      {
+        type: 'about',
+        title: 'About This Project',
+        content: 'Website for Maydi Strength, a personal training and fitness brand. Features product shop for fitness merchandise and a consultation booking system for personal training services.'
+      },
+      {
+        type: 'features',
+        title: 'Key Features',
+        items: [
+          'Shopify e-commerce store',
+          'Training consultation booking form',
+          'Custom landing pages',
+          'Lead generation and capture',
+          'Mobile-responsive design',
+          'Product catalog and shop'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'mixhers',
+    title: 'Mixhers',
+    category: 'website',
+    shortDescription: 'E-commerce website for women\'s health supplements. Features science-backed educational content, subscription management, and optimized product pages.',
+    thumbnail: '/assets/images/projects/mixhers/mixhers-homepage-thumbnail.webp',
+    subtitle: 'Women\'s Health E-commerce',
+    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
+    mediaGallery: [
+      { src: '/assets/images/projects/mixhers/mixhers-homepage.jpg', thumbnail: '/assets/images/projects/mixhers/mixhers-homepage-thumbnail.webp', caption: 'Homepage' },
+      { src: '/assets/images/projects/mixhers/mixhers-backed-by-science.jpg', thumbnail: '/assets/images/projects/mixhers/mixhers-backed-by-science-thumbnail.webp', caption: 'Science and education page' }
+    ],
+    links: {
+      primary: { label: 'Visit Website', url: 'https://www.mixhers.com' },
+      external: []
+    },
+    sections: [
+      {
+        type: 'about',
+        title: 'About This Project',
+        content: 'E-commerce website for Mixhers, a women\'s health supplement brand. Features science-backed educational content about hormones and women\'s health, along with subscription-based product offerings.'
+      },
+      {
+        type: 'features',
+        title: 'Key Features',
+        items: [
+          'Custom Shopify theme',
+          'Science and education content pages',
+          'Subscription management',
+          'Product bundles and customization',
+          'Mobile-responsive design',
+          'Educational blog and resources'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'visbiome',
+    title: 'Visbiome',
+    category: 'website',
+    shortDescription: 'Medical-grade probiotic e-commerce website with extensive educational content. Features condition-specific pages and scientific research integration.',
+    thumbnail: '/assets/images/projects/visbiome/visbiome-gut-health-thumbnail.webp',
+    subtitle: 'Medical Probiotic E-commerce',
+    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
+    mediaGallery: [
+      { src: '/assets/images/projects/visbiome/visbiome-gut-health.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-gut-health-thumbnail.webp', caption: 'Gut health information page' },
+      { src: '/assets/images/projects/visbiome/visbiome-ibs.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-ibs-thumbnail.webp', caption: 'IBS treatment page' },
+      { src: '/assets/images/projects/visbiome/visbiome-leaky-gut.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-leaky-gut-thumbnail.webp', caption: 'Leaky gut information' },
+      { src: '/assets/images/projects/visbiome/visbiome-ulcerative-colitis.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-ulcerative-colitis-thumbnail.webp', caption: 'Ulcerative colitis page' },
+      { src: '/assets/images/projects/visbiome/visbiome-vs-vsl3.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-vs-vsl3-thumbnail.webp', caption: 'Product comparison page' }
+    ],
+    links: {
+      primary: { label: 'Visit Website', url: 'https://www.visbiome.com' },
+      external: []
+    },
+    sections: [
+      {
+        type: 'about',
+        title: 'About This Project',
+        content: 'E-commerce website for Visbiome, a medical-grade probiotic brand. Features extensive educational content about various gut health conditions including IBS, ulcerative colitis, and leaky gut syndrome.'
+      },
+      {
+        type: 'features',
+        title: 'Key Features',
+        items: [
+          'Custom Shopify implementation',
+          'Medical-grade probiotic products',
+          'Condition-specific educational pages',
+          'Scientific research integration',
+          'Product comparison tools',
+          'Mobile-responsive design'
         ]
       }
     ]
@@ -274,233 +470,6 @@ const projects = [
           'Resource management and inventory',
           'Day/night cycle',
           'Save and load world functionality'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'brickhouse-nutrition',
-    title: 'Brickhouse Nutrition',
-    category: 'website',
-    shortDescription: 'E-commerce website for a premium nutrition and supplements brand. Features custom product pages, educational content, and optimized conversion funnels.',
-    thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home-thumbnail.jpg',
-    subtitle: 'E-commerce Nutrition Website',
-    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
-    mediaGallery: [
-      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home-thumbnail.jpg', caption: 'Homepage' },
-      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp-thumbnail.jpg', caption: 'Field of Greens product page' },
-      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp-thumbnail.jpg', caption: 'Creatone product page' }
-    ],
-    links: {
-      primary: { label: 'Visit Website', url: 'https://www.brickhousenutrition.com' },
-      external: []
-    },
-    sections: [
-      {
-        type: 'about',
-        title: 'About This Project',
-        content: 'E-commerce website for Brickhouse Nutrition, a supplements brand. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-      },
-      {
-        type: 'features',
-        title: 'Key Features',
-        items: [
-          'Shopify e-commerce platform',
-          'Product pages with supplement information',
-          'Lorem ipsum dolor sit amet',
-          'Consectetur adipiscing elit',
-          'Sed do eiusmod tempor',
-          'Responsive web design'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'honey-hole',
-    title: 'Honey Hole Collectibles',
-    category: 'website',
-    shortDescription: 'Multi-brand e-commerce platform for sports card collecting and breaking. Features separate storefronts for retail and breaking services with shared navigation.',
-    thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-homepage-thumbnail.webp',
-    subtitle: 'Sports Card E-commerce Platform',
-    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
-    mediaGallery: [
-      { src: '/assets/images/projects/honey-hole/honeyhole-nav.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-nav-thumbnail.webp', caption: 'Unified navigation system' },
-      { src: '/assets/images/projects/honey-hole/honeyhole-collect-homepage.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-homepage-thumbnail.webp', caption: 'Collect store homepage' },
-      { src: '/assets/images/projects/honey-hole/honeyhole-breaks-homepage.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-breaks-homepage-thumbnail.webp', caption: 'Breaks store homepage' },
-      { src: '/assets/images/projects/honey-hole/honeyhole-collect-collection.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-collection-thumbnail.webp', caption: 'Product collection page' },
-      { src: '/assets/images/projects/honey-hole/honeyhole-collect-pdp.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-pdp-thumbnail.webp', caption: 'Product detail page' },
-      { src: '/assets/images/projects/honey-hole/honeyhole-collect-about-us.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-about-us-thumbnail.webp', caption: 'About page' }
-    ],
-    links: {
-      primary: { label: 'Visit Collect Store', url: 'https://www.honeyholecollect.com' },
-      external: [
-        { label: 'Visit Breaks Store', url: 'https://www.honeyholebreaks.com' }
-      ]
-    },
-    sections: [
-      {
-        type: 'about',
-        title: 'About This Project',
-        content: 'E-commerce platform for Honey Hole, featuring both a retail collectibles store and a card breaking service. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-      },
-      {
-        type: 'features',
-        title: 'Key Features',
-        items: [
-          'Two separate Shopify stores',
-          'Sports card retail and breaking services',
-          'Lorem ipsum dolor sit amet',
-          'Consectetur adipiscing elit',
-          'Mobile-responsive design',
-          'Product catalog and filtering'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'maydi-strength',
-    title: 'Maydi Strength',
-    category: 'website',
-    shortDescription: 'E-commerce and lead generation website for a personal training and fitness brand. Features online shop, consultation booking, and fitness content.',
-    thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-homepage-thumbnail.webp',
-    subtitle: 'Fitness & Training Platform',
-    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
-    mediaGallery: [
-      { src: '/assets/images/projects/maydi-strength/maydi-strength-homepage.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-homepage-thumbnail.webp', caption: 'Homepage' },
-      { src: '/assets/images/projects/maydi-strength/maydi-strength-shop.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-shop-thumbnail.webp', caption: 'Product shop' },
-      { src: '/assets/images/projects/maydi-strength/maydi-strength-lead-form.jpg', thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-lead-form-thumbnail.webp', caption: 'Consultation booking form' }
-    ],
-    links: {
-      primary: { label: 'Visit Website', url: 'https://www.maydistrength.com' },
-      external: []
-    },
-    sections: [
-      {
-        type: 'about',
-        title: 'About This Project',
-        content: 'Website for Maydi Strength, a personal training brand. Features product shop and consultation booking. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-      },
-      {
-        type: 'features',
-        title: 'Key Features',
-        items: [
-          'Shopify e-commerce store',
-          'Training consultation booking',
-          'Lorem ipsum dolor sit',
-          'Consectetur adipiscing',
-          'Responsive design',
-          'Product catalog'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'mixhers',
-    title: 'Mixhers',
-    category: 'website',
-    shortDescription: 'E-commerce website for women\'s health supplements. Features science-backed educational content, subscription management, and optimized product pages.',
-    thumbnail: '/assets/images/projects/mixhers/mixhers-homepage-thumbnail.webp',
-    subtitle: 'Women\'s Health E-commerce',
-    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
-    mediaGallery: [
-      { src: '/assets/images/projects/mixhers/mixhers-homepage.jpg', thumbnail: '/assets/images/projects/mixhers/mixhers-homepage-thumbnail.webp', caption: 'Homepage' },
-      { src: '/assets/images/projects/mixhers/mixhers-backed-by-science.jpg', thumbnail: '/assets/images/projects/mixhers/mixhers-backed-by-science-thumbnail.webp', caption: 'Science and education page' }
-    ],
-    links: {
-      primary: { label: 'Visit Website', url: 'https://www.mixhers.com' },
-      external: []
-    },
-    sections: [
-      {
-        type: 'about',
-        title: 'About This Project',
-        content: 'E-commerce website for Mixhers, a women\'s health supplement brand. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.'
-      },
-      {
-        type: 'features',
-        title: 'Key Features',
-        items: [
-          'Shopify e-commerce platform',
-          'Women\'s health supplement products',
-          'Lorem ipsum dolor sit amet',
-          'Consectetur adipiscing elit',
-          'Responsive web design',
-          'Product information pages'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'naturaverde-pro',
-    title: 'Naturaverde Pro',
-    category: 'website',
-    shortDescription: 'B2B e-commerce platform for professional esthetician supplies. Features wholesale pricing, bulk ordering, and professional product education.',
-    thumbnail: '/assets/images/projects/naturaverde-pro/naturaverde-pro-homepage-thumbnail.webp',
-    subtitle: 'Professional Beauty Supplies',
-    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
-    mediaGallery: [
-      { src: '/assets/images/projects/naturaverde-pro/naturaverde-pro-homepage.jpg', thumbnail: '/assets/images/projects/naturaverde-pro/naturaverde-pro-homepage-thumbnail.webp', caption: 'Homepage' },
-      { src: '/assets/images/projects/naturaverde-pro/naturaverde-pro-pdp.jpg', thumbnail: '/assets/images/projects/naturaverde-pro/naturaverde-pro-pdp-thumbnail.webp', caption: 'Product detail page' }
-    ],
-    links: {
-      primary: { label: 'Visit Website', url: 'https://www.naturaverdepro.com' },
-      external: []
-    },
-    sections: [
-      {
-        type: 'about',
-        title: 'About This Project',
-        content: 'E-commerce website for Naturaverde Pro, featuring professional esthetician supplies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.'
-      },
-      {
-        type: 'features',
-        title: 'Key Features',
-        items: [
-          'Shopify e-commerce store',
-          'Professional beauty supply products',
-          'Lorem ipsum dolor sit',
-          'Consectetur adipiscing',
-          'Responsive design',
-          'Product catalog'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'visbiome',
-    title: 'Visbiome',
-    category: 'website',
-    shortDescription: 'Medical-grade probiotic e-commerce website with extensive educational content. Features condition-specific pages and scientific research integration.',
-    thumbnail: '/assets/images/projects/visbiome/visbiome-gut-health-thumbnail.webp',
-    subtitle: 'Medical Probiotic E-commerce',
-    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
-    mediaGallery: [
-      { src: '/assets/images/projects/visbiome/visbiome-gut-health.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-gut-health-thumbnail.webp', caption: 'Gut health information page' },
-      { src: '/assets/images/projects/visbiome/visbiome-ibs.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-ibs-thumbnail.webp', caption: 'IBS treatment page' },
-      { src: '/assets/images/projects/visbiome/visbiome-leaky-gut.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-leaky-gut-thumbnail.webp', caption: 'Leaky gut information' },
-      { src: '/assets/images/projects/visbiome/visbiome-ulcerative-colitis.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-ulcerative-colitis-thumbnail.webp', caption: 'Ulcerative colitis page' },
-      { src: '/assets/images/projects/visbiome/visbiome-vs-vsl3.jpg', thumbnail: '/assets/images/projects/visbiome/visbiome-vs-vsl3-thumbnail.webp', caption: 'Product comparison page' }
-    ],
-    links: {
-      primary: { label: 'Visit Website', url: 'https://www.visbiome.com' },
-      external: []
-    },
-    sections: [
-      {
-        type: 'about',
-        title: 'About This Project',
-        content: 'E-commerce website for Visbiome, a medical-grade probiotic brand. Features educational content about gut health conditions. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-      },
-      {
-        type: 'features',
-        title: 'Key Features',
-        items: [
-          'Shopify e-commerce platform',
-          'Medical probiotic products',
-          'Gut health educational pages',
-          'Lorem ipsum dolor sit',
-          'Responsive web design',
-          'Product information'
         ]
       }
     ]

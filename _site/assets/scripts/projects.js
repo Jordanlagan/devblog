@@ -69,6 +69,7 @@ function changeMedia(projectId, index) {
   // Update caption separately
   if (captionEl) {
     captionEl.textContent = media.caption;
+    captionEl.style.display = media.caption ? 'block' : 'none';
   }
 
   // Update active thumbnail
@@ -228,7 +229,7 @@ function openProjectDetail(projectId) {
                   <img src="${firstMedia.src}" alt="${project.title}" class="zoomable" onclick="openImageZoom('${firstMedia.src}')" loading="lazy">
                 `}
               </div>
-              <div class="media-caption">${firstMedia.caption}</div>
+              <div class="media-caption" style="display: ${firstMedia.caption ? 'block' : 'none'};">${firstMedia.caption}</div>
             </div>
             <div class="media-gallery-side">
               ${project.mediaGallery.map((media, idx) => `
@@ -243,7 +244,7 @@ function openProjectDetail(projectId) {
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden;">
               <img src="${firstMedia.src}" alt="${project.title}" class="zoomable" onclick="openImageZoom('${firstMedia.src}')" style="width: 100%; height: auto; min-height: 100%; object-fit: cover; object-position: center; display: block; cursor: zoom-in;" loading="lazy">
             </div>
-            <div class="media-caption">${firstMedia.caption}</div>
+            <div class="media-caption" style="display: ${firstMedia.caption ? 'block' : 'none'};">${firstMedia.caption}</div>
           </div>
           `}
         </div>
