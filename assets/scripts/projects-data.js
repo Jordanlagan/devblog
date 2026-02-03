@@ -4,7 +4,7 @@ const projects = [
     id: 'datapulse',
     title: 'DataPulse',
     category: 'web-app',
-    shortDescription: 'DataPulse is a digital marketing tool that helps agencies & businesses visualize the performance of their marketing campaigns in real-time. It pulls data from various APIs on-demand and displays dashboards that can be shared with clients.',
+    shortDescription: 'A comprehensive digital marketing tool that helps agencies and businesses visualize marketing campaign performance in real-time. Features interactive dashboards with data from multiple APIs that can be shared with clients.',
     thumbnail: '/assets/images/projects/datapulse/datapulse-promo.png',
     subtitle: 'Real-time Marketing Analytics Platform',
     techStack: ['Ruby on Rails', 'React', 'AWS', 'PostgreSQL', 'Sidekiq', 'Redis', 'Chart.js', 'GraphQL', 'REST APIs'],
@@ -22,7 +22,7 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'DataPulse is a comprehensive digital marketing tool that helps agencies and businesses visualize the performance of their marketing campaigns in real-time. It pulls data from various APIs on-demand and displays interactive dashboards that can be shared with clients. Built to handle enterprise-level data processing with real-time updates and customizable reporting.'
+        content: 'DataPulse is a comprehensive digital marketing tool that helps agencies and businesses visualize the performance of their marketing campaigns in real-time. The platform pulls data from various APIs on-demand and displays interactive dashboards that can be shared with clients. Built to handle enterprise-level data processing with real-time updates and customizable reporting.'
       },
       {
         type: 'features',
@@ -42,7 +42,7 @@ const projects = [
     id: 'kaiwa',
     title: 'Kaiwa',
     category: 'web-app',
-    shortDescription: 'Kaiwa is a lightweight & highly customizable solution for adding comments to any website. Users can create comment boxes in Kaiwa, then install them using a simple tag. This is a work in progress.',
+    shortDescription: 'A lightweight and highly customizable commenting system for websites. Users can create comment boxes and install them with a single JavaScript tag. Features real-time updates and moderation tools.',
     thumbnail: '/assets/images/projects/kaiwa/kaiwa-promo.png',
     subtitle: 'Universal Comment System',
     techStack: ['Ruby on Rails', 'JavaScript', 'AWS', 'PostgreSQL'],
@@ -61,7 +61,7 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'Kaiwa is a lightweight and highly customizable solution for adding comments to any website. Users can create comment boxes in Kaiwa, then install them using a simple JavaScript tag. Features real-time updates, moderation tools, and seamless integration with any website or platform.'
+        content: 'Kaiwa is a lightweight and highly customizable solution for adding comments to any website. Users can create comment boxes in Kaiwa, then install them using a simple JavaScript tag. The system features real-time updates, moderation tools, and seamless integration with any website or platform.'
       },
       {
         type: 'features',
@@ -78,7 +78,7 @@ const projects = [
     id: 'blog-autopilot',
     title: 'Blog Autopilot',
     category: 'web-app',
-    shortDescription: 'Blog Autopilot is an AI-powered content generation tool that helps businesses and creators automate their blog publishing workflow. It generates SEO-optimized articles, and supports auto publishing to various platforms.',
+    shortDescription: 'An AI-powered content generation tool that helps businesses and creators automate their blog publishing workflow. Generates SEO-optimized articles and supports auto-publishing to WordPress, Google Docs, and custom SFTP servers.',
     thumbnail: '/assets/images/projects/blog-autopilot/blog-autopilot-promo.png',
     subtitle: 'AI-Powered Content Automation',
     techStack: ['Ruby on Rails', 'jQuery', 'OpenAI API', 'PostgreSQL', 'ActiveJob'],
@@ -97,7 +97,7 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'Blog Autopilot is an AI-powered content generation tool that helps businesses and creators automate their blog publishing workflow. It generates SEO-optimized articles using AI and supports auto-publishing to various platforms including WordPress, Google Docs, and Custom SFTP servers.'
+        content: 'Blog Autopilot is an AI-powered content generation tool that helps businesses and creators automate their blog publishing workflow. The platform generates SEO-optimized articles using AI and supports auto-publishing to various platforms including WordPress, Google Docs, and custom SFTP servers.'
       },
       {
         type: 'features',
@@ -116,14 +116,14 @@ const projects = [
     id: 'brickhouse-nutrition',
     title: 'Brickhouse Nutrition',
     category: 'website',
-    shortDescription: 'E-commerce website for a premium nutrition and supplements brand. Features custom product pages, educational content, and optimized conversion funnels.',
+    shortDescription: 'E-commerce website for a premium supplements brand. Involved migrating product pages to custom Shopify templates, improving user experience and conversion rates across the site.',
     thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home-thumbnail.jpg',
     subtitle: 'E-commerce Nutrition Website',
     techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
     mediaGallery: [
-      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home-thumbnail.jpg', caption: 'Homepage' },
-      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp-thumbnail.jpg', caption: 'Field of Greens product page' },
-      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp-thumbnail.jpg', caption: 'Creatone product page' }
+      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-home-thumbnail.jpg', caption: 'Updated homepage with a modern design.' },
+      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-field-of-greens-pdp-thumbnail.jpg', caption: 'Updated all PDPs sitewide to improve CRO and UX.' },
+      { src: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp.jpg', thumbnail: '/assets/images/projects/brickhouse-nutrition/brickhouse-nutrition-creatone-pdp-thumbnail.jpg', caption: 'Developed unique experiences for each target audience.' }
     ],
     links: {
       primary: { label: 'Visit Website', url: 'https://www.brickhousenutrition.com' },
@@ -133,18 +133,17 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'E-commerce website for Brickhouse Nutrition, a premium supplements brand. Features custom product pages with detailed supplement information and educational content about health and nutrition.'
+        content: 'E-commerce website for Brickhouse Nutrition, a premium supplements brand. This project involved migrating all existing product pages to custom Shopify templates, which allowed greater customization and improved user experience. The site features detailed supplement information and educational content about health and nutrition.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Custom Shopify theme development',
-          'Product pages with detailed supplement information',
-          'Educational content and blog',
-          'Subscription and bundle options',
-          'Mobile-optimized checkout',
-          'Responsive web design'
+          'Shopify 2.0 theme development',
+          'Improved conversion rates on product pages',
+          'Developed educational content to feature on PDPs',
+          'Optimized performance and site speed',
+          'Mobile-responsive design'
         ]
       }
     ]
@@ -153,10 +152,10 @@ const projects = [
     id: 'honey-hole',
     title: 'Honey Hole Collectibles',
     category: 'website',
-    shortDescription: 'Multi-brand e-commerce platform for sports card collecting and breaking. Features separate storefronts for retail and breaking services with shared navigation.',
+    shortDescription: 'Dual e-commerce platform for a sports card business with separate storefronts for retail and card breaking services. Migrated from WooCommerce to Shopify with unified inventory management through Thrive.',
     thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-homepage-thumbnail.webp',
     subtitle: 'Sports Card E-commerce Platform',
-    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
+    techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS', 'Thrive', 'Shopify Flow', 'WooCommerce', 'WordPress'],
     mediaGallery: [
       { src: '/assets/images/projects/honey-hole/honeyhole-nav.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-nav-thumbnail.webp', caption: 'Unified navigation system' },
       { src: '/assets/images/projects/honey-hole/honeyhole-collect-homepage.jpg', thumbnail: '/assets/images/projects/honey-hole/honeyhole-collect-homepage-thumbnail.webp', caption: 'Collect store homepage' },
@@ -175,7 +174,7 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'E-commerce platform for Honey Hole, featuring both a retail collectibles store and a card breaking service. Built as two separate Shopify stores with unified branding and shared navigation system.'
+        content: 'Dual e-commerce platform for Honey Hole, featuring both a retail collectibles store and a card breaking service. Built as two separate Shopify stores with unified branding and shared inventory management through Thrive. The project involved migrating data from WooCommerce to Shopify and creating an attractive, user-friendly storefront.'
       },
       {
         type: 'features',
@@ -183,10 +182,9 @@ const projects = [
         items: [
           'Dual Shopify store architecture',
           'Sports card retail and breaking services',
-          'Unified navigation across stores',
-          'Custom product pages',
-          'Mobile-responsive design',
-          'Product catalog and filtering'
+          'Unified inventory management with Thrive',
+          'Optimized navigation and user experience',
+          'Mobile-friendly design',
         ]
       }
     ]
@@ -195,7 +193,7 @@ const projects = [
     id: 'maydi-strength',
     title: 'Maydi Strength',
     category: 'website',
-    shortDescription: 'E-commerce and lead generation website for a personal training and fitness brand. Features online shop, consultation booking, and fitness content.',
+    shortDescription: 'Website for a personal trainer and fitness coach. The site features a product shop for fitness merchandise as well as a booking system for personal training services.',
     thumbnail: '/assets/images/projects/maydi-strength/maydi-strength-homepage-thumbnail.webp',
     subtitle: 'Fitness & Training Platform',
     techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
@@ -212,18 +210,16 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'Website for Maydi Strength, a personal training and fitness brand. Features product shop for fitness merchandise and a consultation booking system for personal training services.'
+        content: 'Website for a personal trainer and fitness coach. The site features a product shop for fitness merchandise and a consultation booking system for personal training services.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Shopify e-commerce store',
-          'Training consultation booking form',
+          'Shopify 2.0 theme development',
           'Custom landing pages',
           'Lead generation and capture',
-          'Mobile-responsive design',
-          'Product catalog and shop'
+          'Mobile-friendly design',
         ]
       }
     ]
@@ -232,7 +228,7 @@ const projects = [
     id: 'mixhers',
     title: 'Mixhers',
     category: 'website',
-    shortDescription: 'E-commerce website for women\'s health supplements. Features science-backed educational content, subscription management, and optimized product pages.',
+    shortDescription: 'E-commerce website for health supplements targeted towards women. This project involved migrating from a vintage Shopify theme to a modern Shopify 2.0 theme, improving site performance and user experience.',
     thumbnail: '/assets/images/projects/mixhers/mixhers-homepage-thumbnail.webp',
     subtitle: 'Women\'s Health E-commerce',
     techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
@@ -248,18 +244,16 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'E-commerce website for Mixhers, a women\'s health supplement brand. Features science-backed educational content about hormones and women\'s health, along with subscription-based product offerings.'
+        content: 'E-commerce website for Mixhers, a women\'s health supplement brand. This project involved migrating from a vintage Shopify theme to a modern Shopify 2.0 theme, improving site performance and user experience. The site features science-backed educational content about hormones and women\'s health.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Custom Shopify theme',
-          'Science and education content pages',
-          'Subscription management',
-          'Product bundles and customization',
-          'Mobile-responsive design',
-          'Educational blog and resources'
+          'Shopify 2.0 theme migration',
+          'Improved site performance and speed',
+          'Enhanced mobile responsiveness',
+          'Custom landing pages',
         ]
       }
     ]
@@ -268,7 +262,7 @@ const projects = [
     id: 'visbiome',
     title: 'Visbiome',
     category: 'website',
-    shortDescription: 'Medical-grade probiotic e-commerce website with extensive educational content. Features condition-specific pages and scientific research integration.',
+    shortDescription: 'E-commerce website for a medical-grade probiotic brand. Features extensive educational content on gut health conditions like IBS, ulcerative colitis, and leaky gut syndrome, along with product comparison tools.',
     thumbnail: '/assets/images/projects/visbiome/visbiome-gut-health-thumbnail.webp',
     subtitle: 'Medical Probiotic E-commerce',
     techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
@@ -287,17 +281,15 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'E-commerce website for Visbiome, a medical-grade probiotic brand. Features extensive educational content about various gut health conditions including IBS, ulcerative colitis, and leaky gut syndrome.'
+        content: 'E-commerce website for Visbiome, a medical-grade probiotic brand. Features extensive educational content on gut health conditions such as IBS, ulcerative colitis, and leaky gut syndrome, along with product comparison tools to help users make informed decisions.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Custom Shopify implementation',
-          'Medical-grade probiotic products',
-          'Condition-specific educational pages',
-          'Scientific research integration',
+          'Condition-specific educational landing pages',
           'Product comparison tools',
+          'Shopify 2.0 theme customization',
           'Mobile-responsive design'
         ]
       }
@@ -309,8 +301,8 @@ const projects = [
     category: 'game',
     shortDescription: 'A side-scrolling platformer game built during my early game development days. Features multiple levels with increasing difficulty and various obstacles.',
     thumbnail: '/assets/images/projects/escape-3/escape-3.jpg',
-    subtitle: 'Classic Platformer Game',
-    techStack: ['Game Maker Studio', 'GML'],
+    subtitle: 'Platformer Game',
+    techStack: ['Game Maker', 'GML'],
     mediaGallery: [
       { src: '/assets/images/projects/escape-3/escape-3.jpg', thumbnail: '/assets/images/projects/escape-3/escape-3.jpg', caption: 'Escape 3 gameplay' }
     ],
@@ -322,17 +314,14 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'A side-scrolling platformer game built during my early game development days. Features multiple levels with increasing difficulty and various obstacles. Created with Game Maker Studio, this project helped me learn game design principles and player mechanics.'
+        content: 'A side-scrolling platformer game built during early game development days. Features multiple levels with increasing difficulty and various obstacles. Created with Game Maker to learn game design principles and player mechanics.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Multiple challenging levels with unique themes',
-          'Smooth platforming mechanics',
-          'Custom level design with progressive difficulty',
-          'Retro pixel art style',
-          'Boss battles and collectibles'
+          'Collectible items',
+          'Boss battles'
         ]
       }
     ]
@@ -341,10 +330,10 @@ const projects = [
     id: 'escape-4',
     title: 'Escape 4',
     category: 'game',
-    shortDescription: 'The sequel to Escape 3, featuring improved mechanics and more challenging levels.',
+    shortDescription: 'A side-scrolling platformer game and the sequel to Escape 3, featuring fog of war and blood splatters.',
     thumbnail: '/assets/images/projects/escape-4/escape-4.jpg',
-    subtitle: 'Platformer Game - Sequel',
-    techStack: ['Game Maker Studio', 'GML'],
+    subtitle: 'Platformer Game',
+    techStack: ['Game Maker', 'GML'],
     mediaGallery: [
       { src: '/assets/images/projects/escape-4/escape-4.jpg', thumbnail: '/assets/images/projects/escape-4/escape-4.jpg', caption: 'Escape 4 gameplay' }
     ],
@@ -356,17 +345,15 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'The sequel to Escape 3, featuring improved mechanics and more challenging levels. Built on lessons learned from the first game, Escape 4 introduced new enemies, power-ups, and a more polished player experience.'
+        content: 'A side-scrolling platformer and the sequel to Escape 3, featuring fog of war and blood splatter effects. Building on lessons learned from the first game, this sequel introduced new enemies, power-ups, and a more polished player experience.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Enhanced gameplay mechanics',
-          'More complex level design',
-          'New obstacles and enemy types',
-          'Power-up system',
-          'Improved graphics and animations'
+          'Fog of war effect',
+          'Blood splatter effects',
+          'New enemy types and obstacles'
         ]
       }
     ]
@@ -390,17 +377,15 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'An infinite climbing game where you jump upwards avoiding obstacles and collecting points. Features procedurally generated levels that get progressively harder as you climb higher. Simple mechanics, endless challenge.'
+        content: 'An infinite climbing game where you jump upwards avoiding obstacles and collecting points. The game features procedurally generated levels that get progressively harder as you climb higher.'
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Infinite procedural level generation',
-          'Global leaderboard and score tracking',
-          'Increasing difficulty curve',
-          'Simple one-button controls',
-          'Addictive arcade gameplay'
+          'Randomly generated levels',
+          'Increasing difficulty',
+          'Point collection system'
         ]
       }
     ]
@@ -409,10 +394,10 @@ const projects = [
     id: 'talga-belly',
     title: 'Talga Belly',
     category: 'game',
-    shortDescription: 'A quirky interactive experience where you control a creature that eats villagers. Not your typical game!',
+    shortDescription: 'An interactive experience where you control a creature that eats villagers.',
     thumbnail: '/assets/images/projects/talga-belly/talga-belly.jpg',
     subtitle: 'Interactive Experience',
-    techStack: ['Game Maker Studio', 'GML'],
+    techStack: ['Game Maker', 'GML'],
     mediaGallery: [
       { src: '/assets/images/projects/talga-belly/talga-belly.jpg', thumbnail: '/assets/images/projects/talga-belly/talga-belly.jpg', caption: 'Talga Belly game screen' }
     ],
@@ -424,17 +409,13 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'A quirky interactive experience where you control a creature that eats villagers. Not your typical game! This experimental project explores unconventional gameplay mechanics and humorous interactions.'
+        content: 'An interactive experience where you control a creature that eats villagers. The game features humorous sound effects and animations as you interact with the villagers in various ways.',
       },
       {
         type: 'features',
         title: 'Key Features',
         items: [
-          'Unique gameplay concept',
-          'Interactive villagers with AI behavior',
-          'Humorous sound effects and animations',
-          'Multiple game modes',
-          'Unlockable content'
+          'Eat villagers'
         ]
       }
     ]
@@ -458,7 +439,7 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'A 2D sandbox building game inspired by Minecraft. Mine resources, craft items, and build your world. Features procedurally generated terrain, crafting systems, and creative freedom to build whatever you imagine.'
+        content: 'A 2D sandbox building game inspired by Minecraft. Players can mine resources, craft items, and build their world. The game features procedurally generated terrain, crafting systems, and creative freedom to build whatever you can imagine.'
       },
       {
         type: 'features',
