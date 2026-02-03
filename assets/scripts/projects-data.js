@@ -262,7 +262,7 @@ const projects = [
     id: 'visbiome',
     title: 'Visbiome',
     category: 'website',
-    shortDescription: 'E-commerce website for a medical-grade probiotic brand. Features extensive educational content on gut health conditions like IBS, ulcerative colitis, and leaky gut syndrome, along with product comparison tools.',
+    shortDescription: 'E-commerce website for a medical-grade probiotic brand. Features extensive educational content on gut health conditions like IBS, ulcerative colitis, and leaky gut syndrome.',
     thumbnail: '/assets/images/projects/visbiome/visbiome-gut-health-thumbnail.webp',
     subtitle: 'Medical Probiotic E-commerce',
     techStack: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
@@ -281,7 +281,7 @@ const projects = [
       {
         type: 'about',
         title: 'About This Project',
-        content: 'E-commerce website for Visbiome, a medical-grade probiotic brand. Features extensive educational content on gut health conditions such as IBS, ulcerative colitis, and leaky gut syndrome, along with product comparison tools to help users make informed decisions.'
+        content: 'E-commerce website for Visbiome, a medical-grade probiotic brand. Features extensive educational content on gut health conditions such as IBS, ulcerative colitis, and leaky gut syndrome.'
       },
       {
         type: 'features',
